@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Apr 19 11:33:56 2019
+# Process ID: 388
+# Current directory: C:/Users/Scott/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11736
+# Log file: C:/Users/Scott/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/Scott/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Xilinx/playground/pmod_i2s_quick_start/i2s_playback/i2s_playback.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 750.418 ; gain = 47.266
+update_compile_order -fileset sources_1
+archive_project C:/Xilinx/playground/pmod_i2s_quick_start/i2s_playback.xpr.zip -temp_dir C:/Users/Scott/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-388-LT15155 -force
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Scott/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-388-LT15155' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'clk_wiz_0_synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-133] re-setting run 'clk_wiz_0_impl_1'...

@@ -1,0 +1,41 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Fri Nov  8 22:51:34 2019
+| Host         : LAPTOP-ATT53B95 running 64-bit major release  (build 9200)
+| Command      : report_drc -file i2s_playback_drc_opted.rpt
+| Design       : i2s_playback
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 1
++--------+----------+------------------------------------------------------------------+------------+
+| Rule   | Severity | Description                                                      | Violations |
++--------+----------+------------------------------------------------------------------+------------+
+| CKLD-2 | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
++--------+----------+------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CKLD-2#1 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net clock_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): clock_IBUF_inst/O
+Related violations: <none>
+
+
