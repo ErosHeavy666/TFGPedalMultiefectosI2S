@@ -40,6 +40,7 @@ Port (
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
     enable_in             : in STD_LOGIC;
+    SW14                  : in STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -49,42 +50,109 @@ Port (
 end EfectoCHORUS;
 
 architecture Behavioral of EfectoCHORUS is
-    signal l_lfsr_reg, r_lfsr_reg, l_lfsr_next, r_lfsr_next, r_random, l_random : STD_LOGIC_VECTOR (1 downto 0);
-    signal seed_l : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    signal seed_r : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0); 
+
+    signal r_lfsr_reg, r_random : signed (15 downto 0);
+    signal l_lfsr_reg, l_random : signed (15 downto 0);
+    signal seed_l : signed (15 downto 0) := "0000000001100110";
+    signal seed_r : signed (15 downto 0) := "0000000001100110";
+        
+    signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0);
+     
     type fifo_t is array (0 to n-1) of signed(d_width-1 downto 0);
-    signal l_data_next, l_data_reg, r_data_reg, r_data_next, l_data_next_aux, r_data_next_aux, l_data_reg_aux, r_data_reg_aux: fifo_t;
+    signal l_data_next_aux, r_data_next_aux, l_data_reg_aux, r_data_reg_aux: fifo_t;
+    
+    signal filter_select_aux : STD_LOGIC;
+    --signal counter_reg, counter_next : unsigned (8 downto 0);
+    --signal addra_reg, addra_next : STD_LOGIC;
+    --signal l_data_next, l_data_reg, r_data_reg, r_data_next : fifo_t; 
+
+
+component fir_filter is
+GENERIC(
+    d_width         :  INTEGER := 16);
+Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
+        Reset : in STD_LOGIC;  --Reset síncrono general del Fir
+        Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
+        Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
+                                         --valor de Sample_In con un pulso activo durante un ciclo de reloj.
+        filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
+        Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
+        Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
+                                           --valor de Sample_Out con un pulso activo durante un ciclo de reloj.
+        
+end component;
+     
 begin
+
+Unit_FIR_Filter : fir_filter 
+GENERIC MAP(d_width => 16)
+PORT MAP (
+    clk_12megas => clk,
+    Reset => reset_n,
+    Sample_In => l_lfsr_reg,
+    Sample_In_Enable => enable_in,
+    filter_select => filter_select_aux,
+    Sample_Out => l_random,
+    Sample_Out_ready => enable_out
+);
+
+process(SW14)
+begin
+    if(SW14 = '1') then
+        filter_select_aux <= '1';
+    else
+        filter_select_aux <= '0';
+    end if;
+end process;
+
+--process(clk, reset_n, enable_in)
+--begin
+--    if reset_n = '1' then
+--        counter_reg <= (others => '0');
+--        addra_reg <= '0';
+--    elsif (rising_edge(clk)) then --MCLK
+--        if(enable_in = '1')then
+--            counter_reg <= counter_next;
+--            addra_reg <= addra_next;
+--        end if;
+--    end if;
+--end process;
+
+--process (counter_reg, addra_reg)
+--begin
+--    if (addra_reg = '1') then
+--        counter_next <= counter_reg + 1;
+--    else
+--        counter_next <= counter_reg - 1;
+--    end if;
+--end process;
+
+--process (counter_reg, addra_reg)
+--begin  
+--    --addra_next <= addra_reg;
+--    if counter_reg = 511 then
+--        addra_next <= '0';
+--    elsif counter_reg = 0 then
+--        addra_next <= '1';
+--    else
+--        addra_next <= addra_reg; 
+--    end if;
+--end process; 
 
 process(clk, reset_n, enable_in)
 begin
-    if reset_n = '1' then
-        l_data_reg <= (others => (others => '0'));
-        r_data_reg <= (others => (others => '0'));  
+    if reset_n = '1' then 
         l_data_reg_aux <= (others => (others => '0')); 
         r_data_reg_aux <= (others => (others => '0'));
     elsif (rising_edge(clk)) then --MCLK
         if(enable_in = '1')then
-            l_data_reg <= l_data_next;
-            r_data_reg <= r_data_next;
             l_data_reg_aux <= l_data_next_aux;
             r_data_reg_aux <= r_data_next_aux;
         end if;
     end if;
 end process;
 
-process (l_data_in, l_data_reg, r_data_in, r_data_reg)
-begin
-    l_data_next(0) <= signed(l_data_in);
-    r_data_next(0) <= signed(r_data_in);
-    for i in 1 to n-1 loop
-        l_data_next(i) <= l_data_reg(i-1);
-        r_data_next(i) <= r_data_reg(i-1);      
-    end loop;
-end process;
-
-process(clk, reset_n, enable_in)
+process(clk, reset_n, enable_in, seed_l, seed_r, l_lfsr_reg, r_lfsr_reg)
 begin
     if(reset_n = '1') then
         l_lfsr_reg <= (others=>'0');
@@ -94,36 +162,39 @@ begin
             l_lfsr_reg <= seed_l;
             r_lfsr_reg <= seed_r;
        
-            --l_lfsr_reg(0) <= l_lfsr_reg(3);
-            --l_lfsr_reg(0) <= l_lfsr_reg(2);
-            l_lfsr_reg(0) <= l_lfsr_reg(1);
-            l_lfsr_reg(1) <= l_lfsr_reg(1) xnor l_lfsr_reg(0);
-            --l_lfsr_reg(4) <= l_lfsr_reg(3);
+            l_lfsr_reg(0) <= l_lfsr_reg(7);
+            l_lfsr_reg(1) <= l_lfsr_reg(0);
+            l_lfsr_reg(2) <= l_lfsr_reg(1) xnor l_lfsr_reg(7);
+            l_lfsr_reg(3) <= l_lfsr_reg(2) xnor l_lfsr_reg(7);
+            l_lfsr_reg(4) <= l_lfsr_reg(3) xnor l_lfsr_reg(7);
+            l_lfsr_reg(5) <= l_lfsr_reg(4);
+            l_lfsr_reg(6) <= l_lfsr_reg(5);
+            l_lfsr_reg(7) <= l_lfsr_reg(6);
                         
-            --r_lfsr_reg(0) <= r_lfsr_reg(3);
-            --r_lfsr_reg(0) <= r_lfsr_reg(2);
-            r_lfsr_reg(0) <= r_lfsr_reg(1);
-            r_lfsr_reg(1) <= r_lfsr_reg(1) xnor r_lfsr_reg(0);
-            --r_lfsr_reg(4) <= r_lfsr_reg(3);
+--            r_lfsr_reg(0) <= r_lfsr_reg(7);
+--            r_lfsr_reg(1) <= r_lfsr_reg(0);
+--            r_lfsr_reg(2) <= r_lfsr_reg(1) xnor r_lfsr_reg(7);
+--            r_lfsr_reg(3) <= r_lfsr_reg(2) xnor r_lfsr_reg(7);
+--            r_lfsr_reg(4) <= r_lfsr_reg(3) xnor r_lfsr_reg(7);
+--            r_lfsr_reg(5) <= r_lfsr_reg(4);
+--            r_lfsr_reg(6) <= r_lfsr_reg(5);
+--            r_lfsr_reg(7) <= r_lfsr_reg(6);
             
       end if;
     end if;
 end process;
 
-l_random <= (l_lfsr_reg);
-r_random <= (r_lfsr_reg); 
-
 process (l_data_out_aux, r_data_out_aux, l_data_reg_aux, r_data_reg_aux)
 begin
     l_data_next_aux(0) <= signed(l_data_out_aux);
-    r_data_next_aux(0) <= signed(l_data_out_aux);
+    r_data_next_aux(0) <= signed(r_data_out_aux);
     for i in 1 to n-1 loop
         l_data_next_aux(i) <= l_data_reg_aux(i-1);
         r_data_next_aux(i) <= r_data_reg_aux(i-1);
     end loop;
 end process;
 
-process(clk, reset_n)
+process(clk, reset_n, enable_in)
 begin
     if reset_n = '1' then
         l_data_out_aux <= (others => '0');
@@ -132,8 +203,8 @@ begin
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
         if(enable_in = '1')then
-            l_data_out_aux <= std_logic_vector(signed(l_data_in) + shift_right(l_data_reg_aux(n-to_integer(unsigned(l_random))-1),2));
-            r_data_out_aux <= std_logic_vector(signed(r_data_in) + shift_right(r_data_reg_aux(n-to_integer(unsigned(l_random))-1),2));
+            l_data_out_aux <= std_logic_vector(signed(l_data_in) + shift_right(l_data_reg_aux(n-to_integer(unsigned(l_random))-1),1));
+            r_data_out_aux <= std_logic_vector(signed(r_data_in) + shift_right(r_data_reg_aux(n-to_integer(unsigned(l_random))-1),1));
         end if;
     end if;
 end process;

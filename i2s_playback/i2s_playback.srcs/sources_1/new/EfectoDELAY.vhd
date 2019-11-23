@@ -76,7 +76,7 @@ begin
     end loop;
  end process;
 
-process(clk, reset_n)
+process(clk, reset_n, enable_in)
 begin
     if reset_n = '1' then
         l_data_out <= (others => '0');

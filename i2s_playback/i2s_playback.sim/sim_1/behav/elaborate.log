@@ -11,6 +11,10 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.reg [reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Ruta_datos_Fir [ruta_datos_fir_default]
+Compiling architecture behavioral of entity xil_defaultlib.controlador_fir [controlador_fir_default]
+Compiling architecture behavioral of entity xil_defaultlib.fir_filter [fir_filter_default]
 Compiling architecture behavioral of entity xil_defaultlib.EfectoCHORUS [efectochorus_default]
 Compiling architecture behavioral of entity xil_defaultlib.tb_randomefect
 Built simulation snapshot tb_randomEfect_behav

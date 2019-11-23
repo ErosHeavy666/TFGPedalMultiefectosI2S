@@ -22,7 +22,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -52,8 +51,7 @@ architecture Behavioral of EfectoES is
 
 begin 
 
-process(clk, reset_n)
-
+process(clk, reset_n, enable_in)
 begin
 
     if(reset_n = '1') then
@@ -68,4 +66,5 @@ begin
         end if;
     end if;
 end process;
+
 end Behavioral;

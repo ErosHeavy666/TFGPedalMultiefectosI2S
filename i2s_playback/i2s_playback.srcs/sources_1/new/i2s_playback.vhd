@@ -33,7 +33,10 @@ ENTITY i2s_playback IS
         play_enable :  in STD_LOGIC;    
         SW0         :  in STD_LOGIC; 
         SW1         :  in STD_LOGIC; 
-        SW2         :  in STD_LOGIC;                  
+        SW2         :  in STD_LOGIC; 
+        SW5         :  in STD_LOGIC;
+        SW6         :  in STD_LOGIC;
+        SW14        :  in STD_LOGIC;                
         mclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
         sclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
         ws          :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --word select (or left-right clock)
@@ -69,33 +72,33 @@ ARCHITECTURE logic OF i2s_playback IS
         END COMPONENT;
 
     --declare I2S Transceiver component
-component i2s is
-    generic (
-        ms_ratio_w: natural := 3;       -- clk to sclk ratio = 2^ms_ratio_w (default = 8)
-        sw_ratio_w: natural := 6;       -- sclk to ws ratio  = 2^sw_ratio_w (default = 64)
-        
-        data_w:     natural := 16
-    );
-    port (
-        clk:       in  std_logic;
-        n_reset_a: in  std_logic;
-
-        reset_s:   in  std_logic;
+    component i2s is
+        generic (
+            ms_ratio_w: natural := 3;       -- clk to sclk ratio = 2^ms_ratio_w (default = 8)
+            sw_ratio_w: natural := 6;       -- sclk to ws ratio  = 2^sw_ratio_w (default = 64)
+            
+            data_w:     natural := 16
+        );
+        port (
+            clk:       in  std_logic;
+            n_reset_a: in  std_logic;
     
-        sclk:      out std_logic;
-        ws:        out std_logic;
-        sd_in:     in  std_logic;
-        sd_out:    out std_logic;
-
-        l_in:      out signed(data_w-1 downto 0);
-        r_in:      out signed(data_w-1 downto 0);
-        en_in:     out std_logic;
-
-        l_out:     in  signed(data_w-1 downto 0);
-        r_out:     in  signed(data_w-1 downto 0);
-        en_out:    out std_logic
-    );
-end component;
+            reset_s:   in  std_logic;
+        
+            sclk:      out std_logic;
+            ws:        out std_logic;
+            sd_in:     in  std_logic;
+            sd_out:    out std_logic;
+    
+            l_in:      out signed(data_w-1 downto 0);
+            r_in:      out signed(data_w-1 downto 0);
+            en_in:     out std_logic;
+    
+            l_out:     in  signed(data_w-1 downto 0);
+            r_out:     in  signed(data_w-1 downto 0);
+            en_out:    out std_logic
+        );
+    end component;
     
     component display_interface port(
             clk : in STD_LOGIC;
@@ -116,6 +119,9 @@ end component;
         SW0                   : in STD_LOGIC;
         SW1                   : in STD_LOGIC;
         SW2                   : in STD_LOGIC;
+        SW5                   : in STD_LOGIC;
+        SW6                   : in STD_LOGIC; 
+        SW14                  : in STD_LOGIC;  
         l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
         l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
         r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -130,7 +136,7 @@ end component;
         clk             : in STD_LOGIC;
         reset           :in STD_LOGIC;
         play_enable     : in STD_LOGIC;
-        l_data_rx   : in STD_LOGIC_VECTOR (d_width-1 downto 0);
+        --l_data_rx   : in STD_LOGIC_VECTOR (d_width-1 downto 0);
         r_data_rx   : in STD_LOGIC_VECTOR (d_width-1 downto 0);
         LEDs        : out STD_LOGIC_VECTOR (d_width-1 downto 0)
     );
@@ -178,7 +184,10 @@ BEGIN
          enable_out => open,
          SW0 => SW0,
          SW1 => SW1,
-         SW2 => SW2, 
+         SW2 => SW2,
+         SW5 => SW5,
+         SW6 => SW6,
+         SW14 => SW14,
          l_data_in => std_LOGIC_VECTOR(l_data_rx) , 
          l_data_out => l_data_tx, 
          r_data_in => std_LOGIC_VECTOR(r_data_rx) , 
@@ -200,7 +209,7 @@ BEGIN
         clk         =>  master_clk ,
         reset       =>  reset_n ,
         play_enable =>  play_enable,
-        l_data_rx   =>  std_logic_vector(l_data_rx)  ,
+        --l_data_rx   =>  std_logic_vector(l_data_rx)  ,
         r_data_rx   =>  std_logic_vector(r_data_rx)  ,
         LEDs        =>  LED       
     );

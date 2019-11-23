@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_randomEfect_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="sine_package" />
+            <top_module name="tb_randomEfect" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="19195000000fs"></ZoomStartTime>
+      <ZoomEndTime time="90200233051fs"></ZoomEndTime>
+      <Cursor1Time time="115170000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="159"></NameColumnWidth>
+      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="1" />
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectVIBRATO/wave_out" type="array">
+      <obj_property name="ElementShortName">wave_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wave_out[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+</wave_config>

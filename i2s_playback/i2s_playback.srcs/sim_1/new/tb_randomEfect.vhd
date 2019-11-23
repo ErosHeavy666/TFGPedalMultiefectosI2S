@@ -65,6 +65,23 @@ Port (
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
     enable_in             : in STD_LOGIC;
+    SW14                  : in STD_LOGIC;
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC  
+); 
+end component;
+
+component EfectoVIBRATO is
+GENERIC(
+    n               :  INTEGER := 500;
+    d_width         :  INTEGER := 16);
+Port ( 
+    clk                   : in STD_LOGIC;
+    reset_n               : in STD_LOGIC;
+    enable_in             : in STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -89,15 +106,63 @@ Port (
 );
 end component;
 
+component EfectoECO is
+GENERIC(
+    n               :  INTEGER := 5000;
+    d_width         :  INTEGER := 16);
+Port ( 
+    clk                   : in STD_LOGIC;
+    reset_n               : in STD_LOGIC;
+    enable_in             : in STD_LOGIC;
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC  
+); 
+end component;
+
+component EfectCOMPRESSOR is
+GENERIC(
+    d_width         : INTEGER := 16
+    );
+Port ( 
+    clk                   : in STD_LOGIC;
+    reset_n               : in STD_LOGIC;
+    enable_in             : IN STD_LOGIC;
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC
+);
+end component;
+
+component EfectoOVERDRIVE is
+GENERIC(
+    d_width         : INTEGER := 16
+    );
+Port ( 
+    clk                   : in STD_LOGIC;
+    reset_n               : in STD_LOGIC;
+    enable_in             : IN STD_LOGIC;
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC
+);
+end component;
+
 signal clk, reset_n, enable_in, enable_out : STD_LOGIC:='0';
 --signal l_data_out, r_data_out : STD_LOGIC_VECTOR (d_width-1  downto 0);
-
 
 file data_in_file: text OPEN read_mode IS "C:\Vivado\i2s_playback\sample_in.dat";
 file data_out_file: text OPEN write_mode IS "C:\Vivado\i2s_playback\sample_out.dat";
 signal Sample_In, sample_out : STD_LOGIC_VECTOR (15 downto 0);
 signal en_tx, en_rx : STD_LOGIC := '1';
 constant  clk_period : time := 10ns;
+signal SW14 : STD_LOGIC := '1';
 
 begin
 clk_process :process
@@ -127,6 +192,7 @@ PORT MAP(
      clk => clk,
      reset_n => reset_n, 
      enable_in => enable_in,
+     SW14 => SW14,
      l_data_in => Sample_In, 
      l_data_out => open, 
      r_data_in => Sample_In, 
@@ -134,8 +200,62 @@ PORT MAP(
      enable_out => enable_out
 ); 
 
+--Unit_EfectVIBRATO : EfectoVIBRATO
+--GENERIC MAP(n => 500, d_width => 16)
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--);
+
 --Unit_EfectREVERB : EfectoREVERB
---GENERIC MAP(n => 2500, d_width => 16)
+--GENERIC MAP(n => 1500, d_width => 16)
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--); 
+
+--Unit_EfectoECO : EfectoECO
+--GENERIC MAP(n => 5000, d_width => 16)
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--); 
+
+--Unit_EfectCOMPRESSOR : EfectCOMPRESSOR
+--GENERIC MAP(d_width => 16
+--            )
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--); 
+
+--Unit_EfectOVERDRIVE : EfectoOVERDRIVE
+--GENERIC MAP(d_width => 16
+--            )
 --PORT MAP(
 --     clk => clk,
 --     reset_n => reset_n, 

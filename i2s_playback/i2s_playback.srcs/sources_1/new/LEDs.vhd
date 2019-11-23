@@ -38,7 +38,7 @@ Port (
     clk  : in STD_LOGIC;
     reset : in STD_LOGIC;
     play_enable : in STD_LOGIC;
-    l_data_rx : in STD_LOGIC_VECTOR (d_width-1 downto 0);
+    --l_data_rx : in STD_LOGIC_VECTOR (d_width-1 downto 0);
     r_data_rx : in STD_LOGIC_VECTOR (d_width-1 downto 0);
     LEDs : out STD_LOGIC_VECTOR (d_width-1 downto 0)
 );
@@ -46,7 +46,7 @@ end LEDs;
 
 architecture Behavioral of LEDs is
 
-signal RL_data_LEDs : STD_LOGIC_VECTOR (d_width-1 downto 0);
+--signal RL_data_LEDs : STD_LOGIC_VECTOR (d_width-1 downto 0);
 
 begin
 
@@ -54,7 +54,7 @@ begin
   --MEJORA 1- BARRA DE NIVEL DE INTENSIDAD SONORA-----
   ----------------------------------------------------
   
-  RL_data_LEDs <=  l_data_rx xnor r_data_rx;
+  --RL_data_LEDs <=  l_data_rx xnor r_data_rx;
   
   process(clk, r_data_rx, play_enable, reset) --Proceso sensible al reloj de MCLK
       begin

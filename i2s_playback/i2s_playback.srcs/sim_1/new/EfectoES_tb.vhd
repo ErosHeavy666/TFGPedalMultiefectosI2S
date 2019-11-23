@@ -31,48 +31,58 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity EfectoES_tb is
+entity EfectoLOOPER_tb is
 --  Port ( );
-end EfectoES_tb;
+end EfectoLOOPER_tb;
 
-architecture Behavioral of EfectoES_tb is
+architecture Behavioral of EfectoLOOPER_tb is
 
 constant d_width : INTEGER := 16;
+constant d_deep  : INTEGER := 18;
 
-component EfectoES is
+component EfectoLOOPER is
 GENERIC(
-    d_width         :  INTEGER := 16);
+    d_width         : INTEGER := 16;
+    d_deep          : INTEGER := 18
+    );
 Port ( 
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
-    en_rx                 : in STD_LOGIC;
-    enable_ES             : in STD_LOGIC;
+    enable_in             : IN STD_LOGIC;
+    SW5                   : IN STD_LOGIC;
+    SW6                   : IN STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0)  
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC
 );
 end component;
 
-signal clk, reset_n, en_rx, enable_ES : STD_LOGIC;
+signal clk, reset_n, enable_in, enable_out, SW5, SW6 : STD_LOGIC;
 signal l_data_in, l_data_out, r_data_in, r_data_out : STD_LOGIC_VECTOR (d_width-1  downto 0);
 
 constant  clk_period : time := 89ns;
 
 begin
 
-Unit_EfectES : EfectoES 
-GENERIC MAP(d_width => 16)
+Unit_EfectLOOPER : EfectoLOOPER 
+GENERIC MAP(d_width => 16, 
+            d_deep => 18 
+            --g2 => 1/5
+            )
 PORT MAP(
      clk => clk,
      reset_n => reset_n, 
-     en_rx => en_rx,
-     enable_ES => enable_ES,
-     l_data_in => l_data_in , 
-     l_data_out => l_data_out, 
-     r_data_in => r_data_in, 
-     r_data_out => r_data_out
-);
+     enable_in => enable_in ,
+     SW5 => SW5,
+     SW6 => SW6,
+     l_data_in => l_data_in   , 
+     l_data_out => l_data_out  , 
+     r_data_in => r_data_in  , 
+     r_data_out => r_data_out  ,
+     enable_out => enable_out
+); 
 
     clk_process :process
       begin    
@@ -85,35 +95,65 @@ PORT MAP(
     stim_proc: process 
       begin
           reset_n <= '1';
-          en_rx <= '0';
-          enable_ES <= '0';
+          SW5 <= '0';
+          SW6 <= '0';
+          enable_in <= '0';
           l_data_in <= "0000111100001111";
           r_data_in <= "1111000011110000";
           wait for 10*clk_period;
           
           reset_n <= '0';
-          en_rx <= '0';
-          enable_ES <= '0';
-          wait for 10*clk_period; 
-  
-          reset_n <= '0';
-          en_rx <= '1';
-          enable_ES <= '0';
+          SW5 <= '0';
+          SW6 <= '0';
+          enable_in <= '0';
+          l_data_in <= "0000111100001111";
+          r_data_in <= "1111000011110000";
           wait for 10*clk_period;
           
           reset_n <= '0';
-          en_rx <= '0';
-          enable_ES <= '1';
+          SW5 <= '1';
+          SW6 <= '0';
+          enable_in <= '1';
+          l_data_in <= "0000111100001100";
+          r_data_in <= "1111000011110011";
           wait for 10*clk_period;
           
           reset_n <= '0';
-          en_rx <= '1';
-          enable_ES <= '1';
+          SW5 <= '1';
+          SW6 <= '0';
+          enable_in <= '1';
+          l_data_in <= "0000100100001100";
+          r_data_in <= "1111011011110011";
           wait for 10*clk_period;
+          
+          reset_n <= '0';
+          SW5 <= '1';
+          SW6 <= '0';
+          enable_in <= '1';
+          l_data_in <= "1100100100001100";
+          r_data_in <= "0011011011110011";
+          wait for 10*clk_period;
+                              
+          reset_n <= '0';
+          SW5 <= '1';
+          SW6 <= '1';
+          enable_in <= '1';
+          l_data_in <= "0000000000001111";
+          r_data_in <= "0011011111110011";
+          wait for 90*clk_period;
           
           reset_n <= '1';
-          en_rx <= '1';
-          enable_ES <= '1';
+          SW5 <= '1';
+          SW6 <= '0';
+          wait for 200*clk_period;
+          
+          reset_n <= '0';
+          SW5 <= '1';
+          SW6 <= '1';
+          enable_in <= '1';
+          l_data_in <= "0000000000001111";
+          r_data_in <= "0011011111110011";
           wait;
+          
       end process;
 end Behavioral;
