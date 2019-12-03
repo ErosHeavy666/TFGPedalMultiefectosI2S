@@ -30,12 +30,14 @@ ENTITY i2s_playback IS
     PORT(
         clock       :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
         reset_n     :  IN  STD_LOGIC;                     --active low asynchronous reset
-        play_enable :  in STD_LOGIC;    
+        play_enable :  in STD_LOGIC;
+        BTNR        :  in STD_LOGIC;     
         SW0         :  in STD_LOGIC; 
         SW1         :  in STD_LOGIC; 
         SW2         :  in STD_LOGIC; 
         SW5         :  in STD_LOGIC;
         SW6         :  in STD_LOGIC;
+        SW7         : in STD_LOGIC;
         SW14        :  in STD_LOGIC;                
         mclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
         sclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
@@ -116,11 +118,13 @@ ARCHITECTURE logic OF i2s_playback IS
         reset_n               : in STD_LOGIC;
         enable_in             : in STD_LOGIC; 
         enable_out            : out STD_LOGIC;
+        BTNR                  : in STD_LOGIC;
         SW0                   : in STD_LOGIC;
         SW1                   : in STD_LOGIC;
         SW2                   : in STD_LOGIC;
         SW5                   : in STD_LOGIC;
         SW6                   : in STD_LOGIC; 
+        SW7                   : in STD_LOGIC;
         SW14                  : in STD_LOGIC;  
         l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
         l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
@@ -178,15 +182,17 @@ BEGIN
     unit_digital_efects : Digital_Efects
     GENERIC MAP(d_width => 16)
     PORT MAP(
-         clk => master_clk, 
+         clk => master_clk , 
          reset_n => reset_n ,
-         enable_in => en_rx,
+         enable_in => en_rx ,
          enable_out => open,
+         BTNR => BTNR,
          SW0 => SW0,
          SW1 => SW1,
          SW2 => SW2,
          SW5 => SW5,
          SW6 => SW6,
+         SW7 => SW7,
          SW14 => SW14,
          l_data_in => std_LOGIC_VECTOR(l_data_rx) , 
          l_data_out => l_data_tx, 

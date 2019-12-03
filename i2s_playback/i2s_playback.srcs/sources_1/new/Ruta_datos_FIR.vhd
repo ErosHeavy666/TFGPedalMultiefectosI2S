@@ -96,7 +96,7 @@ reg2: reg
           reset => reset,
           dato_in => x1,      
           dato_out => x2             
-     );                               
+     );                                                         
 reg3: reg                            
     PORT MAP(                        
           clk_12megas => clk_12megas,
@@ -112,8 +112,7 @@ reg4: reg
          reset => reset,
          dato_in => x3,      
          dato_out => x4             
-    );                               
-    
+    );       
   process(clk_12megas) --Proceso que si 
   begin
     if(rising_edge(clk_12megas)) then --detecta un flanco de subida del reloj general del sistema
@@ -131,47 +130,47 @@ reg4: reg
 
   process(filter_select) --Selección del tipo de filtrado que deseamos realizar
   begin                 --Cargamos el valor de los coeficientes deseados
-    if (filter_select = '1') then --Highpass
-        c0 <= "0000010000000000";
-        c1 <= "0001111100000000";
-        c2 <= "0011100000000000";
-        c3 <= "0001111100000000";
-        c4 <= "0000010000000000";
-    else --Lowpass
---        c0 <= "00000100";
---        c1 <= "00011111";
---        c2 <= "00111000";
---        c3 <= "00011111";
---        c4 <= "00000100";
+  
+    if (filter_select = '1') then --Hamming Lowpass for CHORUS
         
+
+        c0 <= "0010010011010110";
+        c1 <= "0001001001010001";
+        c2 <= "0010101000000000";
+        c3 <= "0001001001010001";
+        c4 <= "0010010011010110"; 
+              
+    else --Noise
+
         c0 <= (others => '0');
         c1 <= (others => '0');
         c2 <= (others => '0');
         c3 <= (others => '0');
-        c4 <= (others => '0');        
+        c4 <= (others => '0'); 
+         
     end if;
   end process;
        --Proceso encargado de suministrar los coeficientes de Cn a las señales de ruta Xn
    process (s_M12,M1_aux,M2_aux,c0,c1,c2,c3,c4,x0,x1,x2,x3,x4) 
-        begin
-        case s_M12 is
-          when "000"  => 
-                M1_aux <= c0;
-                M2_aux <= x0;
-          when "001"  => 
-                M1_aux <= c1;
-                M2_aux <= x1;
-          when "010"  =>
-                M1_aux <= c2;
-                M2_aux <= x2;
-          when "011"  =>
-                M1_aux <= c3;
-                M2_aux <= x3;
-          when others  => 
-                M1_aux <= c4;
-                M2_aux <= x4;      
-        end case;
-   end process;
+            begin
+            case s_M12 is
+              when "000"  => 
+                    M1_aux <= c0;
+                    M2_aux <= x0;
+              when "001"  => 
+                    M1_aux <= c1;
+                    M2_aux <= x1;
+              when "010"  =>
+                    M1_aux <= c2;
+                    M2_aux <= x2;
+              when "011"  =>
+                    M1_aux <= c3;
+                    M2_aux <= x3;
+              when others  => 
+                    M1_aux <= c4;
+                    M2_aux <= x4;      
+            end case;
+       end process;
    --Proceso que multiplica las señales del flujo por los correspondientes coeficientes       
    process(M1_aux, M2_aux, mult_aux)
         begin
@@ -221,3 +220,5 @@ reg4: reg
         Sample_out <= sample_out_aux;
         
 end Behavioral;
+
+

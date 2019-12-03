@@ -41,6 +41,34 @@ architecture Behavioral of tb_randomEfect is
 
 constant d_width : INTEGER := 16;
 
+component i2s is
+    generic (
+        ms_ratio_w: natural := 3;       -- clk to sclk ratio = 2^ms_ratio_w (default = 8)
+        sw_ratio_w: natural := 6;       -- sclk to ws ratio  = 2^sw_ratio_w (default = 64)
+        
+        data_w:     natural := 16
+    );
+    port (
+        clk:       in  std_logic;
+        n_reset_a: in  std_logic;
+
+        reset_s:   in  std_logic;
+    
+        sclk:      out std_logic;
+        ws:        out std_logic;
+        sd_in:     in  std_logic;
+        sd_out:    out std_logic;
+
+        l_in:      out signed(data_w-1 downto 0);
+        r_in:      out signed(data_w-1 downto 0);
+        en_in:     out std_logic;
+
+        l_out:     in  signed(data_w-1 downto 0);
+        r_out:     in  signed(data_w-1 downto 0);
+        en_out:    out std_logic
+    );
+end component;
+
 component EfectoDELAY is
 GENERIC(
     n               :  INTEGER := 4000;
@@ -154,14 +182,28 @@ Port (
 );
 end component;
 
+component EfectoAUTOWAH is
+GENERIC(
+    d_width         :  INTEGER := 16);
+Port ( 
+    clk                   : in STD_LOGIC;
+    reset_n               : in STD_LOGIC;
+    enable_in             : in STD_LOGIC;
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+    enable_out            : out STD_LOGIC  
+); 
+end component;
+
 signal clk, reset_n, enable_in, enable_out : STD_LOGIC:='0';
 --signal l_data_out, r_data_out : STD_LOGIC_VECTOR (d_width-1  downto 0);
 
 file data_in_file: text OPEN read_mode IS "C:\Vivado\i2s_playback\sample_in.dat";
 file data_out_file: text OPEN write_mode IS "C:\Vivado\i2s_playback\sample_out.dat";
 signal Sample_In, sample_out : STD_LOGIC_VECTOR (15 downto 0);
-signal en_tx, en_rx : STD_LOGIC := '1';
-constant  clk_period : time := 10ns;
+constant clk_period : time := 10ns;
 signal SW14 : STD_LOGIC := '1';
 
 begin
@@ -172,6 +214,14 @@ begin
     clk <= '0';
     wait for clk_period/2;
 end process; 
+
+--enable_process :process
+--begin    
+--    enable_in <= '1';
+--    wait for clk_period;
+--    enable_in <= '0';
+--    wait for 64*clk_period;
+--end process; 
 
 --Unit_EfectDELAY : EfectoDELAY 
 --GENERIC MAP(n => 4000, d_width => 16)
@@ -266,6 +316,20 @@ PORT MAP(
 --     r_data_out => Sample_out,
 --     enable_out => enable_out
 --); 
+
+--Unit_EfectAUTOWAH : EfectOAUTOWAH
+--GENERIC MAP(d_width => 16
+--            )
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--);
 
 process(clk)
 VARIABLE in_line : line;

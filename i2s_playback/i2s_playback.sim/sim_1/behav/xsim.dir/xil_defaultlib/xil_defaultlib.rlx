@@ -2,9 +2,7 @@
 2017.2
 Jun 15 2017
 18:52:51
-C:/Vivado/i2s_playback/i2s_playback.srcs/sim_1/new/tb_randomEfect.vhd,1574547420,vhdl,,,,tb_randomefect,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoCHORUS.vhd,1574547838,vhdl,,,,efectochorus,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR.vhd,1574547317,vhdl,,,,ruta_datos_fir,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_FIR.vhd,1574504574,vhdl,,,,controlador_fir,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/fir_filter.vhd,1574504275,vhdl,,,,fir_filter,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd,1574504365,vhdl,,,,reg,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.sim/sim_1/behav/glbl.v,1497407496,verilog,,,,glbl,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sim_1/new/EfectoES_tb.vhd,1575385621,vhdl,,,,efectolooper_tb,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1575321939,verilog,,,,blk_mem_gen_0,,,../../../i2s_playback.srcs/sources_1/ip/clk_wiz_1,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd,1575386328,vhdl,,,,efectolooper,,,,,,,,

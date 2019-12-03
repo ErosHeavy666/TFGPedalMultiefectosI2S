@@ -1,0 +1,1 @@
+-wto "893a0b9648674972a087b3809a8290bd" --debug "typical" --relax --mt "2" -L "blk_mem_gen_v8_3_6" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "EfectoLOOPER_tb_behav" "xil_defaultlib.EfectoLOOPER_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

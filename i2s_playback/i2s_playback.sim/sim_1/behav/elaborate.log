@@ -1,8 +1,10 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_randomEfect_behav xil_defaultlib.tb_randomEfect -log elaborate.log 
+Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot EfectoLOOPER_tb_behav xil_defaultlib.EfectoLOOPER_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2017.2/nightly/2017_06_15_1909853/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.2/nightly/2017_06_15_1909853/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -10,11 +12,16 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.reg [reg_default]
-Compiling architecture behavioral of entity xil_defaultlib.Ruta_datos_Fir [ruta_datos_fir_default]
-Compiling architecture behavioral of entity xil_defaultlib.controlador_fir [controlador_fir_default]
-Compiling architecture behavioral of entity xil_defaultlib.fir_filter [fir_filter_default]
-Compiling architecture behavioral of entity xil_defaultlib.EfectoCHORUS [efectochorus_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_randomefect
-Built simulation snapshot tb_randomEfect_behav
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling architecture behavioral of entity xil_defaultlib.EfectoLOOPER [efectolooper_default]
+Compiling architecture behavioral of entity xil_defaultlib.efectolooper_tb
+Built simulation snapshot EfectoLOOPER_tb_behav

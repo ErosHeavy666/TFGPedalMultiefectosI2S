@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec  3 15:47:28 2019
+# Process ID: 6704
+# Current directory: C:/Vivado/i2s_playback/i2s_playback.runs/fir_compiler_0_synth_1
+# Command line: vivado.exe -log fir_compiler_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fir_compiler_0.tcl
+# Log file: C:/Vivado/i2s_playback/i2s_playback.runs/fir_compiler_0_synth_1/fir_compiler_0.vds
+# Journal file: C:/Vivado/i2s_playback/i2s_playback.runs/fir_compiler_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fir_compiler_0.tcl -notrace

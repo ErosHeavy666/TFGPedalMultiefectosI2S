@@ -1,0 +1,50 @@
+
+*** Running vivado
+    with args -log fir_compiler_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fir_compiler_0.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source fir_compiler_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 317.973 ; gain = 80.371
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (13#1) [c:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 386.785 ; gain = 149.184
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 386.785 ; gain = 149.184
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 588.926 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 588.926 ; gain = 351.324
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 588.926 ; gain = 351.324
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 588.926 ; gain = 351.324
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 588.926 ; gain = 351.324
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 588.926 ; gain = 351.324
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:52 . Memory (MB): peak = 667.363 ; gain = 429.762
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:53 . Memory (MB): peak = 678.508 ; gain = 440.906
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:53 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |DSP48E1 |     1|
+|2     |LUT1    |     3|
+|3     |LUT2    |    16|
+|4     |LUT3    |     2|
+|5     |LUT4    |     5|
+|6     |LUT5    |     1|
+|7     |LUT6    |     5|
+|8     |SRL16E  |    53|
+|9     |FDRE    |   132|
+|10    |FDSE    |     1|
++------+--------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:54 . Memory (MB): peak = 687.652 ; gain = 450.051
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:57 . Memory (MB): peak = 687.652 ; gain = 450.676

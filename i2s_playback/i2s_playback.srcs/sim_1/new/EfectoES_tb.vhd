@@ -48,6 +48,7 @@ GENERIC(
 Port ( 
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
+    BTNR                  : in STD_LOGIC;
     enable_in             : IN STD_LOGIC;
     SW5                   : IN STD_LOGIC;
     SW6                   : IN STD_LOGIC;
@@ -59,7 +60,7 @@ Port (
 );
 end component;
 
-signal clk, reset_n, enable_in, enable_out, SW5, SW6 : STD_LOGIC;
+signal clk, reset_n, enable_in, enable_out, SW5, SW6, BTNR : STD_LOGIC;
 signal l_data_in, l_data_out, r_data_in, r_data_out : STD_LOGIC_VECTOR (d_width-1  downto 0);
 
 constant  clk_period : time := 89ns;
@@ -77,6 +78,7 @@ PORT MAP(
      enable_in => enable_in ,
      SW5 => SW5,
      SW6 => SW6,
+     BTNR => BTNR,
      l_data_in => l_data_in   , 
      l_data_out => l_data_out  , 
      r_data_in => r_data_in  , 
@@ -153,6 +155,11 @@ PORT MAP(
           enable_in <= '1';
           l_data_in <= "0000000000001111";
           r_data_in <= "0011011111110011";
+          wait for 100*clk_period;
+          
+          reset_n <= '0';
+          SW5 <= '0';
+          SW6 <= '0';
           wait;
           
       end process;
