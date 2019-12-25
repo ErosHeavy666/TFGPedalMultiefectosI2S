@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Dec  3 17:27:03 2019
+| Date             : Tue Dec 24 13:25:32 2019
 | Host             : LAPTOP-ATT53B95 running 64-bit major release  (build 9200)
 | Command          : report_power -file i2s_playback_power_routed.rpt -pb i2s_playback_power_summary_routed.pb -rpx i2s_playback_power_routed.rpx
 | Design           : i2s_playback
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.237 |
-| Dynamic (W)              | 0.136 |
-| Device Static (W)        | 0.100 |
+| Total On-Chip Power (W)  | 0.230 |
+| Dynamic (W)              | 0.126 |
+| Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 83.9  |
-| Junction Temperature (C) | 26.1  |
+| Max Ambient (C)          | 84.0  |
+| Junction Temperature (C) | 26.0  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,22 +49,22 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.007 |        6 |       --- |             --- |
-| Slice Logic             |     0.005 |    85228 |       --- |             --- |
-|   LUT as Logic          |     0.005 |    15723 |     63400 |           24.80 |
-|   F7/F8 Muxes           |    <0.001 |     1452 |     63400 |            2.29 |
-|   CARRY4                |    <0.001 |      296 |     15850 |            1.87 |
-|   Register              |    <0.001 |    51341 |    126800 |           40.49 |
-|   BUFG                  |    <0.001 |        2 |        32 |            6.25 |
-|   LUT as Shift Register |    <0.001 |    13518 |     19000 |           71.15 |
-|   Others                |     0.000 |      131 |       --- |             --- |
-| Signals                 |     0.006 |    71017 |       --- |             --- |
-| Block RAM               |     0.002 |       64 |       135 |           47.41 |
+| Clocks                  |     0.006 |        6 |       --- |             --- |
+| Slice Logic             |     0.001 |    65598 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |    10021 |     63400 |           15.81 |
+|   CARRY4                |    <0.001 |      429 |     15850 |            2.71 |
+|   Register              |    <0.001 |    33971 |    126800 |           26.79 |
+|   F7/F8 Muxes           |    <0.001 |     1695 |     63400 |            2.67 |
+|   LUT as Shift Register |    <0.001 |    18246 |     19000 |           96.03 |
+|   Others                |     0.000 |      197 |       --- |             --- |
+|   BUFG                  |     0.000 |        1 |        32 |            3.13 |
+| Signals                 |     0.001 |    46816 |       --- |             --- |
+| Block RAM               |     0.002 |      128 |       135 |           94.81 |
 | PLL                     |     0.111 |        1 |         6 |           16.67 |
-| DSPs                    |    <0.001 |        6 |       240 |            2.50 |
-| I/O                     |     0.005 |       50 |       210 |           23.81 |
-| Static Power            |     0.100 |          |           |                 |
-| Total                   |     0.237 |          |           |                 |
+| DSPs                    |    <0.001 |        4 |       240 |            1.67 |
+| I/O                     |     0.005 |       61 |       210 |           29.05 |
+| Static Power            |     0.103 |          |           |                 |
+| Total                   |     0.230 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.048 |       0.031 |      0.017 |
+| Vccint    |       1.000 |     0.040 |       0.021 |      0.018 |
 | Vccaux    |       1.800 |     0.074 |       0.056 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -83,7 +83,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -146,14 +146,15 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| i2s_playback                                     |     0.136 |
+| i2s_playback                                     |     0.126 |
 |   displays                                       |    <0.001 |
 |     counter_assig                                |    <0.001 |
 |   i2s_clock                                      |     0.112 |
 |     inst                                         |     0.112 |
-|   unit_digital_efects                            |     0.019 |
+|   unit_digital_efects                            |     0.008 |
 |     Unit_EfectAUTOWAH                            |    <0.001 |
-|       Unit_FIR_Filter_WAH_L                      |    <0.001 |
+|     Unit_EfectBANKFILTER                         |    <0.001 |
+|       Unit_FIR_Filter_bankfilter_L               |    <0.001 |
 |         U0                                       |    <0.001 |
 |           reg0                                   |    <0.001 |
 |           reg1                                   |    <0.001 |
@@ -161,7 +162,7 @@ Table of Contents
 |           reg3                                   |    <0.001 |
 |           reg4                                   |    <0.001 |
 |         U1                                       |    <0.001 |
-|       Unit_FIR_Filter_WAH_R                      |    <0.001 |
+|       Unit_FIR_Filter_bankfilter_R               |    <0.001 |
 |         U0                                       |    <0.001 |
 |           reg0                                   |    <0.001 |
 |           reg1                                   |    <0.001 |
@@ -169,27 +170,12 @@ Table of Contents
 |           reg3                                   |    <0.001 |
 |           reg4                                   |    <0.001 |
 |         U1                                       |    <0.001 |
-|       Unit_sine_wave_autowah                     |    <0.001 |
-|     Unit_EfectCHORUS                             |     0.014 |
-|       Unit_FIR_Filter_L                          |     0.005 |
-|         U0                                       |     0.005 |
-|           reg0                                   |    <0.001 |
-|           reg1                                   |    <0.001 |
-|           reg2                                   |    <0.001 |
-|           reg3                                   |    <0.001 |
-|           reg4                                   |    <0.001 |
-|         U1                                       |    <0.001 |
-|       Unit_FIR_Filter_R                          |     0.006 |
-|         U0                                       |     0.005 |
-|           reg0                                   |    <0.001 |
-|           reg1                                   |    <0.001 |
-|           reg2                                   |    <0.001 |
-|           reg3                                   |    <0.001 |
-|           reg4                                   |    <0.001 |
-|         U1                                       |    <0.001 |
+|       Unit_sine_wave_bankfilter                  |    <0.001 |
+|     Unit_EfectCHORUS                             |     0.001 |
+|       Unit_sine_wave_chorus                      |    <0.001 |
 |     Unit_EfectCOMPRESSOR                         |    <0.001 |
 |     Unit_EfectDELAY                              |    <0.001 |
-|     Unit_EfectECO                                |     0.001 |
+|     Unit_EfectECO                                |     0.002 |
 |     Unit_EfectES                                 |    <0.001 |
 |     Unit_EfectLOOPER                             |     0.002 |
 |       Unit_RAM                                   |     0.002 |
@@ -248,11 +234,75 @@ Table of Contents
 |                   prim_noinit.ram                |    <0.001 |
 |                 ramloop[31].ram.r                |    <0.001 |
 |                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[32].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[33].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[34].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[35].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[36].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[37].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[38].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[39].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
 |                 ramloop[3].ram.r                 |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[40].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[41].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[42].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[43].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[44].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[45].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[46].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[47].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[48].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[49].ram.r                |    <0.001 |
 |                   prim_noinit.ram                |    <0.001 |
 |                 ramloop[4].ram.r                 |    <0.001 |
 |                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[50].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[51].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[52].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[53].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[54].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[55].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[56].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[57].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[58].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[59].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
 |                 ramloop[5].ram.r                 |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[60].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[61].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[62].ram.r                |    <0.001 |
+|                   prim_noinit.ram                |    <0.001 |
+|                 ramloop[63].ram.r                |    <0.001 |
 |                   prim_noinit.ram                |    <0.001 |
 |                 ramloop[6].ram.r                 |    <0.001 |
 |                   prim_noinit.ram                |    <0.001 |
@@ -264,7 +314,8 @@ Table of Contents
 |                   prim_noinit.ram                |    <0.001 |
 |     Unit_EfectOVERDRIVE                          |    <0.001 |
 |     Unit_EfectREVERB                             |    <0.001 |
-|     Unit_EfectVIBRATO                            |    <0.001 |
+|     Unit_EfectREVERB_PARAMETRIZADO               |     0.001 |
+|     Unit_EfectVIBRATO                            |     0.001 |
 |       Unit_sine_wave                             |    <0.001 |
 |   unit_i2s                                       |    <0.001 |
 |   unit_leds                                      |    <0.001 |

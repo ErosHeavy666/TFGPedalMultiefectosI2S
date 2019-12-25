@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575388361">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577188101">
   <File Type="PWROPT-DRC" Name="i2s_playback_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="i2s_playback_timing_summary_init.rpt"/>
@@ -62,6 +62,13 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/ip/clk_wiz_1/clk_wiz_1.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -88,6 +95,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/EfectoAUTOWAH.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sine_package2.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -129,6 +142,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/EfectoREVERB_PARAMETRIZADO.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/EfectoREVERB_test.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -136,6 +155,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/EfectoVIBRATO.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/EfectoWAHWAH.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -153,19 +178,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Ruta_datos_FIR.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Ruta_datos_FIR_WAH.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/controlador_FIR.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -190,12 +203,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/display_interface.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/fir_filter.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -227,10 +234,37 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/sine_wave_chorus.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/i2s_playback.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../Xilinx/playground/pmod_i2s_quick_start/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd"/>
         <Attr Name="ImportTime" Val="1555691366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Ruta_datos_FIR.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controlador_FIR.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fir_filter.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -287,14 +321,11 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/i2s_playback.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../Xilinx/playground/pmod_i2s_quick_start/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc"/>
-        <Attr Name="ImportTime" Val="1555449291"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/i2s_playback.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -310,5 +341,4 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
 </GenRun>

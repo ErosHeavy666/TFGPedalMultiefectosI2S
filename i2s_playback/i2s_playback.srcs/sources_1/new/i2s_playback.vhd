@@ -28,24 +28,35 @@ ENTITY i2s_playback IS
     GENERIC(
         d_width     :  INTEGER := 16);                    --data width
     PORT(
-        clock       :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
-        reset_n     :  IN  STD_LOGIC;                     --active low asynchronous reset
-        play_enable :  in STD_LOGIC;
-        BTNR        :  in STD_LOGIC;     
-        SW0         :  in STD_LOGIC; 
-        SW1         :  in STD_LOGIC; 
-        SW2         :  in STD_LOGIC; 
-        SW5         :  in STD_LOGIC;
-        SW6         :  in STD_LOGIC;
+        clock       : IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
+        reset_n     : IN  STD_LOGIC;                     --active low asynchronous reset
+        play_enable : in STD_LOGIC;
+        BTNR        : in STD_LOGIC;
+        BTNC        : in STD_LOGIC; 
+        BTNL        : in STD_LOGIC; 
+        BTND        : in STD_LOGIC;     
+        SW0         : in STD_LOGIC;
+        SW1         : in STD_LOGIC;
+        SW2         : in STD_LOGIC;
+        SW3         : in STD_LOGIC;
+        SW4         : in STD_LOGIC;
+        SW5         : in STD_LOGIC;
+        SW6         : in STD_LOGIC;
         SW7         : in STD_LOGIC;
-        SW14        :  in STD_LOGIC;                
-        mclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
-        sclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
-        ws          :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --word select (or left-right clock)
-        sd_in       :  IN  STD_LOGIC;                     --serial data in
-        sd_out      :  OUT STD_LOGIC;
-        seg         :  out STD_LOGIC_VECTOR (6 downto 0);
-        an          :  out STD_LOGIC_VECTOR (7 downto 0);
+        SW8         : in STD_LOGIC;
+        SW9         : in STD_LOGIC;
+        SW10        : in STD_LOGIC;
+        SW11        : in STD_LOGIC;
+        SW12        : in STD_LOGIC;
+        SW13        : in STD_LOGIC;
+        SW14        : in STD_LOGIC;                
+        mclk        : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
+        sclk        : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
+        ws          : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --word select (or left-right clock)
+        sd_in       : IN  STD_LOGIC;                     --serial data in
+        sd_out      : OUT STD_LOGIC;
+        seg         : out STD_LOGIC_VECTOR (6 downto 0);
+        an          : out STD_LOGIC_VECTOR (7 downto 0);
         LED         : out STD_LOGIC_VECTOR (d_width-1 downto 0)
 
         );                    --serial data out
@@ -119,13 +130,24 @@ ARCHITECTURE logic OF i2s_playback IS
         enable_in             : in STD_LOGIC; 
         enable_out            : out STD_LOGIC;
         BTNR                  : in STD_LOGIC;
+        BTNC                  : in STD_LOGIC; 
+        BTNL                  : in STD_LOGIC; 
+        BTND                  : in STD_LOGIC; 
         SW0                   : in STD_LOGIC;
         SW1                   : in STD_LOGIC;
         SW2                   : in STD_LOGIC;
+        SW3                   : in STD_LOGIC;
+        SW4                   : in STD_LOGIC;
         SW5                   : in STD_LOGIC;
-        SW6                   : in STD_LOGIC; 
+        SW6                   : in STD_LOGIC;
         SW7                   : in STD_LOGIC;
-        SW14                  : in STD_LOGIC;  
+        SW8                   : in STD_LOGIC;
+        SW9                   : in STD_LOGIC;
+        SW10                  : in STD_LOGIC;
+        SW11                  : in STD_LOGIC;
+        SW12                  : in STD_LOGIC;
+        SW13                  : in STD_LOGIC;
+        SW14                  : in STD_LOGIC;
         l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
         l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
         r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -187,12 +209,23 @@ BEGIN
          enable_in => en_rx ,
          enable_out => open,
          BTNR => BTNR,
+         BTNC => BTNC,
+         BTNL => BTNL,
+         BTND => BTND,
          SW0 => SW0,
          SW1 => SW1,
          SW2 => SW2,
+         SW3 => SW3,
+         SW4 => SW4,
          SW5 => SW5,
          SW6 => SW6,
          SW7 => SW7,
+         SW8 => SW8,
+         SW9 => SW9,
+         SW10 => SW10,
+         SW11 => SW11,
+         SW12 => SW12,
+         SW13 => SW13,
          SW14 => SW14,
          l_data_in => std_LOGIC_VECTOR(l_data_rx) , 
          l_data_out => l_data_tx, 

@@ -3,81 +3,68 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="EfectoLOOPER_tb_behav.wdb" id="1">
+      <db_ref path="tb_randomEfect_behav.wdb" id="1">
          <top_modules>
-            <top_module name="EfectoLOOPER_tb" />
-            <top_module name="glbl" />
+            <top_module name="sine_package" />
+            <top_module name="tb_randomEfect" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="100000000001fs"></ZoomEndTime>
-      <Cursor1Time time="18315789000fs"></Cursor1Time>
+      <ZoomEndTime time="40000000001fs"></ZoomEndTime>
+      <Cursor1Time time="16421637000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="192"></NameColumnWidth>
-      <ValueColumnWidth column_width="101"></ValueColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
-   <wvobject fp_name="/EfectoLOOPER_tb/reset_n" type="logic">
-      <obj_property name="ElementShortName">reset_n</obj_property>
-      <obj_property name="ObjectShortName">reset_n</obj_property>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c0" type="array">
+      <obj_property name="ElementShortName">c0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c0[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/enable_in" type="logic">
-      <obj_property name="ElementShortName">enable_in</obj_property>
-      <obj_property name="ObjectShortName">enable_in</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c1" type="array">
+      <obj_property name="ElementShortName">c1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c1[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/SW5" type="logic">
-      <obj_property name="ElementShortName">SW5</obj_property>
-      <obj_property name="ObjectShortName">SW5</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c2" type="array">
+      <obj_property name="ElementShortName">c2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c2[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/SW6" type="logic">
-      <obj_property name="ElementShortName">SW6</obj_property>
-      <obj_property name="ObjectShortName">SW6</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c3" type="array">
+      <obj_property name="ElementShortName">c3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c3[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/l_data_in" type="array">
-      <obj_property name="ElementShortName">l_data_in[15:0]</obj_property>
-      <obj_property name="ObjectShortName">l_data_in[15:0]</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c4" type="array">
+      <obj_property name="ElementShortName">c4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c4[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/l_data_out" type="array">
-      <obj_property name="ElementShortName">l_data_out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">l_data_out[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/r_data_in" type="array">
-      <obj_property name="ElementShortName">r_data_in[15:0]</obj_property>
-      <obj_property name="ObjectShortName">r_data_in[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/r_data_out" type="array">
-      <obj_property name="ElementShortName">r_data_out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">r_data_out[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/ena_RAM" type="logic">
-      <obj_property name="ElementShortName">ena_RAM</obj_property>
-      <obj_property name="ObjectShortName">ena_RAM</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/wea_RAM" type="array">
-      <obj_property name="ElementShortName">wea_RAM[0:0]</obj_property>
-      <obj_property name="ObjectShortName">wea_RAM[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/dina_RAM" type="array">
-      <obj_property name="ElementShortName">dina_RAM[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dina_RAM[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/douta_RAM" type="array">
-      <obj_property name="ElementShortName">douta_RAM[7:0]</obj_property>
-      <obj_property name="ObjectShortName">douta_RAM[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/addra_reg" type="array">
-      <obj_property name="ElementShortName">addra_reg[17:0]</obj_property>
-      <obj_property name="ObjectShortName">addra_reg[17:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/addra_max_reg" type="array">
-      <obj_property name="ElementShortName">addra_max_reg[17:0]</obj_property>
-      <obj_property name="ObjectShortName">addra_max_reg[17:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/EfectoLOOPER_tb/Unit_EfectLOOPER/state_reg" type="other">
-      <obj_property name="ElementShortName">state_reg</obj_property>
-      <obj_property name="ObjectShortName">state_reg</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_sine_wave_autowah/wave_out" type="array">
+      <obj_property name="ElementShortName">wave_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wave_out[7:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

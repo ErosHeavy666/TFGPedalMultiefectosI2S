@@ -33,7 +33,7 @@ use work.sine_package.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity EfectoAUTOWAH is
+entity EfectoBANKFILTER is
 GENERIC(
     d_width         :  INTEGER := 16);
 Port ( 
@@ -46,23 +46,23 @@ Port (
     r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     enable_out            : out STD_LOGIC  
 ); 
-end EfectoAUTOWAH;
+end EfectoBANKFILTER;
 
-architecture Behavioral of EfectoAUTOWAH is
+architecture Behavioral of EfectoBANKFILTER is
         
     signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0);
      
     signal l_data_reg, r_data_reg: signed(d_width-1 downto 0);
     
     signal wave_out_retard : sine_vector_type;
-    signal filter_select_aux : STD_LOGIC_VECTOR(1 downto 0);
-    signal filter_select_pipeline : STD_LOGIC := '1';
+    signal filter_select_aux : STD_LOGIC_VECTOR(2 downto 0);
+    --signal filter_select_pipeline : STD_LOGIC := '1';
     
-    signal sample_out_ready_aux : STD_LOGIC;
+    --signal sample_out_ready_aux : STD_LOGIC;
     
     --signal l_data_in_reg, r_data_in_reg : signed (d_width-1  downto 0);
     
-component Fir_Filter_Autowah is
+component Fir_Filter_bankfilter is
 GENERIC(
     d_width         :  INTEGER := 16);
 Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
@@ -70,11 +70,10 @@ Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 1
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
         Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
                                          --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC_VECTOR(1 downto 0); --0 lowpass, 1 highpass
+        filter_select: in STD_LOGIC_VECTOR(2 downto 0); --0 lowpass, 1 highpass
         Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
         Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
-                                           --valor de Sample_Out con un pulso activo durante un ciclo de reloj.
-        
+                                           --valor de Sample_Out con un pulso activo durante un ciclo de reloj.       
 end component;
 
 --component fir_filter_pipeline is
@@ -92,14 +91,16 @@ end component;
         
 --end component;
 
-component sine_wave_autowah is
+component sine_wave_bankfilter is
   port( clk, reset_n, enable_in: in std_logic;
         wave_out: out sine_vector_type);
 end component;
-     
+  
+signal gain : integer := 8;   
+
 begin
 
-Unit_sine_wave_autowah : sine_wave_autowah 
+Unit_sine_wave_bankfilter : sine_wave_bankfilter 
 PORT MAP(
     clk => clk,
     reset_n => reset_n,
@@ -107,7 +108,7 @@ PORT MAP(
     wave_out => wave_out_retard
 );
 
-Unit_FIR_Filter_WAH_L : Fir_Filter_Autowah 
+Unit_FIR_Filter_bankfilter_L : Fir_Filter_bankfilter 
 GENERIC MAP(d_width => 16)
 PORT MAP (
     clk_12megas => clk,
@@ -119,7 +120,7 @@ PORT MAP (
     Sample_Out_ready => open
 );
 
-Unit_FIR_Filter_WAH_R : Fir_Filter_Autowah 
+Unit_FIR_Filter_bankfilter_R : Fir_Filter_bankfilter 
 GENERIC MAP(d_width => 16)
 PORT MAP (
     clk_12megas => clk,
@@ -157,18 +158,26 @@ PORT MAP (
 
 process(wave_out_retard)
 begin
-    if(wave_out_retard >= "00000000" and wave_out_retard < "00110000") then
-        filter_select_aux <= "00";
-    elsif(wave_out_retard >= "00110000" and wave_out_retard < "01011001") then
-        filter_select_aux <= "01";
-    elsif(wave_out_retard >= "01011001" and wave_out_retard < "01110101") then
-        filter_select_aux <= "10";   
+    if(wave_out_retard >= "10000001" and wave_out_retard < "10100001") then
+        filter_select_aux <= "000";
+    elsif(wave_out_retard >= "10100001" and wave_out_retard < "11000001") then
+        filter_select_aux <= "110";
+    elsif(wave_out_retard >= "11000001" and wave_out_retard < "11100001") then
+        filter_select_aux <= "101";  
+    elsif(wave_out_retard >= "11100001" and wave_out_retard < "00000000") then
+        filter_select_aux <= "100"; 
+    elsif(wave_out_retard >= "00000000" and wave_out_retard < "00011111") then
+        filter_select_aux <= "011";  
+    elsif(wave_out_retard >= "00011111" and wave_out_retard < "00111111") then
+        filter_select_aux <= "010";
+    elsif(wave_out_retard >= "00111111" and wave_out_retard < "01011111") then
+        filter_select_aux <= "001";                             
     else
-        filter_select_aux <= "11";     
+        filter_select_aux <= "000";     
     end if;
 end process;
 
-process(clk, reset_n, sample_out_ready_aux)
+process(clk, reset_n, enable_in)
 begin
     if reset_n = '1' then
         l_data_out <= (others => '0');
@@ -177,8 +186,10 @@ begin
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
         if(enable_in = '1')then
-            l_data_out <= std_logic_vector(signed(l_data_in)/3 + l_data_reg/2);
-            r_data_out <= std_logic_vector(signed(r_data_in)/3 + r_data_reg/2);
+            l_data_out <= std_logic_vector(signed(l_data_in)/8 + l_data_reg);
+            r_data_out <= std_logic_vector(signed(r_data_in)/8 + r_data_reg);
+            --l_data_out <= std_logic_vector(l_data_reg + l_data_reg + l_data_reg + l_data_reg);
+            --r_data_out <= std_logic_vector(r_data_reg + r_data_reg + r_data_reg + r_data_reg);          
         end if;
     end if;
 end process;

@@ -1,0 +1,1 @@
+-wto "893a0b9648674972a087b3809a8290bd" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "tb_randomEfect_behav" "xil_defaultlib.tb_randomEfect" -log "elaborate.log" 

@@ -101,8 +101,6 @@ begin
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
         if(enable_in = '1')then
-            --l_data_out_aux <= std_logic_vector(signed(l_data_in) + shift_right(l_data_reg_aux(n-to_integer(l_random)-1),2));
-            --r_data_out_aux <= std_logic_vector(signed(r_data_in) + shift_right(r_data_reg_aux(n-to_integer(r_random)-1),2));
             l_data_out <= std_logic_vector(shift_right(l_data_reg(n-to_integer(unsigned(wave_out_retard))-1),1));
             r_data_out <= std_logic_vector(shift_right(r_data_reg(n-to_integer(unsigned(wave_out_retard))-1),1));
         end if;

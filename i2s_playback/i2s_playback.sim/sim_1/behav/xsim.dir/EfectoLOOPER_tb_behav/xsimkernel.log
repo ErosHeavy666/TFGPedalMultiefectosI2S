@@ -1,7 +1,0 @@
-Running: xsim.dir/EfectoLOOPER_tb_behav/xsimk.exe -simmode gui -wdb EfectoLOOPER_tb_behav.wdb -simrunnum 0 -socket 62620
-Design successfully loaded
-Design Loading Memory Usage: 7340 KB (Peak: 7340 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 8340 KB (Peak: 8340 KB)
-Simulation CPU Usage: 639 ms

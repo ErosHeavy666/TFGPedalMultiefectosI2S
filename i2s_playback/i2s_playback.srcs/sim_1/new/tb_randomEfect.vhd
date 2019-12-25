@@ -93,7 +93,7 @@ Port (
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
     enable_in             : in STD_LOGIC;
-    SW14                  : in STD_LOGIC;
+    --SW14                  : in STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -120,7 +120,7 @@ end component;
 
 component EfectoREVERB is
 GENERIC(
-    n               :  INTEGER := 2500;
+    n               :  INTEGER := 500;
     d_width         :  INTEGER := 16);
 Port ( 
     clk                   : in STD_LOGIC;
@@ -242,7 +242,7 @@ PORT MAP(
      clk => clk,
      reset_n => reset_n, 
      enable_in => enable_in,
-     SW14 => SW14,
+     --SW14 => SW14,
      l_data_in => Sample_In, 
      l_data_out => open, 
      r_data_in => Sample_In, 

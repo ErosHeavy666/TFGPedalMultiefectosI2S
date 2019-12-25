@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity controlador_fir_WAH is
+entity controlador_fir_bankfilter is
 Port (                                    
     clk_12megas       : in STD_LOGIC;                
     reset             : in STD_LOGIC; 
@@ -40,9 +40,9 @@ Port (
     s_M3              : out STD_LOGIC;   
     Sample_Out_Ready  : out STD_LOGIC                     
 );
-end controlador_fir_WAH;
+end controlador_fir_bankfilter;
 
-architecture Behavioral of controlador_fir_WAH is
+architecture Behavioral of controlador_fir_bankfilter is
 
      type state_type is(idle, op);             --Hay dos posibles estados, el Idle y Op
      signal state_reg, state_next: state_type; --Señales para tener los diferentes estados del ASMD implementado

@@ -2,7 +2,7 @@
 2017.2
 Jun 15 2017
 18:52:51
-C:/Vivado/i2s_playback/i2s_playback.sim/sim_1/behav/glbl.v,1497407496,verilog,,,,glbl,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sim_1/new/EfectoES_tb.vhd,1575385621,vhdl,,,,efectolooper_tb,,,,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1575321939,verilog,,,,blk_mem_gen_0,,,../../../i2s_playback.srcs/sources_1/ip/clk_wiz_1,,,,,
-C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd,1575386328,vhdl,,,,efectolooper,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sim_1/new/tb_randomEfect.vhd,1577029472,vhdl,,,,tb_randomefect,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoCHORUS.vhd,1577044089,vhdl,,,,efectochorus,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd,1577044178,vhdl,C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoCHORUS.vhd;C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_chorus.vhd,,,sine_package2,,,,,,,,
+C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_chorus.vhd,1577044236,vhdl,,,,sine_wave_chorus,,,,,,,,

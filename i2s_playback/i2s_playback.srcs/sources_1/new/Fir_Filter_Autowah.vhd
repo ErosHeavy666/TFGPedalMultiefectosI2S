@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Fir_Filter_Autowah is
+entity Fir_Filter_bankfilter is
 GENERIC(
     d_width         :  INTEGER := 16);
 Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
@@ -39,27 +39,27 @@ Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 1
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
         Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
                                          --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC_VECTOR(1 downto 0); --0 lowpass, 1 highpass
+        filter_select: in STD_LOGIC_VECTOR(2 downto 0); --0 lowpass, 1 highpass
         Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
         Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
                                            --valor de Sample_Out con un pulso activo durante un ciclo de reloj.
-end Fir_Filter_Autowah;
+end Fir_Filter_bankfilter;
 
-architecture Behavioral of Fir_Filter_Autowah is
+architecture Behavioral of Fir_Filter_bankfilter is
 
-component Ruta_datos_Fir_WAH is --Declaracion estructural para el fichero Ruta_Datos_Fir
+component Ruta_datos_Fir_bankfilter is --Declaracion estructural para el fichero Ruta_Datos_Fir
 Port (  s_M12                :  in STD_LOGIC_VECTOR(2 downto 0);
         s_M3                 :  in STD_LOGIC;
         clk_12megas          :  in STD_LOGIC;
         reset                :  in STD_LOGIC;
         Sample_In            :  in signed (d_width-1 downto 0);
         Sample_In_enable     :  in STD_LOGIC;
-        filter_select        :  in STD_LOGIC_VECTOR(1 downto 0);
+        filter_select        :  in STD_LOGIC_VECTOR(2 downto 0);
         Sample_Out           :  out signed (d_width-1 downto 0)
        );       
 end component;
 
-component controlador_fir_WAH is --Declaracion estructural para el fichero Controlador
+component controlador_fir_bankfilter is --Declaracion estructural para el fichero Controlador
 
 Port (                                    
     clk_12megas       : in STD_LOGIC;                
@@ -76,7 +76,7 @@ signal s_M3_aux : STD_LOGIC;
 
 begin
 
-U0  : Ruta_datos_Fir_WAH
+U0  : Ruta_datos_Fir_bankfilter
 PORT MAP (
         s_M12               => s_M12_aux,
         s_M3                => s_M3_aux,
@@ -88,7 +88,7 @@ PORT MAP (
         Sample_Out          => Sample_Out
  );  
  
-U1 : controlador_Fir_WAH 
+U1 : controlador_Fir_bankfilter 
 PORT MAP (
         clk_12megas         => clk_12megas,
         reset               => reset,

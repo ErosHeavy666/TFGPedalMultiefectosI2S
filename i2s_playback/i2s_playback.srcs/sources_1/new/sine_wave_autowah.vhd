@@ -33,12 +33,12 @@ use work.sine_package.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity sine_wave_autowah is
+entity sine_wave_bankfilter is
   port( clk, reset_n, enable_in: in std_logic;
       wave_out: out sine_vector_type);
-end sine_wave_autowah;
+end sine_wave_bankfilter;
 
-architecture Behavioral of sine_wave_autowah is
+architecture Behavioral of sine_wave_bankfilter is
 
 type state_type is ( counting_up, change_down, counting_down, change_up );
 signal state, next_state : state_type;
@@ -123,7 +123,7 @@ end process;
 
 process (counter_reg, enable_wah)
 begin
-    if counter_reg = 255 then
+    if counter_reg = 45 then
         enable_wah <= '1';
         counter_next <= (others => '0');
     else

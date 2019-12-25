@@ -1,10 +1,93 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot EfectoLOOPER_tb_behav xil_defaultlib.EfectoLOOPER_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_randomEfect_behav xil_defaultlib.tb_randomEfect -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-1783] select index 30 into current_contents is out of bounds [/wrk/2017.2/nightly/2017_06_15_1909853/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2419]
-WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.2/nightly/2017_06_15_1909853/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+WARNING: [VRFC 10-1537] value 130 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:111]
+WARNING: [VRFC 10-1537] value 132 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:113]
+WARNING: [VRFC 10-1537] value 135 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:115]
+WARNING: [VRFC 10-1537] value 138 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:117]
+WARNING: [VRFC 10-1537] value 140 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:119]
+WARNING: [VRFC 10-1537] value 143 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:121]
+WARNING: [VRFC 10-1537] value 146 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:123]
+WARNING: [VRFC 10-1537] value 148 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:125]
+WARNING: [VRFC 10-1537] value 151 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:127]
+WARNING: [VRFC 10-1537] value 153 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:129]
+WARNING: [VRFC 10-1537] value 156 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:131]
+WARNING: [VRFC 10-1537] value 158 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:133]
+WARNING: [VRFC 10-1537] value 161 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:135]
+WARNING: [VRFC 10-1537] value 163 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:137]
+WARNING: [VRFC 10-1537] value 165 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:139]
+WARNING: [VRFC 10-1537] value 168 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:141]
+WARNING: [VRFC 10-1537] value 170 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:143]
+WARNING: [VRFC 10-1537] value 172 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:145]
+WARNING: [VRFC 10-1537] value 175 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:147]
+WARNING: [VRFC 10-1537] value 177 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:149]
+WARNING: [VRFC 10-1537] value 179 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:151]
+WARNING: [VRFC 10-1537] value 181 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:153]
+WARNING: [VRFC 10-1537] value 184 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:155]
+WARNING: [VRFC 10-1537] value 186 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:157]
+WARNING: [VRFC 10-1537] value 188 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:159]
+WARNING: [VRFC 10-1537] value 190 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:161]
+WARNING: [VRFC 10-1537] value 192 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:163]
+WARNING: [VRFC 10-1537] value 194 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:165]
+WARNING: [VRFC 10-1537] value 196 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:167]
+WARNING: [VRFC 10-1537] value 198 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:169]
+WARNING: [VRFC 10-1537] value 200 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:171]
+WARNING: [VRFC 10-1537] value 202 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:173]
+WARNING: [VRFC 10-1537] value 204 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:175]
+WARNING: [VRFC 10-1537] value 206 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:177]
+WARNING: [VRFC 10-1537] value 208 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:179]
+WARNING: [VRFC 10-1537] value 209 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:181]
+WARNING: [VRFC 10-1537] value 211 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:183]
+WARNING: [VRFC 10-1537] value 213 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:185]
+WARNING: [VRFC 10-1537] value 215 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:187]
+WARNING: [VRFC 10-1537] value 216 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:189]
+WARNING: [VRFC 10-1537] value 218 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:191]
+WARNING: [VRFC 10-1537] value 220 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:193]
+WARNING: [VRFC 10-1537] value 221 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:195]
+WARNING: [VRFC 10-1537] value 223 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:197]
+WARNING: [VRFC 10-1537] value 224 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:199]
+WARNING: [VRFC 10-1537] value 226 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:201]
+WARNING: [VRFC 10-1537] value 227 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:203]
+WARNING: [VRFC 10-1537] value 228 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:205]
+WARNING: [VRFC 10-1537] value 230 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:207]
+WARNING: [VRFC 10-1537] value 231 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:209]
+WARNING: [VRFC 10-1537] value 232 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:211]
+WARNING: [VRFC 10-1537] value 234 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:213]
+WARNING: [VRFC 10-1537] value 235 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:215]
+WARNING: [VRFC 10-1537] value 236 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:217]
+WARNING: [VRFC 10-1537] value 237 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:219]
+WARNING: [VRFC 10-1537] value 238 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:221]
+WARNING: [VRFC 10-1537] value 240 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:223]
+WARNING: [VRFC 10-1537] value 241 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:225]
+WARNING: [VRFC 10-1537] value 242 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:227]
+WARNING: [VRFC 10-1537] value 243 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:229]
+WARNING: [VRFC 10-1537] value 244 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:231]
+WARNING: [VRFC 10-1537] value 244 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:233]
+WARNING: [VRFC 10-1537] value 245 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:235]
+WARNING: [VRFC 10-1537] value 246 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:237]
+WARNING: [VRFC 10-1537] value 247 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:239]
+WARNING: [VRFC 10-1537] value 248 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:241]
+WARNING: [VRFC 10-1537] value 248 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:243]
+WARNING: [VRFC 10-1537] value 249 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:245]
+WARNING: [VRFC 10-1537] value 250 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:247]
+WARNING: [VRFC 10-1537] value 250 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:249]
+WARNING: [VRFC 10-1537] value 251 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:251]
+WARNING: [VRFC 10-1537] value 252 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:253]
+WARNING: [VRFC 10-1537] value 252 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:255]
+WARNING: [VRFC 10-1537] value 252 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:257]
+WARNING: [VRFC 10-1537] value 253 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:259]
+WARNING: [VRFC 10-1537] value 253 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:261]
+WARNING: [VRFC 10-1537] value 254 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:263]
+WARNING: [VRFC 10-1537] value 254 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:265]
+WARNING: [VRFC 10-1537] value 254 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:267]
+WARNING: [VRFC 10-1537] value 254 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:269]
+WARNING: [VRFC 10-1537] value 255 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:271]
+WARNING: [VRFC 10-1537] value 255 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:273]
+WARNING: [VRFC 10-1537] value 255 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:275]
+WARNING: [VRFC 10-1537] value 255 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:277]
+WARNING: [VRFC 10-1537] value 255 is out of target constraint range 0 to 127 [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_package2.vhd:279]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -12,16 +95,9 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package vl.vl_types
-Compiling module xil_defaultlib.glbl
-Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
-Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
-Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
-Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
-Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
-Compiling module xil_defaultlib.blk_mem_gen_0
-Compiling architecture behavioral of entity xil_defaultlib.EfectoLOOPER [efectolooper_default]
-Compiling architecture behavioral of entity xil_defaultlib.efectolooper_tb
-Built simulation snapshot EfectoLOOPER_tb_behav
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.sine_package2
+Compiling architecture behavioral of entity xil_defaultlib.sine_wave_chorus [sine_wave_chorus_default]
+Compiling architecture behavioral of entity xil_defaultlib.EfectoCHORUS [efectochorus_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_randomefect
+Built simulation snapshot tb_randomEfect_behav

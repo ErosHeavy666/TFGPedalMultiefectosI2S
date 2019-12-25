@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sim_1/new/EfectoES_tb.vhd"
-
-# Do not sort compile order
-nosort

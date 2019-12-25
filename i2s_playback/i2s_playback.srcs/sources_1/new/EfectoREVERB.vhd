@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EfectoREVERB is
 GENERIC(
-    n               :  INTEGER := 1500;
+    n               :  INTEGER := 500;
     d_width         :  INTEGER := 16);
 Port ( 
     clk                   : in STD_LOGIC;
@@ -84,7 +84,7 @@ end process;
 process (l_data_out_aux, r_data_out_aux, l_data_reg_aux, r_data_reg_aux)
 begin
     l_data_next_aux(0) <= signed(l_data_out_aux);
-    r_data_next_aux(0) <= signed(l_data_out_aux);
+    r_data_next_aux(0) <= signed(r_data_out_aux);
     for i in 1 to n-1 loop
         l_data_next_aux(i) <= l_data_reg_aux(i-1);
         r_data_next_aux(i) <= r_data_reg_aux(i-1);

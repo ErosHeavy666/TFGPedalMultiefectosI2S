@@ -84,7 +84,7 @@ end process;
 process (l_data_out_aux, r_data_out_aux, l_data_reg_aux, r_data_reg_aux)
 begin
     l_data_next_aux(0) <= signed(l_data_out_aux);
-    r_data_next_aux(0) <= signed(l_data_out_aux);
+    r_data_next_aux(0) <= signed(r_data_out_aux);
     for i in 1 to n-1 loop
         l_data_next_aux(i) <= l_data_reg_aux(i-1);
         r_data_next_aux(i) <= r_data_reg_aux(i-1);
@@ -95,7 +95,7 @@ process(clk, reset_n, enable_in)
 begin
     if reset_n = '1' then
         l_data_out_aux <= (others => '0');
-        l_data_out_aux <= (others => '0');
+        r_data_out_aux <= (others => '0');
         enable_out <= '0';
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;

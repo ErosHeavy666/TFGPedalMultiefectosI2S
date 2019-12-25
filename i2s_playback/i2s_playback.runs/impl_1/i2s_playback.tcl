@@ -47,6 +47,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -56,10 +57,10 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/i2s_playback.dcp
+  read_ip -quiet C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
+  set_property is_locked true [get_files C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
   read_ip -quiet C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
   set_property is_locked true [get_files C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci]
-  read_ip -quiet C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  set_property is_locked true [get_files C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
   read_xdc C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc
   link_design -top i2s_playback -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
