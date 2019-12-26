@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577188099">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577387512">
   <File Type="RDS-PROPCONSTRS" Name="i2s_playback_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="i2s_playback.tcl"/>
   <File Type="RDS-RDS" Name="i2s_playback.vds"/>

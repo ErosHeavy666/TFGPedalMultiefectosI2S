@@ -152,18 +152,17 @@ end component;
 
 component EfectCOMPRESSOR is
 GENERIC(
-    d_width         : INTEGER := 16
-    );
+    d_width         :  INTEGER := 16);
 Port ( 
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
-    enable_in             : IN STD_LOGIC;
+    enable_in             : in STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC
-);
+    enable_out            : out STD_LOGIC  
+); 
 end component;
 
 component EfectoOVERDRIVE is
@@ -182,7 +181,7 @@ Port (
 );
 end component;
 
-component EfectoAUTOWAH is
+component EfectoBANKFILTER is
 GENERIC(
     d_width         :  INTEGER := 16);
 Port ( 
@@ -215,13 +214,13 @@ begin
     wait for clk_period/2;
 end process; 
 
---enable_process :process
---begin    
---    enable_in <= '1';
---    wait for clk_period;
---    enable_in <= '0';
---    wait for 64*clk_period;
---end process; 
+enable_process :process
+begin    
+    enable_in <= '1';
+    wait for clk_period;
+    enable_in <= '0';
+    wait for 64*clk_period;
+end process; 
 
 --Unit_EfectDELAY : EfectoDELAY 
 --GENERIC MAP(n => 4000, d_width => 16)
@@ -236,19 +235,19 @@ end process;
 --     enable_out => enable_out
 --); 
 
-Unit_EfectCHORUS : EfectoCHORUS
-GENERIC MAP(n => 1000, d_width => 16)
-PORT MAP(
-     clk => clk,
-     reset_n => reset_n, 
-     enable_in => enable_in,
-     --SW14 => SW14,
-     l_data_in => Sample_In, 
-     l_data_out => open, 
-     r_data_in => Sample_In, 
-     r_data_out => Sample_out,
-     enable_out => enable_out
-); 
+--Unit_EfectCHORUS : EfectoCHORUS
+--GENERIC MAP(n => 1000, d_width => 16)
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     --SW14 => SW14,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--); 
 
 --Unit_EfectVIBRATO : EfectoVIBRATO
 --GENERIC MAP(n => 500, d_width => 16)
@@ -317,19 +316,19 @@ PORT MAP(
 --     enable_out => enable_out
 --); 
 
---Unit_EfectAUTOWAH : EfectOAUTOWAH
---GENERIC MAP(d_width => 16
---            )
---PORT MAP(
---     clk => clk,
---     reset_n => reset_n, 
---     enable_in => enable_in,
---     l_data_in => Sample_In, 
---     l_data_out => open, 
---     r_data_in => Sample_In, 
---     r_data_out => Sample_out,
---     enable_out => enable_out
---);
+Unit_EfectoBANKFILTER : EfectoBANKFILTER
+GENERIC MAP(d_width => 16
+            )
+PORT MAP(
+     clk => clk,
+     reset_n => reset_n, 
+     enable_in => enable_in,
+     l_data_in => Sample_In, 
+     l_data_out => open, 
+     r_data_in => Sample_In, 
+     r_data_out => Sample_out,
+     enable_out => enable_out
+);
 
 process(clk)
 VARIABLE in_line : line;
@@ -342,7 +341,7 @@ begin
          report "line: " & in_line.all;
          Read(in_line, in_int, in_read_ok);
          Sample_In <= std_logic_vector(to_signed(in_int, 16)); -- 16 = the bit width
-         enable_in <= '1';
+         --enable_in <= '1';
        else
          assert false report "Simulation Finished" severity failure;
           

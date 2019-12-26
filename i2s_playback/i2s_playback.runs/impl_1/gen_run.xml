@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577188101">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577387513">
   <File Type="PWROPT-DRC" Name="i2s_playback_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="i2s_playback_timing_summary_init.rpt"/>

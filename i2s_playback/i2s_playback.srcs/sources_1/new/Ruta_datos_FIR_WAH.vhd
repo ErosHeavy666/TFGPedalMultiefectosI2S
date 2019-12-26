@@ -35,22 +35,22 @@ use IEEE.NUMERIC_STD.ALL;
 entity Ruta_datos_Fir_bankfilter is
 GENERIC(
     d_width         :  INTEGER := 16);
-Port (  s_M12: in STD_LOGIC_VECTOR(2 downto 0); --Señan de control del Mux con los registros R1 y R2
+Port (  s_M12: in STD_LOGIC_VECTOR(3 downto 0); --Señan de control del Mux con los registros R1 y R2
         s_M3: in STD_LOGIC; --Señal de control del Mux para el registro R3
         clk_12megas: in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
         reset: in STD_LOGIC; --Reset síncrono general del Fir
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,7>
         Sample_In_enable : in STD_LOGIC;--entrada de control que informa de cuando se ha actualizado el
                                         --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC_VECTOR(2 downto 0); --0 lowpass, 1 highpass
+        filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
         Sample_Out : out signed (d_width-1 downto 0) --Muestras de salida codificadas en <1,7>
        ); 
 end Ruta_datos_Fir_bankfilter;
 
 architecture Behavioral of Ruta_datos_Fir_bankfilter is
 
-signal x0,x1,x2,x3,x4 : SIGNED (d_width-1 downto 0); --Señales auxiliares para los registros de la ruta de datos
-signal c0,c1,c2,c3,c4 : SIGNED (d_width-1 downto 0);  --Coeficientes del filtrado FIR
+signal x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15 : SIGNED (d_width-1 downto 0); --Señales auxiliares para los registros de la ruta de datos
+signal c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15 : SIGNED (d_width-1 downto 0);  --Coeficientes del filtrado FIR
 
 component reg is --Declaracion estructural para el fichero reg
     Port (
@@ -62,14 +62,13 @@ component reg is --Declaracion estructural para el fichero reg
     );
 end component;
    --Señales auxiliares de registros y operaciones de lógica combinacional de la ruta de datos diseñada
-   
-     signal R1_reg, R2_reg, R1_next, R2_next : signed((d_width*2 - 2) downto 0); --Registros R1 y R2
-     signal mult_aux: signed((d_width*2 - 1) downto 0); --Multiplicación
-     signal R3_reg, R3_next: signed(d_width-1 downto 0); --Registros R3
-     signal M3_aux, M2_aux, M1_aux : signed(d_width-1 downto 0); 
-     signal mult : signed (d_width*2-2 downto 0);
-     signal sample_out_aux : signed(d_width-1 downto 0); 
-     
+    signal R1_reg, R2_reg, R1_next, R2_next : signed((d_width*2 - 2) downto 0); --Registros R1 y R2
+    signal mult_aux: signed((d_width*2 - 1) downto 0); --Multiplicación
+    signal R3_reg, R3_next: signed(d_width-1 downto 0); --Registros R3
+    signal M3_aux, M2_aux, M1_aux : signed(d_width-1 downto 0); 
+    signal mult : signed (d_width*2-2 downto 0);
+    signal sample_out_aux : signed(d_width-1 downto 0); 
+    signal uno_logic : STD_LOGIC := '1'; 
 begin
 
          --FIR-filter-Ruta de datos-Flujo de los datos Xn con sus Cn
@@ -113,8 +112,97 @@ reg4: reg
          dato_in => x3,      
          dato_out => x4             
     );                               
+reg5: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x4,      
+         dato_out => x5             
+    );  
+reg6: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x5,      
+         dato_out => x6             
+    );  
+reg7: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x6,      
+         dato_out => x7             
+    );  
     
-  process(clk_12megas) --Proceso que si 
+reg8: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x7,      
+         dato_out => x8             
+    );  
+reg9: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x8,      
+         dato_out => x9             
+    );
+reg10: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x9,      
+         dato_out => x10             
+    );
+reg11: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x10,      
+         dato_out => x11             
+    ); 
+reg12: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x11,      
+         dato_out => x12             
+    ); 
+ reg13: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x12,      
+         dato_out => x13             
+    );
+ reg14: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x13,      
+         dato_out => x14             
+    );     
+ reg15: reg                            
+    PORT MAP(                        
+         clk_12megas => clk_12megas,
+         enable =>  Sample_In_enable,
+         reset => reset,
+         dato_in => x14,      
+         dato_out => x15            
+    ); 
+                                                    
+process(clk_12megas) --Proceso que si 
   begin
     if(rising_edge(clk_12megas)) then --detecta un flanco de subida del reloj general del sistema
         if(reset = '1') then --Y el reset se encuentra activado, pondra a cero los registros R1,R2,R3
@@ -127,124 +215,138 @@ reg4: reg
             R1_reg <= R1_next;
         end if;
     end if;
-  end process;  
+end process;  
 
-  process(filter_select) --Selección del tipo de filtrado que deseamos realizar
+process(filter_select) --Selección del tipo de filtrado que deseamos realizar
   begin                 --Cargamos el valor de los coeficientes deseados
   
-    if (filter_select = "000") then --100Hz/2.5KHz/1.2dB/-10.46dB      
-        c0 <= "0001011000100101";
-        c1 <= "0001100010110100";
-        c2 <= "0001110101110001";
-        c3 <= "0001100010110100";
-        c4 <= "0001011000100101"; 
-              
-    elsif (filter_select = "001") then --200Hz/2.5KHz/1.2dB/-10.46dB   
-        c0 <= "0001010100011111";
-        c1 <= "0001100101111001";
-        c2 <= "0001111001110111";
-        c3 <= "0001100101111001";
-        c4 <= "0001010100011111";
-        
-    elsif (filter_select = "010") then --300Hz/2.5KHz/1.2dB/-10.46dB    
-        c0 <= "0001010011111110";
-        c1 <= "0001100111111100";
-        c2 <= "0001111011111010";
-        c3 <= "0001100111111100";
-        c4 <= "0001010011111110";
-        
-    elsif (filter_select = "011") then  --440Hz/2.5KHz/1.2dB/-10.46dB       
-        c0 <= "0001001111111000";
-        c1 <= "0001101010100000";
-        c2 <= "0010000000100001";
-        c3 <= "0001101010100000";
-        c4 <= "0001001111111000";
-        
-    elsif (filter_select = "100") then --600Hz/2.5KHz/1.2dB/-10.46dB                 
-        c0 <= "0001010000011001";
-        c1 <= "0001101110000101";
-        c2 <= "0010000101001000";
-        c3 <= "0001101110000101";
-        c4 <= "0001010000011001";  
-         
-    elsif (filter_select = "101") then --800Hz/2.5KHz/1.2dB/-10.46dB         
-        c0 <= "0001001100010010";
-        c1 <= "0001110000101001";
-        c2 <= "0010001001001110";
-        c3 <= "0001110000101001";
-        c4 <= "0001001100010010";   
-    
-    elsif (filter_select = "110") then  --1000Hz/2.5KHz/1.2dB/-10.46dB      
-        c0 <= "0000110000001000";
-        c1 <= "0010001111111000";
-        c2 <= "0010001110010110";
-        c3 <= "0010001111111000";
-        c4 <= "0000110000001000";      
+    if (filter_select = '1') then --100Hz/2.5KHz/1.2dB/-10.46dB      
+        c0 <= "1111111111011111";
+        c1 <= "0000001011110010";
+        c2 <= "0000011000000100";
+        c3 <= "0000011011001001";
+        c4 <= "0000101000111101";
+        c5 <= "0000110000001000";
+        c6 <= "0000111000010100";
+        c7 <= "0000111011011001";
+        c8 <= "0000111011011001";
+        c9 <= "0000111000010100";
+        c10 <= "0000110000001000";
+        c11 <= "0000101000111101";
+        c12 <= "0000011011001001";  
+        c13 <= "0000011000000100";
+        c14 <= "0000001011110010";
+        c15 <= "1111111111011111";   
     else           
         c0 <= (others => '0');
         c1 <= (others => '0');
         c2 <= (others => '0');
         c3 <= (others => '0');
         c4 <= (others => '0');   
-         
+        c5 <= (others => '0'); 
+        c6 <= (others => '0'); 
+        c7 <= (others => '0'); 
+        c8 <= (others => '0'); 
+        c9 <= (others => '0'); 
+        c10 <= (others => '0'); 
+        c11 <= (others => '0'); 
+        c12 <= (others => '0'); 
+        c13 <= (others => '0'); 
+        c14 <= (others => '0'); 
+        c15 <= (others => '0');    
+            
     end if;
-  end process;
+end process;
        --Proceso encargado de suministrar los coeficientes de Cn a las señales de ruta Xn
-   process (s_M12,M1_aux,M2_aux,c0,c1,c2,c3,c4,x0,x1,x2,x3,x4) 
+process (s_M12,M1_aux,M2_aux,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,
+   x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15) 
         begin
         case s_M12 is
-          when "000"  => 
+          when "0000"  => 
                 M1_aux <= c0;
                 M2_aux <= x0;
-          when "001"  => 
+          when "0001"  => 
                 M1_aux <= c1;
                 M2_aux <= x1;
-          when "010"  =>
+          when "0010"  =>
                 M1_aux <= c2;
                 M2_aux <= x2;
-          when "011"  =>
+          when "0011"  =>
                 M1_aux <= c3;
                 M2_aux <= x3;
-          when others  => 
+          when "0100"  =>
                 M1_aux <= c4;
                 M2_aux <= x4;      
+          when "0101"  =>
+                M1_aux <= c5;
+                M2_aux <= x5; 
+          when "0110"  =>    
+                M1_aux <= c6;      
+                M2_aux <= x6;   
+          when "0111"  =>          
+                M1_aux <= c7;      
+                M2_aux <= x7;      
+          when "1000"  =>          
+                M1_aux <= c8;      
+                M2_aux <= x8;      
+          when "1001"  =>          
+                M1_aux <= c9;      
+                M2_aux <= x9;      
+          when "1010"  =>    
+                M1_aux <= c10;      
+                M2_aux <= x10;
+          when "1011"  =>     
+                M1_aux <= c11;
+                M2_aux <= x11;
+          when "1100"  =>     
+                M1_aux <= c12;
+                M2_aux <= x12;
+          when "1101"  =>     
+                M1_aux <= c13;
+                M2_aux <= x13;   
+          when "1110"  =>     
+                M1_aux <= c14;
+                M2_aux <= x14;                   
+          when others  => 
+                M1_aux <= c15;
+                M2_aux <= x15;      
         end case;
-   end process;
+end process;
    --Proceso que multiplica las señales del flujo por los correspondientes coeficientes       
-   process(M1_aux, M2_aux, mult_aux)
+process(M1_aux, M2_aux, mult_aux)
         begin
             mult_aux <= M1_aux * M2_aux; --Cn*Xn
             mult <= mult_aux(d_width*2-2 downto 0);
-   end process;
+end process;
     --Proceso que carga en R1 el valor de mult    
-   process(mult)
+process(mult)
         begin
             R1_next <= mult;    
-   end process;
+end process;
         --Proceso que carga en R2 el valor de R1, la síntesis esto la va a asociar como dos medios multiplicadores
-  process(R1_reg)
+process(R1_reg)
         begin    
             R2_next <= R1_reg;    
-  end process;
+end process;
         --Proceso que coloca a la salida del Mux3 el R3 o "00000000"
-  process(s_M3, R3_reg)
+process(s_M3, R3_reg)
         begin
             if(s_M3 = '1') then
                  M3_aux <=  R3_reg;
             else 
                  M3_aux <= (others => '0');
              end if;            
-  end process;
+end process;
          --Proceso que suma la salida del Mux3 con los 8 bits más significativos del registro R2 y los asocia a R3
-  process(R2_reg, M3_aux)
+process(R2_reg, M3_aux)
         begin         
             R3_next <= R2_reg(d_width*2-2 downto d_width*2-2-15) + M3_aux;
-  end process;
+end process;
         --Proceso que asigna a la señal auxiliar de salida el valor del registro R3 calcilado anteriormente 
-  process(R3_reg)
+process(R3_reg)
         begin 
             sample_out_aux <= R3_reg(d_width-1 downto 0);
-  end process;
+end process;
         
         --Asignación de la salida tras haber realizado toda la lógica combinacional
         --Esta sentencia es equivalente a:

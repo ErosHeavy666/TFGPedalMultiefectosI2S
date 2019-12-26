@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Tue Dec 24 12:48:28 2019
-# Process ID: 12596
+# Start of session at: Thu Dec 26 20:11:57 2019
+# Process ID: 14956
 # Current directory: C:/Vivado/i2s_playback/i2s_playback.runs/synth_1
 # Command line: vivado.exe -log i2s_playback.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2s_playback.tcl
 # Log file: C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/i2s_playback.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6940 
+INFO: Helper process launched with PID 7604 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 318.348 ; gain = 75.047
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 319.457 ; gain = 75.043
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'i2s_playback' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:65]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:5' bound to instance 'i2s_clock' of component 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:177]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:5' bound to instance 'i2s_clock' of component 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:13]
 	Parameter ms_ratio_w bound to: 3 - type: integer 
 	Parameter sw_ratio_w bound to: 6 - type: integer 
 	Parameter data_w bound to: 16 - type: integer 
@@ -100,42 +100,59 @@ INFO: [Synth 8-3491] module 'EfectoLOOPER' declared at 'C:/Vivado/i2s_playback/i
 INFO: [Synth 8-638] synthesizing module 'EfectoLOOPER' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:55]
 	Parameter d_width bound to: 16 - type: integer 
 	Parameter d_deep bound to: 19 - type: integer 
-INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'Unit_RAM' of component 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:82]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'Unit_RAM' of component 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:18]
 INFO: [Synth 8-256] done synthesizing module 'EfectoLOOPER' (12#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:55]
 	Parameter d_width bound to: 16 - type: integer 
 INFO: [Synth 8-3491] module 'EfectoBANKFILTER' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:36' bound to instance 'Unit_EfectBANKFILTER' of component 'EfectoBANKFILTER' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Digital_Efects.vhd:407]
 INFO: [Synth 8-638] synthesizing module 'EfectoBANKFILTER' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:51]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'sine_wave_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:36' bound to instance 'Unit_sine_wave_bankfilter' of component 'sine_wave_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:103]
+INFO: [Synth 8-3491] module 'sine_wave_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:36' bound to instance 'Unit_sine_wave_bankfilter' of component 'sine_wave_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:108]
 INFO: [Synth 8-638] synthesizing module 'sine_wave_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:41]
 WARNING: [Synth 8-6014] Unused sequential element table_value_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:107]
 INFO: [Synth 8-256] done synthesizing module 'sine_wave_bankfilter' (13#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:41]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'Fir_Filter_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:34' bound to instance 'Unit_FIR_Filter_bankfilter_L' of component 'Fir_Filter_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:111]
+INFO: [Synth 8-3491] module 'Fir_Filter_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:34' bound to instance 'Unit_FIR_Filter_bankfilter_L' of component 'Fir_Filter_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:116]
 INFO: [Synth 8-638] synthesizing module 'Fir_Filter_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:48]
 	Parameter d_width bound to: 16 - type: integer 
 INFO: [Synth 8-3491] module 'Ruta_datos_Fir_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:35' bound to instance 'U0' of component 'Ruta_datos_Fir_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:79]
 INFO: [Synth 8-638] synthesizing module 'Ruta_datos_Fir_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:50]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg0' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:76]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg0' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:75]
 INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:47]
 	Parameter d_width bound to: 16 - type: integer 
 INFO: [Synth 8-256] done synthesizing module '\reg ' (14#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:47]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg1' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:84]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg2' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:92]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg3' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:100]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg4' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:108]
-WARNING: [Synth 8-3936] Found unconnected internal register 'mult_aux_reg' and it is trimmed from '32' to '31' bits. [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:216]
-WARNING: [Synth 8-6014] Unused sequential element c3_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:139]
-WARNING: [Synth 8-6014] Unused sequential element c4_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:140]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg1' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:83]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg2' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:91]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg3' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:99]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg4' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:107]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg5' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:115]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg6' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg7' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:131]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg8' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:140]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg9' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:148]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg10' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:156]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg11' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:164]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg12' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:172]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg13' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:180]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg14' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:188]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd:35' bound to instance 'reg15' of component 'reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:196]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mult_aux_reg' and it is trimmed from '32' to '31' bits. [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:318]
+WARNING: [Synth 8-6014] Unused sequential element c8_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:232]
+WARNING: [Synth 8-6014] Unused sequential element c9_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:233]
+WARNING: [Synth 8-6014] Unused sequential element c10_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:234]
+WARNING: [Synth 8-6014] Unused sequential element c11_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:235]
+WARNING: [Synth 8-6014] Unused sequential element c12_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:236]
+WARNING: [Synth 8-6014] Unused sequential element c13_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:237]
+WARNING: [Synth 8-6014] Unused sequential element c14_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:238]
+WARNING: [Synth 8-6014] Unused sequential element c15_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:239]
 INFO: [Synth 8-256] done synthesizing module 'Ruta_datos_Fir_bankfilter' (15#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:50]
 INFO: [Synth 8-3491] module 'controlador_fir_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:34' bound to instance 'U1' of component 'controlador_fir_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'controlador_fir_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'controlador_fir_bankfilter' (16#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'Fir_Filter_bankfilter' (17#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:48]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'Fir_Filter_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:34' bound to instance 'Unit_FIR_Filter_bankfilter_R' of component 'Fir_Filter_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:123]
+INFO: [Synth 8-3491] module 'Fir_Filter_bankfilter' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd:34' bound to instance 'Unit_FIR_Filter_bankfilter_R' of component 'Fir_Filter_bankfilter' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:128]
 INFO: [Synth 8-256] done synthesizing module 'EfectoBANKFILTER' (18#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:51]
 	Parameter n1 bound to: 1500 - type: integer 
 	Parameter d_width bound to: 16 - type: integer 
@@ -172,7 +189,7 @@ WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[2]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[1]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:33 ; elapsed = 00:02:38 . Memory (MB): peak = 1213.039 ; gain = 969.738
+Finished RTL Elaboration : Time (s): cpu = 00:03:47 ; elapsed = 00:05:09 . Memory (MB): peak = 1213.148 ; gain = 968.734
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -182,49 +199,49 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:43 ; elapsed = 00:02:51 . Memory (MB): peak = 1213.039 ; gain = 969.738
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:58 ; elapsed = 00:05:25 . Memory (MB): peak = 1213.148 ; gain = 968.734
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
-Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
-Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
-Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
+Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
+Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
+Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
+Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
 Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]
 Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/i2s_playback_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/i2s_playback_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/dont_touch.xdc]
-write_xdc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2699.094 ; gain = 179.422
+write_xdc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 2697.219 ; gain = 177.414
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.342 . Memory (MB): peak = 2699.094 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.935 . Memory (MB): peak = 2697.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:51 ; elapsed = 00:05:07 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Constraint Validation : Time (s): cpu = 00:06:42 ; elapsed = 00:09:19 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:51 ; elapsed = 00:05:07 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Loading Part and Timing Information : Time (s): cpu = 00:06:42 ; elapsed = 00:09:19 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-12596-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-14956-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for i2s_clock. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for unit_digital_efects/Unit_EfectLOOPER/Unit_RAM. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:51 ; elapsed = 00:05:08 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:06:42 ; elapsed = 00:09:19 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'i2s_state_reg_reg' in module 'i2s'
 WARNING: [Synth 8-6014] Unused sequential element i2s_state_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_transceiver.vhd:68]
@@ -255,11 +272,11 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sine_
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:56]
 INFO: [Synth 8-5546] ROM "enable_wah" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element table_index_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:86]
-INFO: [Synth 8-5544] ROM "c0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:122]
-WARNING: [Synth 8-6014] Unused sequential element R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
-WARNING: [Synth 8-6014] Unused sequential element R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
-WARNING: [Synth 8-6014] Unused sequential element R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:121]
+WARNING: [Synth 8-6014] Unused sequential element R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:210]
+WARNING: [Synth 8-6014] Unused sequential element R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
+WARNING: [Synth 8-6014] Unused sequential element R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
+WARNING: [Synth 8-6014] Unused sequential element R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element cuenta_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:64]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoREVERB_PARAMETRIZADO.vhd:264]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoREVERB_PARAMETRIZADO.vhd:264]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoREVERB_PARAMETRIZADO.vhd:264]
@@ -322,7 +339,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Vi
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sine_wave_bankfilter'
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:56]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:20:54 ; elapsed = 00:21:19 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:32:58 ; elapsed = 00:41:08 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -355,8 +372,8 @@ Report RTL Partitions:
 |24    |EfectoREVERB_PARAMETRIZADO__GB1 |           1|     26963|
 |25    |EfectoREVERB_PARAMETRIZADO__GB2 |           1|     24240|
 |26    |EfectoREVERB_PARAMETRIZADO__GB3 |           1|     24264|
-|27    |Digital_Efects__GCB0            |           1|     35145|
-|28    |Digital_Efects__GCB1            |           1|     10523|
+|27    |Digital_Efects__GCB0            |           1|     34408|
+|28    |Digital_Efects__GCB1            |           1|     11735|
 |29    |Digital_Efects__GCB2            |           1|     33789|
 |30    |i2s_playback__GC0               |           1|      2137|
 +------+--------------------------------+------------+----------+
@@ -366,17 +383,18 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 5     
-	   2 Input     31 Bit       Adders := 7     
+	   2 Input     31 Bit       Adders := 5     
 	   2 Input     24 Bit       Adders := 3     
 	   2 Input     19 Bit       Adders := 1     
 	   2 Input     18 Bit       Adders := 1     
-	   2 Input     16 Bit       Adders := 18    
+	   2 Input     16 Bit       Adders := 14    
 	   4 Input     16 Bit       Adders := 6     
 	   2 Input     10 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 3     
 	   2 Input      5 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 5     
 +---Registers : 
 	               32 Bit    Registers := 4     
@@ -384,37 +402,33 @@ Detailed RTL Component Info :
 	               24 Bit    Registers := 5     
 	               19 Bit    Registers := 2     
 	               18 Bit    Registers := 1     
-	               16 Bit    Registers := 39041 
+	               16 Bit    Registers := 39063 
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
 	                5 Bit    Registers := 1     
-	                3 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 7     
-	                1 Bit    Registers := 21    
+	                1 Bit    Registers := 22    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 3     
 	   5 Input     32 Bit        Muxes := 4     
 	   4 Input     32 Bit        Muxes := 2     
-	   2 Input     31 Bit        Muxes := 7     
+	   2 Input     31 Bit        Muxes := 5     
 	   2 Input     24 Bit        Muxes := 9     
 	   4 Input     19 Bit        Muxes := 2     
 	   2 Input     19 Bit        Muxes := 6     
 	   2 Input     18 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 47    
-	   5 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 43    
+	   8 Input     16 Bit        Muxes := 2     
 	  17 Input     16 Bit        Muxes := 2     
-	   4 Input     16 Bit        Muxes := 2     
 	  10 Input     16 Bit        Muxes := 2     
 	  16 Input     16 Bit        Muxes := 4     
 	  14 Input     16 Bit        Muxes := 4     
 	   6 Input     16 Bit        Muxes := 2     
+	   5 Input     16 Bit        Muxes := 2     
 	   7 Input     16 Bit        Muxes := 2     
 	  13 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   4 Input     15 Bit        Muxes := 2     
-	   8 Input     14 Bit        Muxes := 4     
-	   7 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 10    
 	   4 Input      8 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
@@ -423,11 +437,11 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 3     
 	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 11    
+	  15 Input      4 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 11    
-	   7 Input      3 Bit        Muxes := 2     
-	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	  16 Input      3 Bit        Muxes := 2     
 	   5 Input      3 Bit        Muxes := 1     
 	  13 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 8     
@@ -438,7 +452,8 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 47    
 	   4 Input      1 Bit        Muxes := 11    
-	   7 Input      1 Bit        Muxes := 4     
+	  15 Input      1 Bit        Muxes := 2     
+	  16 Input      1 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -532,129 +547,25 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     31 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 2     
-Module EfectoAUTOWAH 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-Module sine_wave_bankfilter 
+Module EfectCOMPRESSOR 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 1     
-+---Registers : 
-	               24 Bit    Registers := 1     
-	                7 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     24 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 1     
-	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-Module reg__39106 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39104 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39102 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39100 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39098 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module Ruta_datos_Fir_bankfilter__1 
-Detailed RTL Component Info : 
-+---Registers : 
-	               31 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   4 Input     15 Bit        Muxes := 1     
-	   8 Input     14 Bit        Muxes := 2     
-	   7 Input     13 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 1     
-Module controlador_fir_bankfilter__1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 4     
-	   7 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   7 Input      1 Bit        Muxes := 2     
-Module reg__39088 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39090 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39092 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg__39094 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module reg 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module Ruta_datos_Fir_bankfilter 
-Detailed RTL Component Info : 
-+---Registers : 
-	               31 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   4 Input     15 Bit        Muxes := 1     
-	   8 Input     14 Bit        Muxes := 2     
-	   7 Input     13 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 1     
-Module controlador_fir_bankfilter 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 4     
-	   7 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   7 Input      1 Bit        Muxes := 2     
-Module EfectoBANKFILTER 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     31 Bit       Adders := 2     
 	   2 Input     16 Bit       Adders := 4     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               24 Bit    Registers := 2     
+	               16 Bit    Registers := 4     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 2     
-	   6 Input      3 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 6     
+Module EfectoOVERDRIVE 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 6     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 6     
 Module EfectoLOOPER 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -675,25 +586,202 @@ Detailed RTL Component Info :
 	   7 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 9     
 	   4 Input      1 Bit        Muxes := 2     
-Module EfectoOVERDRIVE 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 6     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 6     
-Module EfectCOMPRESSOR 
+Module sine_wave_bankfilter 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     16 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
-	               24 Bit    Registers := 2     
-	               16 Bit    Registers := 4     
+	               24 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     24 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+Module reg__39151 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39149 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39147 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39145 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39143 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39141 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39139 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39137 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39135 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39133 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39131 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39129 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39127 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39125 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39123 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39121 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module Ruta_datos_Fir_bankfilter__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               31 Bit    Registers := 1     
++---Muxes : 
+	   8 Input     16 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+Module controlador_fir_bankfilter__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 4     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  15 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+Module reg__39089 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39091 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39093 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39095 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39097 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39099 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39101 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39103 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39105 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39107 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39109 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39111 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39113 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39115 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg__39117 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module Ruta_datos_Fir_bankfilter 
+Detailed RTL Component Info : 
++---Registers : 
+	               31 Bit    Registers := 1     
++---Muxes : 
+	   8 Input     16 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+Module controlador_fir_bankfilter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 4     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  15 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+Module EfectoBANKFILTER 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module EfectoAUTOWAH 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
 Module EfectoES 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -727,13 +815,13 @@ Detailed RTL Component Info :
 Module Digital_Efects 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   5 Input     16 Bit        Muxes := 2     
-	  17 Input     16 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 8     
+	  17 Input     16 Bit        Muxes := 2     
 	  10 Input     16 Bit        Muxes := 2     
 	  16 Input     16 Bit        Muxes := 4     
 	  14 Input     16 Bit        Muxes := 4     
 	   6 Input     16 Bit        Muxes := 2     
+	   5 Input     16 Bit        Muxes := 2     
 	   7 Input     16 Bit        Muxes := 2     
 	  13 Input     16 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 6     
@@ -807,19 +895,25 @@ WARNING: [Synth 8-6014] Unused sequential element displays/counter_assig/counter
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_29/\unit_i2s/r_out_reg_reg[0] )
 INFO: [Synth 8-5546] ROM "enable_5HZ" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element table_index_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_chorus.vhd:85]
+DSP Report: Generating DSP l_data_out_aux0, operation Mode is: A*(B:0x50).
+DSP Report: operator l_data_out_aux0 is absorbed into DSP l_data_out_aux0.
+DSP Report: Generating DSP r_data_out_aux0, operation Mode is: A*(B:0x50).
+DSP Report: operator r_data_out_aux0 is absorbed into DSP r_data_out_aux0.
 INFO: [Synth 8-4471] merging register 'Unit_FIR_Filter_bankfilter_R/U1/state_reg_reg' into 'Unit_FIR_Filter_bankfilter_L/U1/state_reg_reg' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element Unit_sine_wave_bankfilter/positive_cycle_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:87]
 WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U1/state_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:63]
-INFO: [Synth 8-5544] ROM "Unit_FIR_Filter_bankfilter_L/U0/c0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "Unit_sine_wave_bankfilter/enable_wah" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:122]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:122]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:123]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:210]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:210]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R1_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:211]
 WARNING: [Synth 8-6014] Unused sequential element Unit_sine_wave_bankfilter/table_index_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd:86]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:121]
-WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:121]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U0/R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_L/U1/cuenta_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:64]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U0/R3_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element Unit_FIR_Filter_bankfilter_R/U1/cuenta_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd:64]
 DSP Report: Generating DSP Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg, operation Mode is: (A*B)'.
 DSP Report: register Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg is absorbed into DSP Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg.
 DSP Report: register Unit_FIR_Filter_bankfilter_L/U0/R1_reg_reg is absorbed into DSP Unit_FIR_Filter_bankfilter_L/U0/R2_reg_reg.
@@ -828,10 +922,6 @@ DSP Report: Generating DSP Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg, operation
 DSP Report: register Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg is absorbed into DSP Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg.
 DSP Report: register Unit_FIR_Filter_bankfilter_R/U0/R1_reg_reg is absorbed into DSP Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg.
 DSP Report: operator Unit_FIR_Filter_bankfilter_R/U0/R1_reg0 is absorbed into DSP Unit_FIR_Filter_bankfilter_R/U0/R2_reg_reg.
-DSP Report: Generating DSP l_data_out_aux0, operation Mode is: A*(B:0x50).
-DSP Report: operator l_data_out_aux0 is absorbed into DSP l_data_out_aux0.
-DSP Report: Generating DSP r_data_out_aux0, operation Mode is: A*(B:0x50).
-DSP Report: operator r_data_out_aux0 is absorbed into DSP r_data_out_aux0.
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[7]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[6]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[5]
@@ -840,15 +930,16 @@ WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[3]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[2]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[1]
 WARNING: [Synth 8-3331] design EfectoLOOPER has unconnected port r_data_in[0]
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Unit_EfectBANKFILTER/Unit_FIR_Filter_bankfilter_L/U1/state_reg_reg )
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[0]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[1]'
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[1]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[2]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[3]'
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[3]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[4]'
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[4]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[5]'
-INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[5]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[6]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Unit_EfectBANKFILTER/filter_select_aux_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Unit_EfectBANKFILTER/\Unit_FIR_Filter_bankfilter_L/U1/state_reg_reg )
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[0]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[1]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[2]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[3]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[4]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[5]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
 INFO: [Synth 8-3886] merging instance 'Unit_EfectLOOPER/r_data_out_reg[6]' (FDC) to 'Unit_EfectLOOPER/r_data_out_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Unit_EfectLOOPER/r_data_out_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Unit_EfectLOOPER/\r_data_out_reg[7] )
 INFO: [Synth 8-5546] ROM "enable_5HZ" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element table_index_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave.vhd:81]
 INFO: [Synth 8-3886] merging instance 'Unit_EfectVIBRATO/r_data_out_reg[14]' (FDCE) to 'Unit_EfectVIBRATO/r_data_out_reg[15]'
@@ -956,7 +1047,7 @@ WARNING: [Synth 8-3332] Sequential element (l_data_reg_reg[99][0]) is unused and
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:24:48 ; elapsed = 00:25:43 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:40:36 ; elapsed = 00:55:48 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -976,10 +1067,10 @@ DSP: Preliminary Mapping  Report (see note below)
 +--------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name               | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +--------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Ruta_datos_Fir_bankfilter | (A*B)'      | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|Ruta_datos_Fir_bankfilter | (A*B)'      | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 1    | 
 |EfectCOMPRESSOR           | A*(B:0x50)  | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |EfectCOMPRESSOR           | A*(B:0x50)  | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Ruta_datos_Fir_bankfilter | (A*B)'      | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|Ruta_datos_Fir_bankfilter | (A*B)'      | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
 +--------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -1017,8 +1108,8 @@ Report RTL Partitions:
 |24    |EfectoREVERB_PARAMETRIZADO__GB1 |           1|     25846|
 |25    |EfectoREVERB_PARAMETRIZADO__GB2 |           1|     24247|
 |26    |EfectoREVERB_PARAMETRIZADO__GB3 |           1|     22723|
-|27    |Digital_Efects__GCB0            |           1|     32254|
-|28    |Digital_Efects__GCB1            |           1|      3355|
+|27    |Digital_Efects__GCB0            |           1|     32251|
+|28    |Digital_Efects__GCB1            |           1|      3706|
 |29    |Digital_Efects__GCB2            |           1|     30629|
 |30    |i2s_playback__GC0               |           1|       675|
 +------+--------------------------------+------------+----------+
@@ -1028,13 +1119,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i2s_clock/clk_out1' to pin 'i2s_clock/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:25:18 ; elapsed = 00:26:13 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:41:23 ; elapsed = 00:56:51 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:26:01 ; elapsed = 00:26:56 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Timing Optimization : Time (s): cpu = 00:42:30 ; elapsed = 00:58:14 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1067,8 +1158,8 @@ Report RTL Partitions:
 |24    |EfectoREVERB_PARAMETRIZADO__GB1 |           1|     25399|
 |25    |EfectoREVERB_PARAMETRIZADO__GB2 |           1|     24247|
 |26    |EfectoREVERB_PARAMETRIZADO__GB3 |           1|     22722|
-|27    |Digital_Efects__GCB0            |           1|     32205|
-|28    |Digital_Efects__GCB1            |           1|      3353|
+|27    |Digital_Efects__GCB0            |           1|     32251|
+|28    |Digital_Efects__GCB1            |           1|      3703|
 |29    |Digital_Efects__GCB2            |           1|     30628|
 |30    |i2s_playback__GC0               |           1|       682|
 +------+--------------------------------+------------+----------+
@@ -1079,7 +1170,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\unit_i2s
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectCOMPRESSOR.vhd:66]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectCOMPRESSOR.vhd:67]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:27:27 ; elapsed = 00:28:24 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Technology Mapping : Time (s): cpu = 00:44:48 ; elapsed = 01:02:54 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1112,7 +1203,7 @@ Report RTL Partitions:
 |24    |EfectoREVERB_PARAMETRIZADO__GB1 |           1|     24912|
 |25    |EfectoREVERB_PARAMETRIZADO__GB2 |           1|     24103|
 |26    |EfectoREVERB_PARAMETRIZADO__GB3 |           1|     22556|
-|27    |Digital_Efects__GCB0            |           1|     31446|
+|27    |Digital_Efects__GCB0            |           1|     31340|
 |28    |Digital_Efects__GCB2            |           1|     18438|
 +------+--------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -1133,7 +1224,7 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:28:26 ; elapsed = 00:29:23 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished IO Insertion : Time (s): cpu = 00:45:58 ; elapsed = 01:04:32 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1146,7 +1237,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:28:26 ; elapsed = 00:29:23 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Renaming Generated Instances : Time (s): cpu = 00:45:58 ; elapsed = 01:04:35 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1158,25 +1249,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:28:34 ; elapsed = 00:29:32 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:46:10 ; elapsed = 01:04:52 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:28:35 ; elapsed = 00:29:32 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Renaming Generated Ports : Time (s): cpu = 00:46:11 ; elapsed = 01:04:53 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:28:37 ; elapsed = 00:29:35 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Handling Custom Attributes : Time (s): cpu = 00:46:16 ; elapsed = 01:04:59 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:28:38 ; elapsed = 00:29:35 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Renaming Generated Nets : Time (s): cpu = 00:46:16 ; elapsed = 01:05:00 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1232,86 +1323,108 @@ Report Cell Usage:
 +------+-------------------+------+
 |1     |blk_mem_gen_1_bbox |     1|
 |2     |clk_wiz_1_bbox     |     1|
-|3     |CARRY4             |   429|
+|3     |CARRY4             |   401|
 |4     |DSP48E1            |     2|
 |5     |DSP48E1_1          |     2|
-|6     |LUT1               |   278|
-|7     |LUT2               |  1566|
-|8     |LUT3               |   981|
-|9     |LUT4               |   419|
-|10    |LUT5               |   661|
-|11    |LUT6               |  7200|
-|12    |MUXF7              |  1213|
-|13    |MUXF8              |   474|
+|6     |LUT1               |   282|
+|7     |LUT2               |  1653|
+|8     |LUT3               |   962|
+|9     |LUT4               |   328|
+|10    |LUT5               |   457|
+|11    |LUT6               |  7114|
+|12    |MUXF7              |  1271|
+|13    |MUXF8              |   506|
 |14    |SRLC32E            | 18246|
 |15    |FDCE               | 33217|
-|16    |FDPE               |     8|
-|17    |FDRE               |   732|
+|16    |FDPE               |     7|
+|17    |FDRE               |  1086|
 |18    |IBUF               |    22|
 |19    |OBUF               |    38|
 +------+-------------------+------+
 
 Report Instance Areas: 
-+------+-----------------------------------+-----------------------------+------+
-|      |Instance                           |Module                       |Cells |
-+------+-----------------------------------+-----------------------------+------+
-|1     |top                                |                             | 65497|
-|2     |  displays                         |display_interface            |    68|
-|3     |    counter_assig                  |display_counter              |    47|
-|4     |  unit_digital_efects              |Digital_Efects               | 63590|
-|5     |    Unit_EfectAUTOWAH              |EfectoAUTOWAH                |    57|
-|6     |    Unit_EfectBANKFILTER           |EfectoBANKFILTER             |   612|
-|7     |      Unit_FIR_Filter_bankfilter_L |Fir_Filter_bankfilter        |   193|
-|8     |        U0                         |Ruta_datos_Fir_bankfilter_5  |   151|
-|9     |          reg0                     |reg_7                        |    18|
-|10    |          reg1                     |reg_8                        |    31|
-|11    |          reg2                     |reg_9                        |    18|
-|12    |          reg3                     |reg_10                       |    30|
-|13    |          reg4                     |reg_11                       |    32|
-|14    |        U1                         |controlador_fir_bankfilter_6 |    42|
-|15    |      Unit_FIR_Filter_bankfilter_R |Fir_Filter_bankfilter_0      |   193|
-|16    |        U0                         |Ruta_datos_Fir_bankfilter    |   153|
-|17    |          reg0                     |\reg                         |    21|
-|18    |          reg1                     |reg_1                        |    30|
-|19    |          reg2                     |reg_2                        |    21|
-|20    |          reg3                     |reg_3                        |    27|
-|21    |          reg4                     |reg_4                        |    32|
-|22    |        U1                         |controlador_fir_bankfilter   |    40|
-|23    |      Unit_sine_wave_bankfilter    |sine_wave_bankfilter         |   166|
-|24    |    Unit_EfectCHORUS               |EfectoCHORUS                 | 19000|
-|25    |      Unit_sine_wave_chorus        |sine_wave_chorus             |  5708|
-|26    |    Unit_EfectCOMPRESSOR           |EfectCOMPRESSOR              |   383|
-|27    |    Unit_EfectDELAY                |EfectoDELAY                  |  7905|
-|28    |    Unit_EfectECO                  |EfectoECO                    | 15050|
-|29    |    Unit_EfectES                   |EfectoES                     |    48|
-|30    |    Unit_EfectLOOPER               |EfectoLOOPER                 |   236|
-|31    |    Unit_EfectOVERDRIVE            |EfectoOVERDRIVE              |   327|
-|32    |    Unit_EfectREVERB               |EfectoREVERB                 |  1849|
-|33    |    Unit_EfectREVERB_PARAMETRIZADO |EfectoREVERB_PARAMETRIZADO   |  5058|
-|34    |    Unit_EfectVIBRATO              |EfectoVIBRATO                | 13052|
-|35    |      Unit_sine_wave               |sine_wave                    |  3319|
-|36    |  unit_i2s                         |i2s                          |  1330|
-|37    |  unit_leds                        |LEDs                         |    18|
-+------+-----------------------------------+-----------------------------+------+
++------+-----------------------------------+------------------------------+------+
+|      |Instance                           |Module                        |Cells |
++------+-----------------------------------+------------------------------+------+
+|1     |top                                |                              | 65603|
+|2     |  displays                         |display_interface             |    68|
+|3     |    counter_assig                  |display_counter               |    47|
+|4     |  unit_digital_efects              |Digital_Efects                | 63945|
+|5     |    Unit_EfectAUTOWAH              |EfectoAUTOWAH                 |    48|
+|6     |    Unit_EfectBANKFILTER           |EfectoBANKFILTER              |  1015|
+|7     |      Unit_FIR_Filter_bankfilter_L |Fir_Filter_bankfilter         |   432|
+|8     |        U0                         |Ruta_datos_Fir_bankfilter_16  |   405|
+|9     |          reg0                     |reg_18                        |    16|
+|10    |          reg1                     |reg_19                        |    16|
+|11    |          reg10                    |reg_20                        |    16|
+|12    |          reg11                    |reg_21                        |    48|
+|13    |          reg12                    |reg_22                        |    16|
+|14    |          reg13                    |reg_23                        |    16|
+|15    |          reg14                    |reg_24                        |    16|
+|16    |          reg15                    |reg_25                        |    32|
+|17    |          reg2                     |reg_26                        |    16|
+|18    |          reg3                     |reg_27                        |    64|
+|19    |          reg4                     |reg_28                        |    16|
+|20    |          reg5                     |reg_29                        |    16|
+|21    |          reg6                     |reg_30                        |    16|
+|22    |          reg7                     |reg_31                        |    32|
+|23    |          reg8                     |reg_32                        |    16|
+|24    |          reg9                     |reg_33                        |    16|
+|25    |        U1                         |controlador_fir_bankfilter_17 |    27|
+|26    |      Unit_FIR_Filter_bankfilter_R |Fir_Filter_bankfilter_0       |   432|
+|27    |        U0                         |Ruta_datos_Fir_bankfilter     |   406|
+|28    |          reg0                     |\reg                          |    17|
+|29    |          reg1                     |reg_1                         |    16|
+|30    |          reg10                    |reg_2                         |    16|
+|31    |          reg11                    |reg_3                         |    48|
+|32    |          reg12                    |reg_4                         |    16|
+|33    |          reg13                    |reg_5                         |    16|
+|34    |          reg14                    |reg_6                         |    16|
+|35    |          reg15                    |reg_7                         |    32|
+|36    |          reg2                     |reg_8                         |    16|
+|37    |          reg3                     |reg_9                         |    64|
+|38    |          reg4                     |reg_10                        |    16|
+|39    |          reg5                     |reg_11                        |    16|
+|40    |          reg6                     |reg_12                        |    16|
+|41    |          reg7                     |reg_13                        |    32|
+|42    |          reg8                     |reg_14                        |    16|
+|43    |          reg9                     |reg_15                        |    16|
+|44    |        U1                         |controlador_fir_bankfilter    |    26|
+|45    |      Unit_sine_wave_bankfilter    |sine_wave_bankfilter          |   119|
+|46    |    Unit_EfectCHORUS               |EfectoCHORUS                  | 19019|
+|47    |      Unit_sine_wave_chorus        |sine_wave_chorus              |  5709|
+|48    |    Unit_EfectCOMPRESSOR           |EfectCOMPRESSOR               |   389|
+|49    |    Unit_EfectDELAY                |EfectoDELAY                   |  7889|
+|50    |    Unit_EfectECO                  |EfectoECO                     | 15020|
+|51    |    Unit_EfectES                   |EfectoES                      |    81|
+|52    |    Unit_EfectLOOPER               |EfectoLOOPER                  |   195|
+|53    |    Unit_EfectOVERDRIVE            |EfectoOVERDRIVE               |   345|
+|54    |    Unit_EfectREVERB               |EfectoREVERB                  |  1798|
+|55    |    Unit_EfectREVERB_PARAMETRIZADO |EfectoREVERB_PARAMETRIZADO    |  5059|
+|56    |    Unit_EfectVIBRATO              |EfectoVIBRATO                 | 13074|
+|57    |      Unit_sine_wave               |sine_wave                     |  3319|
+|58    |  unit_i2s                         |i2s                           |  1081|
+|59    |  unit_leds                        |LEDs                          |    18|
++------+-----------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:28:38 ; elapsed = 00:29:35 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Finished Writing Synthesis Report : Time (s): cpu = 00:46:16 ; elapsed = 01:05:00 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 160 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:24:00 ; elapsed = 00:27:40 . Memory (MB): peak = 2699.094 ; gain = 969.738
-Synthesis Optimization Complete : Time (s): cpu = 00:28:38 ; elapsed = 00:29:35 . Memory (MB): peak = 2699.094 ; gain = 2455.793
+Synthesis finished with 0 errors, 0 critical warnings and 168 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:39:48 ; elapsed = 01:02:11 . Memory (MB): peak = 2697.219 ; gain = 968.734
+Synthesis Optimization Complete : Time (s): cpu = 00:46:16 ; elapsed = 01:05:36 . Memory (MB): peak = 2697.219 ; gain = 2452.805
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 455 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-17] Analyzing 427 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-160 Infos, 158 Warnings, 0 Critical Warnings and 0 Errors encountered.
+170 Infos, 168 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:28:54 ; elapsed = 00:29:56 . Memory (MB): peak = 2699.094 ; gain = 2463.195
+synth_design: Time (s): cpu = 00:46:42 ; elapsed = 01:07:07 . Memory (MB): peak = 2697.219 ; gain = 2460.500
 INFO: [Common 17-1381] The checkpoint 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/i2s_playback.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2699.094 ; gain = 0.000
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.600 . Memory (MB): peak = 2699.094 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 24 13:18:57 2019...
+write_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2697.219 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 2697.219 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 26 21:19:39 2019...

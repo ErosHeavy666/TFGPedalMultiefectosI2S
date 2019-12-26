@@ -11,16 +11,23 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="40000000001fs"></ZoomEndTime>
-      <Cursor1Time time="16421637000fs"></Cursor1Time>
+      <ZoomStartTime time="1391166666fs"></ZoomStartTime>
+      <ZoomEndTime time="1461766667fs"></ZoomEndTime>
+      <Cursor1Time time="1408167000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="192"></NameColumnWidth>
-      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+      <ValueColumnWidth column_width="77"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c0" type="array">
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_sine_wave_bankfilter/wave_out" type="array">
+      <obj_property name="ElementShortName">wave_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wave_out[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c0" type="array">
       <obj_property name="ElementShortName">c0[15:0]</obj_property>
       <obj_property name="ObjectShortName">c0[15:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
@@ -28,7 +35,7 @@
       <obj_property name="radix_fractionWidth">15</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c1" type="array">
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c1" type="array">
       <obj_property name="ElementShortName">c1[15:0]</obj_property>
       <obj_property name="ObjectShortName">c1[15:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
@@ -36,7 +43,7 @@
       <obj_property name="radix_fractionWidth">15</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c2" type="array">
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c2" type="array">
       <obj_property name="ElementShortName">c2[15:0]</obj_property>
       <obj_property name="ObjectShortName">c2[15:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
@@ -44,7 +51,7 @@
       <obj_property name="radix_fractionWidth">15</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c3" type="array">
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c3" type="array">
       <obj_property name="ElementShortName">c3[15:0]</obj_property>
       <obj_property name="ObjectShortName">c3[15:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
@@ -52,7 +59,7 @@
       <obj_property name="radix_fractionWidth">15</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_FIR_Filter_WAH_L/U0/c4" type="array">
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c4" type="array">
       <obj_property name="ElementShortName">c4[15:0]</obj_property>
       <obj_property name="ObjectShortName">c4[15:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
@@ -60,11 +67,261 @@
       <obj_property name="radix_fractionWidth">15</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_randomEfect/Unit_EfectAUTOWAH/Unit_sine_wave_autowah/wave_out" type="array">
-      <obj_property name="ElementShortName">wave_out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">wave_out[7:0]</obj_property>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c5" type="array">
+      <obj_property name="ElementShortName">c5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c5[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c6" type="array">
+      <obj_property name="ElementShortName">c6[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c6[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c7" type="array">
+      <obj_property name="ElementShortName">c7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c7[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c8" type="array">
+      <obj_property name="ElementShortName">c8[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c8[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c9" type="array">
+      <obj_property name="ElementShortName">c9[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c9[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c10" type="array">
+      <obj_property name="ElementShortName">c10[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c10[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c11" type="array">
+      <obj_property name="ElementShortName">c11[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c11[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c12" type="array">
+      <obj_property name="ElementShortName">c12[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c12[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c13" type="array">
+      <obj_property name="ElementShortName">c13[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c13[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c14" type="array">
+      <obj_property name="ElementShortName">c14[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c14[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/c15" type="array">
+      <obj_property name="ElementShortName">c15[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c15[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/Sample_In" type="array">
+      <obj_property name="ElementShortName">Sample_In[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Sample_In[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/Sample_Out" type="array">
+      <obj_property name="ElementShortName">Sample_Out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Sample_Out[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x0" type="array">
+      <obj_property name="ElementShortName">x0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x0[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x1" type="array">
+      <obj_property name="ElementShortName">x1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x1[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x2" type="array">
+      <obj_property name="ElementShortName">x2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x2[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x3" type="array">
+      <obj_property name="ElementShortName">x3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x3[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x4" type="array">
+      <obj_property name="ElementShortName">x4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x4[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x5" type="array">
+      <obj_property name="ElementShortName">x5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x5[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x6" type="array">
+      <obj_property name="ElementShortName">x6[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x6[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x7" type="array">
+      <obj_property name="ElementShortName">x7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x7[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x8" type="array">
+      <obj_property name="ElementShortName">x8[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x8[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x9" type="array">
+      <obj_property name="ElementShortName">x9[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x9[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x10" type="array">
+      <obj_property name="ElementShortName">x10[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x10[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x11" type="array">
+      <obj_property name="ElementShortName">x11[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x11[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x12" type="array">
+      <obj_property name="ElementShortName">x12[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x12[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x13" type="array">
+      <obj_property name="ElementShortName">x13[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x13[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x14" type="array">
+      <obj_property name="ElementShortName">x14[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x14[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U0/x15" type="array">
+      <obj_property name="ElementShortName">x15[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x15[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">15</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U1/s_M12" type="array">
+      <obj_property name="ElementShortName">s_M12[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_M12[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/Unit_FIR_Filter_bankfilter_L/U1/s_M3" type="logic">
+      <obj_property name="ElementShortName">s_M3</obj_property>
+      <obj_property name="ObjectShortName">s_M3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/enable_in" type="logic">
+      <obj_property name="ElementShortName">enable_in</obj_property>
+      <obj_property name="ObjectShortName">enable_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/filter_select_aux" type="logic">
+      <obj_property name="ElementShortName">filter_select_aux</obj_property>
+      <obj_property name="ObjectShortName">filter_select_aux</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_randomEfect/Unit_EfectoBANKFILTER/sample_out_ready_aux" type="logic">
+      <obj_property name="ElementShortName">sample_out_ready_aux</obj_property>
+      <obj_property name="ObjectShortName">sample_out_ready_aux</obj_property>
    </wvobject>
 </wave_config>

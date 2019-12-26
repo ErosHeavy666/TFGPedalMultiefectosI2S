@@ -50,15 +50,15 @@ end EfectoBANKFILTER;
 
 architecture Behavioral of EfectoBANKFILTER is
         
-    signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0);
+    --signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0);
      
     signal l_data_reg, r_data_reg: signed(d_width-1 downto 0);
     
     signal wave_out_retard : sine_vector_type;
-    signal filter_select_aux : STD_LOGIC_VECTOR(2 downto 0);
+    signal filter_select_aux : STD_LOGIC;
     --signal filter_select_pipeline : STD_LOGIC := '1';
     
-    --signal sample_out_ready_aux : STD_LOGIC;
+    signal sample_out_ready_aux : STD_LOGIC;
     
     --signal l_data_in_reg, r_data_in_reg : signed (d_width-1  downto 0);
     
@@ -70,7 +70,7 @@ Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 1
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
         Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
                                          --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC_VECTOR(2 downto 0); --0 lowpass, 1 highpass
+        filter_select: in STD_LOGIC; --0 lowpass
         Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
         Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
                                            --valor de Sample_Out con un pulso activo durante un ciclo de reloj.       
@@ -95,10 +95,15 @@ component sine_wave_bankfilter is
   port( clk, reset_n, enable_in: in std_logic;
         wave_out: out sine_vector_type);
 end component;
-  
-signal gain : integer := 8;   
 
 begin
+
+process(clk)
+begin
+    if(rising_edge(clk)) then
+        filter_select_aux <= '1'; 
+    end if;
+end process;
 
 Unit_sine_wave_bankfilter : sine_wave_bankfilter 
 PORT MAP(
@@ -117,7 +122,7 @@ PORT MAP (
     Sample_In_Enable => enable_in,
     filter_select => filter_select_aux,
     Sample_Out => l_data_reg,
-    Sample_Out_ready => open
+    Sample_Out_ready => sample_out_ready_aux
 );
 
 Unit_FIR_Filter_bankfilter_R : Fir_Filter_bankfilter 
@@ -156,28 +161,17 @@ PORT MAP (
 --    Sample_Out_ready => sample_out_ready_aux
 --);
 
-process(wave_out_retard)
-begin
-    if(wave_out_retard >= "10000001" and wave_out_retard < "10100001") then
-        filter_select_aux <= "000";
-    elsif(wave_out_retard >= "10100001" and wave_out_retard < "11000001") then
-        filter_select_aux <= "110";
-    elsif(wave_out_retard >= "11000001" and wave_out_retard < "11100001") then
-        filter_select_aux <= "101";  
-    elsif(wave_out_retard >= "11100001" and wave_out_retard < "00000000") then
-        filter_select_aux <= "100"; 
-    elsif(wave_out_retard >= "00000000" and wave_out_retard < "00011111") then
-        filter_select_aux <= "011";  
-    elsif(wave_out_retard >= "00011111" and wave_out_retard < "00111111") then
-        filter_select_aux <= "010";
-    elsif(wave_out_retard >= "00111111" and wave_out_retard < "01011111") then
-        filter_select_aux <= "001";                             
-    else
-        filter_select_aux <= "000";     
-    end if;
-end process;
+--process(wave_out_retard)
+--begin
+--    if(wave_out_retard >= "00000000" and wave_out_retard <= "01111111") then
+--        filter_select_aux <= '1';                          
+--    --elsif(wave_out_retard > "10000001")then
+--    else  
+--        filter_select_aux <= '0';
+--    end if;
+--end process;
 
-process(clk, reset_n, enable_in)
+process(clk, reset_n, sample_out_ready_aux, enable_in)
 begin
     if reset_n = '1' then
         l_data_out <= (others => '0');
@@ -185,9 +179,11 @@ begin
         enable_out <= '0';
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
-        if(enable_in = '1')then
-            l_data_out <= std_logic_vector(signed(l_data_in)/8 + l_data_reg);
-            r_data_out <= std_logic_vector(signed(r_data_in)/8 + r_data_reg);
+        if(sample_out_ready_aux = '1')then
+            --l_data_out <= std_logic_vector(signed(l_data_in)/4 + l_data_reg);
+            --r_data_out <= std_logic_vector(signed(r_data_in)/4 + r_data_reg);
+            l_data_out <= std_logic_vector(l_data_reg);
+            r_data_out <= std_logic_vector(r_data_reg);
             --l_data_out <= std_logic_vector(l_data_reg + l_data_reg + l_data_reg + l_data_reg);
             --r_data_out <= std_logic_vector(r_data_reg + r_data_reg + r_data_reg + r_data_reg);          
         end if;

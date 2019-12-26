@@ -39,7 +39,7 @@ Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 1
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
         Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
                                          --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC_VECTOR(2 downto 0); --0 lowpass, 1 highpass
+        filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
         Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
         Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
                                            --valor de Sample_Out con un pulso activo durante un ciclo de reloj.
@@ -48,13 +48,13 @@ end Fir_Filter_bankfilter;
 architecture Behavioral of Fir_Filter_bankfilter is
 
 component Ruta_datos_Fir_bankfilter is --Declaracion estructural para el fichero Ruta_Datos_Fir
-Port (  s_M12                :  in STD_LOGIC_VECTOR(2 downto 0);
+Port (  s_M12                :  in STD_LOGIC_VECTOR(3 downto 0);
         s_M3                 :  in STD_LOGIC;
         clk_12megas          :  in STD_LOGIC;
         reset                :  in STD_LOGIC;
         Sample_In            :  in signed (d_width-1 downto 0);
         Sample_In_enable     :  in STD_LOGIC;
-        filter_select        :  in STD_LOGIC_VECTOR(2 downto 0);
+        filter_select        :  in STD_LOGIC;
         Sample_Out           :  out signed (d_width-1 downto 0)
        );       
 end component;
@@ -65,13 +65,13 @@ Port (
     clk_12megas       : in STD_LOGIC;                
     reset             : in STD_LOGIC; 
     sample_in_enable  : in STD_LOGIC;                     
-    s_M12             : out STD_LOGIC_VECTOR (2 downto 0); 
+    s_M12             : out STD_LOGIC_VECTOR (3 downto 0); 
     s_M3              : out STD_LOGIC;   
     Sample_Out_Ready  : out STD_LOGIC                     
 );
 end component;
 
-signal s_M12_aux : STD_LOGIC_VECTOR(2 downto 0);
+signal s_M12_aux : STD_LOGIC_VECTOR(3 downto 0);
 signal s_M3_aux : STD_LOGIC;
 
 begin
