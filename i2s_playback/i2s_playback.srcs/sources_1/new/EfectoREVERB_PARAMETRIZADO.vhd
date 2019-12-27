@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Eros García Arroyo
 -- 
 -- Create Date: 08.12.2019 12:02:32
 -- Design Name: 
@@ -8,8 +8,9 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
--- 
+-- Description: Efecto Reverb descrito anteriormente pero ahora se puede modelar
+--              las ganancias de las 3 señales que componen la salida y ajustar la 
+--              línea de retardo
 -- Dependencies: 
 -- 
 -- Revision:
@@ -34,29 +35,29 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EfectoREVERB_PARAMETRIZADO is
 GENERIC(
-    n1              : INTEGER := 1500;
-    d_width         : INTEGER := 16);
+    n1              : INTEGER := 1500;--Línea de retardo  
+    d_width         : INTEGER := 16); --Ancho del bus     
 Port ( 
-    clk                   : in STD_LOGIC;
-    reset_n               : in STD_LOGIC;
-    enable_in             : in STD_LOGIC;
-    BTNC                  : in STD_LOGIC; 
-    BTNL                  : in STD_LOGIC; 
-    BTND                  : in STD_LOGIC; 
+    clk                   : in STD_LOGIC; --MCLK                                             
+    reset_n               : in STD_LOGIC; --Reset asíncrono a nivel alto del sistema global  
+    enable_in             : in STD_LOGIC; --Enable proporcionado por el i2s2                 
+    BTNC                  : in STD_LOGIC; --Volumen muestra retardada entrada
+    BTNL                  : in STD_LOGIC; --Volumen muestra original
+    BTND                  : in STD_LOGIC; --Volumen muestra retardada salida
     BTNR                  : in STD_LOGIC; --Control de la línea de retardo
-    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC  
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada izquierdos;                
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida izquierdos;                
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada derechos;                  
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida derechos;                  
+    enable_out            : out STD_LOGIC  --Enable out para la señal i2s2
 ); 
 end EfectoREVERB_PARAMETRIZADO;
 
 architecture Behavioral of EfectoREVERB_PARAMETRIZADO is
    
    signal g1 : integer; --Volumen muestra original --> BTNL
-   signal g2 : integer; --Volumen muestra retardada --> BTND
-   signal g3 : integer; --Volumen muestra retardada --> BTNC
+   signal g2 : integer; --Volumen muestra retardada salida --> BTND
+   signal g3 : integer; --Volumen muestra retardada entrada --> BTNC
     
    type fifo_t1 is array (0 to n1-1) of signed(d_width-1 downto 0);
    signal l_data_next1, l_data_reg1, r_data_reg1, r_data_next1, l_data_next_aux1, r_data_next_aux1, l_data_reg_aux1, r_data_reg_aux1: fifo_t1;

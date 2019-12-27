@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Eros García Arroyo
 -- 
 -- Create Date: 22.12.2019 16:19:35
 -- Design Name: 
@@ -49,67 +49,67 @@ signal counter_reg, counter_next : unsigned (23 downto 0) := (others => '0');
   
 begin
 
-  process( clk, reset_n, enable_in, enable_5HZ )
-  begin
-    if reset_n = '1' then
-      state <= counting_up;
-    elsif rising_edge( clk ) then
-      if (enable_in = '1' and enable_5HZ = '1') then
-        state <= next_state;
+process( clk, reset_n, enable_in, enable_5HZ )
+begin
+  if reset_n = '1' then
+    state <= counting_up;
+  elsif rising_edge( clk ) then
+    if (enable_in = '1' and enable_5HZ = '1') then
+      state <= next_state;
+    end if;
+  end if;
+end process;
+
+process( state, table_index )
+begin
+  next_state <= state;
+  case state is
+    when counting_up =>
+      if table_index = max_table_index then
+        next_state <= change_down;
       end if;
-    end if;
-  end process;
-
-  process( state, table_index )
-  begin
-    next_state <= state;
-    case state is
-      when counting_up =>
-        if table_index = max_table_index then
-          next_state <= change_down;
-        end if;
-      when change_down =>
-        next_state <= counting_down;
-      when counting_down =>
-        if table_index = 0 then
-          next_state <= change_up;
-        end if;
-      when others => -- change_up
-        next_state <= counting_up;
-    end case;
-  end process;
-
-  process( clk, reset_n, enable_in, enable_5HZ )
-  begin
-    if reset_n = '1' then
-      table_index <= 0;
-      positive_cycle <= true;
-    elsif rising_edge( clk ) then
-      if( enable_in = '1' and enable_5HZ = '1') then
-        case next_state is
-          when counting_up =>
-            table_index <= table_index + 1;
-          when counting_down =>
-            table_index <= table_index - 1;
-          when change_up =>
-            positive_cycle <= not positive_cycle;
-          when others =>
-            -- nothing to do
-        end case;
+    when change_down =>
+      next_state <= counting_down;
+    when counting_down =>
+      if table_index = 0 then
+        next_state <= change_up;
       end if;
-    end if;
-  end process;
+    when others => -- change_up
+      next_state <= counting_up;
+  end case;
+end process;
 
-  process( table_index, positive_cycle )
-    variable table_value: table_value_type;
-  begin
-    table_value := get_table_value( table_index );
-    if positive_cycle then
-      wave_out <= std_logic_vector(to_signed(table_value,sine_vector_type'length));
-    else
-      wave_out <= std_logic_vector(to_signed(-table_value,sine_vector_type'length));
+process( clk, reset_n, enable_in, enable_5HZ )
+begin
+  if reset_n = '1' then
+    table_index <= 0;
+    positive_cycle <= true;
+  elsif rising_edge( clk ) then
+    if( enable_in = '1' and enable_5HZ = '1') then
+      case next_state is
+        when counting_up =>
+          table_index <= table_index + 1;
+        when counting_down =>
+          table_index <= table_index - 1;
+        when change_up =>
+          positive_cycle <= not positive_cycle;
+        when others =>
+          -- nothing to do
+      end case;
     end if;
-  end process;
+  end if;
+end process;
+
+process( table_index, positive_cycle )
+  variable table_value: table_value_type;
+begin
+  table_value := get_table_value( table_index );
+  if positive_cycle then
+    wave_out <= std_logic_vector(to_signed(table_value,sine_vector_type'length));
+  else
+    wave_out <= std_logic_vector(to_signed(-table_value,sine_vector_type'length));
+  end if;
+end process;
 
 process(clk, reset_n)
 begin

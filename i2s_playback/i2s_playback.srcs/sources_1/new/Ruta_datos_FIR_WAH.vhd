@@ -71,139 +71,138 @@ end component;
     signal uno_logic : STD_LOGIC := '1'; 
 begin
 
-         --FIR-filter-Ruta de datos-Flujo de los datos Xn con sus Cn
+--FIR-filter-Ruta de datos-Flujo de los datos Xn con sus Cn
 reg0: reg
-    PORT MAP(
-          clk_12megas => clk_12megas,  
-          enable =>  Sample_In_enable,
-          reset => reset,
-          dato_in => Sample_in, --Registramos Sample_In
-          dato_out => x0
-    );  
+PORT MAP(
+     clk_12megas => clk_12megas,  
+     enable =>  Sample_In_enable,
+     reset => reset,
+     dato_in => Sample_in, --Registramos Sample_In
+     dato_out => x0
+);  
 reg1: reg                            
-    PORT MAP(                        
-          clk_12megas => clk_12megas,
-          enable =>  Sample_In_enable,
-          reset => reset,
-          dato_in => x0,      
-          dato_out => x1             
-    );                               
+PORT MAP(                        
+     clk_12megas => clk_12megas,
+     enable =>  Sample_In_enable,
+     reset => reset,
+     dato_in => x0,      
+     dato_out => x1             
+);                               
 reg2: reg                            
-     PORT MAP(                        
-          clk_12megas => clk_12megas,
-          enable =>  Sample_In_enable,
-          reset => reset,
-          dato_in => x1,      
-          dato_out => x2             
-     );                               
+PORT MAP(                        
+     clk_12megas => clk_12megas,
+     enable =>  Sample_In_enable,
+     reset => reset,
+     dato_in => x1,      
+     dato_out => x2             
+);                               
 reg3: reg                            
-    PORT MAP(                        
-          clk_12megas => clk_12megas,
-          enable =>  Sample_In_enable,
-          reset => reset,
-          dato_in => x2,      
-          dato_out => x3             
-    );                               
+PORT MAP(                        
+     clk_12megas => clk_12megas,
+     enable =>  Sample_In_enable,
+     reset => reset,
+     dato_in => x2,      
+     dato_out => x3             
+);                               
 reg4: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x3,      
-         dato_out => x4             
-    );                               
+PORT MAP(                        
+     clk_12megas => clk_12megas,
+     enable =>  Sample_In_enable,
+     reset => reset,
+     dato_in => x3,      
+     dato_out => x4             
+);                               
 reg5: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x4,      
-         dato_out => x5             
-    );  
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x4,      
+    dato_out => x5             
+);  
 reg6: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x5,      
-         dato_out => x6             
-    );  
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x5,      
+    dato_out => x6             
+);  
 reg7: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x6,      
-         dato_out => x7             
-    );  
-    
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x6,      
+    dato_out => x7             
+); 
 reg8: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x7,      
-         dato_out => x8             
-    );  
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x7,      
+    dato_out => x8             
+);  
 reg9: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x8,      
-         dato_out => x9             
-    );
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x8,      
+    dato_out => x9             
+);
 reg10: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x9,      
-         dato_out => x10             
-    );
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x9,      
+    dato_out => x10             
+);
 reg11: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x10,      
-         dato_out => x11             
-    ); 
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x10,      
+    dato_out => x11             
+); 
 reg12: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x11,      
-         dato_out => x12             
-    ); 
- reg13: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x12,      
-         dato_out => x13             
-    );
- reg14: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x13,      
-         dato_out => x14             
-    );     
- reg15: reg                            
-    PORT MAP(                        
-         clk_12megas => clk_12megas,
-         enable =>  Sample_In_enable,
-         reset => reset,
-         dato_in => x14,      
-         dato_out => x15            
-    ); 
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x11,      
+    dato_out => x12             
+); 
+reg13: reg                            
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x12,      
+    dato_out => x13             
+);
+reg14: reg                            
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x13,      
+    dato_out => x14             
+);     
+reg15: reg                            
+PORT MAP(                        
+    clk_12megas => clk_12megas,
+    enable =>  Sample_In_enable,
+    reset => reset,
+    dato_in => x14,      
+    dato_out => x15            
+); 
                                                     
 process(clk_12megas) --Proceso que si 
-  begin
+begin
     if(rising_edge(clk_12megas)) then --detecta un flanco de subida del reloj general del sistema
         if(reset = '1') then --Y el reset se encuentra activado, pondra a cero los registros R1,R2,R3
             R3_reg <= (others => '0');
@@ -218,9 +217,8 @@ process(clk_12megas) --Proceso que si
 end process;  
 
 process(filter_select) --Selección del tipo de filtrado que deseamos realizar
-  begin                 --Cargamos el valor de los coeficientes deseados
-  
-    if (filter_select = '1') then --100Hz/2.5KHz/1.2dB/-10.46dB      
+begin                
+    if (filter_select = '1') then --LPF   
         c0 <= "1111111111011111";
         c1 <= "0000001011110010";
         c2 <= "0000011000000100";
@@ -237,127 +235,125 @@ process(filter_select) --Selección del tipo de filtrado que deseamos realizar
         c13 <= "0000011000000100";
         c14 <= "0000001011110010";
         c15 <= "1111111111011111";   
-    else           
-        c0 <= (others => '0');
-        c1 <= (others => '0');
-        c2 <= (others => '0');
-        c3 <= (others => '0');
-        c4 <= (others => '0');   
-        c5 <= (others => '0'); 
-        c6 <= (others => '0'); 
-        c7 <= (others => '0'); 
-        c8 <= (others => '0'); 
-        c9 <= (others => '0'); 
-        c10 <= (others => '0'); 
-        c11 <= (others => '0'); 
-        c12 <= (others => '0'); 
-        c13 <= (others => '0'); 
-        c14 <= (others => '0'); 
-        c15 <= (others => '0');    
+    else  --HPF      
+        c0 <= "0000000101001000";
+        c1 <= "0000001011110010";
+        c2 <= "1111001110010111";
+        c3 <= "1111111110011110";
+        c4 <= "1110101010100000";   
+        c5 <= "0000000111101100"; 
+        c6 <= "1101010111000011"; 
+        c7 <= "0100000010000011"; 
+        c8 <= "0100000010000011"; 
+        c9 <= "1101010111000011";  
+        c10 <= "0000000111101100";  
+        c11 <= "1110101010100000"; 
+        c12 <= "1111111110011110"; 
+        c13 <= "1111001110010110"; 
+        c14 <= "0000001011110010";
+        c15 <= "0000000101001000";    
             
     end if;
 end process;
-       --Proceso encargado de suministrar los coeficientes de Cn a las señales de ruta Xn
+
+--Proceso encargado de suministrar los coeficientes de Cn a las señales de ruta Xn
 process (s_M12,M1_aux,M2_aux,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,
-   x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15) 
-        begin
-        case s_M12 is
-          when "0000"  => 
-                M1_aux <= c0;
-                M2_aux <= x0;
-          when "0001"  => 
-                M1_aux <= c1;
-                M2_aux <= x1;
-          when "0010"  =>
-                M1_aux <= c2;
-                M2_aux <= x2;
-          when "0011"  =>
-                M1_aux <= c3;
-                M2_aux <= x3;
-          when "0100"  =>
-                M1_aux <= c4;
-                M2_aux <= x4;      
-          when "0101"  =>
-                M1_aux <= c5;
-                M2_aux <= x5; 
-          when "0110"  =>    
-                M1_aux <= c6;      
-                M2_aux <= x6;   
-          when "0111"  =>          
-                M1_aux <= c7;      
-                M2_aux <= x7;      
-          when "1000"  =>          
-                M1_aux <= c8;      
-                M2_aux <= x8;      
-          when "1001"  =>          
-                M1_aux <= c9;      
-                M2_aux <= x9;      
-          when "1010"  =>    
-                M1_aux <= c10;      
-                M2_aux <= x10;
-          when "1011"  =>     
-                M1_aux <= c11;
-                M2_aux <= x11;
-          when "1100"  =>     
-                M1_aux <= c12;
-                M2_aux <= x12;
-          when "1101"  =>     
-                M1_aux <= c13;
-                M2_aux <= x13;   
-          when "1110"  =>     
-                M1_aux <= c14;
-                M2_aux <= x14;                   
-          when others  => 
-                M1_aux <= c15;
-                M2_aux <= x15;      
-        end case;
+                             x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15) 
+begin
+    case s_M12 is
+      when "0000"  => 
+            M1_aux <= c0;
+            M2_aux <= x0;
+      when "0001"  => 
+            M1_aux <= c1;
+            M2_aux <= x1;
+      when "0010"  =>
+            M1_aux <= c2;
+            M2_aux <= x2;
+      when "0011"  =>
+            M1_aux <= c3;
+            M2_aux <= x3;
+      when "0100"  =>
+            M1_aux <= c4;
+            M2_aux <= x4;      
+      when "0101"  =>
+            M1_aux <= c5;
+            M2_aux <= x5; 
+      when "0110"  =>    
+            M1_aux <= c6;      
+            M2_aux <= x6;   
+      when "0111"  =>          
+            M1_aux <= c7;      
+            M2_aux <= x7;      
+      when "1000"  =>          
+            M1_aux <= c8;      
+            M2_aux <= x8;      
+      when "1001"  =>          
+            M1_aux <= c9;      
+            M2_aux <= x9;      
+      when "1010"  =>    
+            M1_aux <= c10;      
+            M2_aux <= x10;
+      when "1011"  =>     
+            M1_aux <= c11;
+            M2_aux <= x11;
+      when "1100"  =>     
+            M1_aux <= c12;
+            M2_aux <= x12;
+      when "1101"  =>     
+            M1_aux <= c13;
+            M2_aux <= x13;   
+      when "1110"  =>     
+            M1_aux <= c14;
+            M2_aux <= x14;                   
+      when others  => 
+            M1_aux <= c15;
+            M2_aux <= x15;      
+    end case;
 end process;
-   --Proceso que multiplica las señales del flujo por los correspondientes coeficientes       
+
+--Proceso que multiplica las señales del flujo por los correspondientes coeficientes       
 process(M1_aux, M2_aux, mult_aux)
-        begin
-            mult_aux <= M1_aux * M2_aux; --Cn*Xn
-            mult <= mult_aux(d_width*2-2 downto 0);
+begin
+    mult_aux <= M1_aux * M2_aux; --Cn*Xn
+    mult <= mult_aux(d_width*2-2 downto 0);
 end process;
-    --Proceso que carga en R1 el valor de mult    
+
+--Proceso que carga en R1 el valor de mult    
 process(mult)
-        begin
-            R1_next <= mult;    
+begin
+    R1_next <= mult;    
 end process;
-        --Proceso que carga en R2 el valor de R1, la síntesis esto la va a asociar como dos medios multiplicadores
+
+--Proceso que carga en R2 el valor de R1, la síntesis esto la va a asociar como dos medios multiplicadores
 process(R1_reg)
-        begin    
-            R2_next <= R1_reg;    
+begin    
+    R2_next <= R1_reg;    
 end process;
-        --Proceso que coloca a la salida del Mux3 el R3 o "00000000"
+
+--Proceso que coloca a la salida del Mux3 el R3 o "00000000"
 process(s_M3, R3_reg)
-        begin
-            if(s_M3 = '1') then
-                 M3_aux <=  R3_reg;
-            else 
-                 M3_aux <= (others => '0');
-             end if;            
+begin
+    if(s_M3 = '1') then
+         M3_aux <=  R3_reg;
+    else 
+         M3_aux <= (others => '0');
+    end if;            
 end process;
-         --Proceso que suma la salida del Mux3 con los 8 bits más significativos del registro R2 y los asocia a R3
+
+--Proceso que suma la salida del Mux3 con los 8 bits más significativos del registro R2 y los asocia a R3
 process(R2_reg, M3_aux)
-        begin         
-            R3_next <= R2_reg(d_width*2-2 downto d_width*2-2-15) + M3_aux;
+begin         
+    R3_next <= R2_reg(d_width*2-2 downto d_width*2-2-15) + M3_aux;
 end process;
-        --Proceso que asigna a la señal auxiliar de salida el valor del registro R3 calcilado anteriormente 
+
+--Proceso que asigna a la señal auxiliar de salida el valor del registro R3 calcilado anteriormente 
 process(R3_reg)
-        begin 
-            sample_out_aux <= R3_reg(d_width-1 downto 0);
+begin 
+    sample_out_aux <= R3_reg(d_width-1 downto 0);
 end process;
-        
-        --Asignación de la salida tras haber realizado toda la lógica combinacional
-        --Esta sentencia es equivalente a:
-        --reg5: reg                            
-        --    PORT MAP(                        
-        --         clk_12megas => clk_12megas,
-        --         enable =>  Sample_In_enable,
-        --         reset => reset,
-        --         dato_in => sample_out_aux,      
-        --         dato_out => Sample_Out             
-        --    );  
-        Sample_out <= sample_out_aux;
+
+--Output
+Sample_out <= sample_out_aux;
         
 end Behavioral;

@@ -214,13 +214,13 @@ begin
     wait for clk_period/2;
 end process; 
 
-enable_process :process
-begin    
-    enable_in <= '1';
-    wait for clk_period;
-    enable_in <= '0';
-    wait for 64*clk_period;
-end process; 
+--enable_process :process
+--begin    
+--    enable_in <= '1';
+--    wait for clk_period;
+--    enable_in <= '0';
+--    wait for 64*clk_period;
+--end process; 
 
 --Unit_EfectDELAY : EfectoDELAY 
 --GENERIC MAP(n => 4000, d_width => 16)
@@ -341,7 +341,7 @@ begin
          report "line: " & in_line.all;
          Read(in_line, in_int, in_read_ok);
          Sample_In <= std_logic_vector(to_signed(in_int, 16)); -- 16 = the bit width
-         --enable_in <= '1';
+         enable_in <= '1';
        else
          assert false report "Simulation Finished" severity failure;
           

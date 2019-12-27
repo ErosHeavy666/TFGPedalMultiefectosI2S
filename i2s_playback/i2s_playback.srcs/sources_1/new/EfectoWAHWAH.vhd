@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Eros García Arroyo
 -- 
 -- Create Date: 22.12.2019 16:41:24
 -- Design Name: 

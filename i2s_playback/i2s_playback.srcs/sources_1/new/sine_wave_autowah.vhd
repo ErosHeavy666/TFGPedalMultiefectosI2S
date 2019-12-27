@@ -123,7 +123,7 @@ end process;
 
 process (counter_reg, enable_wah)
 begin
-    if counter_reg = 45 then
+    if counter_reg = 100 then
         enable_wah <= '1';
         counter_next <= (others => '0');
     else

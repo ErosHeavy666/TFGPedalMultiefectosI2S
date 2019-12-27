@@ -1,15 +1,15 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Eros García Arroyo
 -- 
 -- Create Date: 03.10.2019 21:11:55
 -- Design Name: 
--- Module Name: Buffer16_IN_OUT - Behavioral
+-- Module Name: 
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
--- 
+-- Description: Efecto de bypass. La señal de entrada se registra y sale tal cual a la salida. 
+--              Se podría definir como efecto buffer para probar que el i2s2 funciona 
 -- Dependencies: 
 -- 
 -- Revision:
@@ -34,16 +34,16 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EfectoES is
 GENERIC(
-    d_width         :  INTEGER := 16);
+    d_width         :  INTEGER := 16); --Ancho del bus
 Port ( 
-    clk                   : in STD_LOGIC;
-    reset_n               : in STD_LOGIC;
-    enable_in             : IN STD_LOGIC;
-    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC
+    clk                   : in STD_LOGIC; --MCLK
+    reset_n               : in STD_LOGIC; --Reset asíncrono a nivel alto del sistema global 
+    enable_in             : IN STD_LOGIC; --Enable proporcionado por el i2s2                
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada izquierdos;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida izquierdos;
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada derechos;  
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida derechos;  
+    enable_out            : out STD_LOGIC --Enable out para la señal i2s2
 );
 end EfectoES;
 
@@ -53,7 +53,6 @@ begin
 
 process(clk, reset_n, enable_in)
 begin
-
     if(reset_n = '1') then
         l_data_out <= (others => '0');
         r_data_out <= (others => '0');

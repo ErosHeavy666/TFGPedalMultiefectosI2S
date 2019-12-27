@@ -35,61 +35,38 @@ use work.sine_package.all;
 
 entity EfectoBANKFILTER is
 GENERIC(
-    d_width         :  INTEGER := 16);
+    d_width         :  INTEGER := 16); --Ancho del bus
 Port ( 
-    clk                   : in STD_LOGIC;
-    reset_n               : in STD_LOGIC;
-    enable_in             : in STD_LOGIC;
-    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC  
+    clk                   : in STD_LOGIC; --MCLK
+    reset_n               : in STD_LOGIC; --Reset asíncrono a nivel alto del sistema global
+    enable_in             : in STD_LOGIC; --Enable proporcionado por el i2s2 
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada izquierdos;
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida izquierdos;
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada derechos;
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida derechos;
+    enable_out            : out STD_LOGIC --Enable out para la señal i2s2
 ); 
 end EfectoBANKFILTER;
 
 architecture Behavioral of EfectoBANKFILTER is
-        
-    --signal l_data_out_aux, r_data_out_aux: STD_LOGIC_VECTOR(d_width-1 downto 0);
-     
-    signal l_data_reg, r_data_reg: signed(d_width-1 downto 0);
-    
+            
+    signal l_data_reg, r_data_reg: signed(d_width-1 downto 0);    
     signal wave_out_retard : sine_vector_type;
-    signal filter_select_aux : STD_LOGIC;
-    --signal filter_select_pipeline : STD_LOGIC := '1';
-    
+    signal filter_select_aux : STD_LOGIC;    
     signal sample_out_ready_aux : STD_LOGIC;
-    
-    --signal l_data_in_reg, r_data_in_reg : signed (d_width-1  downto 0);
     
 component Fir_Filter_bankfilter is
 GENERIC(
     d_width         :  INTEGER := 16);
-Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
-        Reset : in STD_LOGIC;  --Reset síncrono general del Fir
+Port (  clk_12megas : in STD_LOGIC; --MCLK
+        Reset : in STD_LOGIC;  --Reset asíncrono a nivel alto del sistema global
         Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
-        Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
-                                         --valor de Sample_In con un pulso activo durante un ciclo de reloj.
-        filter_select: in STD_LOGIC; --0 lowpass
+        Sample_In_enable : in STD_LOGIC; --Enable proporcionado por el i2s2                                       
+        filter_select: in STD_LOGIC; --0 lowpass 1 highpass
         Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
-        Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
-                                           --valor de Sample_Out con un pulso activo durante un ciclo de reloj.       
+        Sample_Out_ready : out STD_LOGIC); --Enable out para la señal filtrada
+                                                 
 end component;
-
---component fir_filter_pipeline is
---GENERIC(
---    d_width         :  INTEGER := 16);
---Port (  clk_12megas : in STD_LOGIC; --Entrada del reloj general del sistema de 12MHz
---        Reset : in STD_LOGIC;  --Reset síncrono general del Fir
---        Sample_In : in signed (d_width-1 downto 0); --Muestras de entrada codificadas en <1,15>
---        Sample_In_enable : in STD_LOGIC; --entrada de control que informa de cuando se ha actualizado el
---                                         --valor de Sample_In con un pulso activo durante un ciclo de reloj.
---        filter_select: in STD_LOGIC; --0 lowpass, 1 highpass
---        Sample_Out : out signed (d_width-1 downto 0); --Muestras de salida codificadas en <1,15>
---        Sample_Out_ready : out STD_LOGIC); --salida de control que informa de cuando se ha actualizado el
---                                           --valor de Sample_Out con un pulso activo durante un ciclo de reloj.
-        
---end component;
 
 component sine_wave_bankfilter is
   port( clk, reset_n, enable_in: in std_logic;
@@ -98,13 +75,6 @@ end component;
 
 begin
 
-process(clk)
-begin
-    if(rising_edge(clk)) then
-        filter_select_aux <= '1'; 
-    end if;
-end process;
-
 Unit_sine_wave_bankfilter : sine_wave_bankfilter 
 PORT MAP(
     clk => clk,
@@ -112,6 +82,15 @@ PORT MAP(
     enable_in => enable_in,
     wave_out => wave_out_retard
 );
+
+process(wave_out_retard)
+begin
+    if(wave_out_retard >= "00000000" and wave_out_retard <= "01111111") then
+        filter_select_aux <= '1';                          
+    else  
+        filter_select_aux <= '0';
+    end if;
+end process;
 
 Unit_FIR_Filter_bankfilter_L : Fir_Filter_bankfilter 
 GENERIC MAP(d_width => 16)
@@ -137,40 +116,6 @@ PORT MAP (
     Sample_Out_ready => open
 );
 
---Unit_FIR_Filter_pipeline_L : fir_filter_pipeline 
---GENERIC MAP(d_width => 16)
---PORT MAP (
---    clk_12megas => clk,
---    Reset => reset_n,
---    Sample_In => signed(l_data_in),
---    Sample_In_Enable => enable_in,
---    filter_select => filter_select_pipeline, --1
---    Sample_Out => l_data_in_reg,
---    Sample_Out_ready => open
---);
-
---Unit_FIR_Filter_pipeline_R : fir_filter_pipeline 
---GENERIC MAP(d_width => 16)
---PORT MAP (
---    clk_12megas => clk,
---    Reset => reset_n,
---    Sample_In => signed(r_data_in),
---    Sample_In_Enable => enable_in,
---    filter_select => filter_select_pipeline, --1
---    Sample_Out => r_data_in_reg,
---    Sample_Out_ready => sample_out_ready_aux
---);
-
---process(wave_out_retard)
---begin
---    if(wave_out_retard >= "00000000" and wave_out_retard <= "01111111") then
---        filter_select_aux <= '1';                          
---    --elsif(wave_out_retard > "10000001")then
---    else  
---        filter_select_aux <= '0';
---    end if;
---end process;
-
 process(clk, reset_n, sample_out_ready_aux, enable_in)
 begin
     if reset_n = '1' then
@@ -180,12 +125,8 @@ begin
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
         if(sample_out_ready_aux = '1')then
-            --l_data_out <= std_logic_vector(signed(l_data_in)/4 + l_data_reg);
-            --r_data_out <= std_logic_vector(signed(r_data_in)/4 + r_data_reg);
             l_data_out <= std_logic_vector(l_data_reg);
-            r_data_out <= std_logic_vector(r_data_reg);
-            --l_data_out <= std_logic_vector(l_data_reg + l_data_reg + l_data_reg + l_data_reg);
-            --r_data_out <= std_logic_vector(r_data_reg + r_data_reg + r_data_reg + r_data_reg);          
+            r_data_out <= std_logic_vector(r_data_reg);         
         end if;
     end if;
 end process;

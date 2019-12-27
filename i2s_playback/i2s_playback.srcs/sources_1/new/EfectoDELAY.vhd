@@ -4,12 +4,13 @@
 -- 
 -- Create Date: 03.10.2019 21:11:55
 -- Design Name: 
--- Module Name: Buffer16_IN_OUT - Behavioral
+-- Module Name: 
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
--- 
+-- Description: Efecto Delay, basado en retardar la señal de manera lineal, a la salida debemos tener
+--              la señal original de entrada más la señal retardada el tiempo establecido en n. Parecido
+--              a emplear una fifo.
 -- Dependencies: 
 -- 
 -- Revision:
@@ -34,17 +35,17 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EfectoDELAY is
 GENERIC(
-    n               :  INTEGER := 4000;
-    d_width         :  INTEGER := 16);
+    n               :  INTEGER := 4000; --Línea de retardo
+    d_width         :  INTEGER := 16); --Ancho del bus
 Port ( 
-    clk                   : in STD_LOGIC;
-    reset_n               : in STD_LOGIC;
-    enable_in             : in STD_LOGIC;
-    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC  
+    clk                   : in STD_LOGIC; --MCLK                                            
+    reset_n               : in STD_LOGIC; --Reset asíncrono a nivel alto del sistema global 
+    enable_in             : in STD_LOGIC; --Enable proporcionado por el i2s2                
+    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada izquierdos;                          
+    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida izquierdos;                          
+    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada derechos;                            
+    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida derechos;                            
+    enable_out            : out STD_LOGIC  --Enable out para la señal i2s2
 ); 
 end EfectoDELAY;
 
