@@ -212,7 +212,7 @@ begin
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
         if(SW6 = '1' and SW5 = '1') then
-            l_data_out <= l_data_in;
+            l_data_out <= l_data_in + (douta_RAM & "00000000");
         else
             l_data_out <= douta_RAM & "00000000";
         end if;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577450017">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577529370">
+  <File Type="PWROPT-DRC" Name="i2s_playback_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="i2s_playback_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="i2s_playback_power_routed.rpx"/>
   <File Type="PA-TCL" Name="i2s_playback.tcl"/>
-  <File Type="INIT-TIMING" Name="i2s_playback_timing_summary_init.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="i2s_playback_drc_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="i2s_playback.hwdef"/>
   <File Type="RDI-RDI" Name="i2s_playback.vdi"/>
   <File Type="OPT-DCP" Name="i2s_playback_opt.dcp"/>
-  <File Type="OPT-HWDEF" Name="i2s_playback.hwdef"/>
   <File Type="OPT-DRC" Name="i2s_playback_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="i2s_playback_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="i2s_playback_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="i2s_playback_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="i2s_playback_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="i2s_playback_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="i2s_playback_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="i2s_playback.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="i2s_playback_drc_routed.rpx"/>
   <File Type="BG-DRC" Name="i2s_playback.drc"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="i2s_playback_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MSK" Name="i2s_playback.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="i2s_playback_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="i2s_playback_methodology_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="i2s_playback.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="i2s_playback_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="i2s_playback_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="i2s_playback_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="i2s_playback_route_status.rpt"/>
