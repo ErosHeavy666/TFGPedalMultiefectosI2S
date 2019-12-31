@@ -211,16 +211,28 @@ begin
         enable_out <= '0';
     elsif (rising_edge(clk)) then --MCLK
         enable_out <= enable_in;
-        if(SW6 = '1' and SW5 = '1') then
+        --Versión superpuesta para amplificador
+        if(SW6 = '1' and SW5 = '1' and wea_RAM = "0") then
             l_data_out <= l_data_in + (douta_RAM & "00000000");
         else
             l_data_out <= douta_RAM & "00000000";
         end if;
         if(SW6 = '1' and SW5 = '1' and wea_RAM = "0") then            
-            r_data_out <= douta_RAM & "00000000";
+            r_data_out <= r_data_in + (douta_RAM & "00000000");
         else
             r_data_out <= douta_RAM & "00000000";
         end if;
+        --Versión full estéreo para auriculares
+--        if(SW6 = '1' and SW5 = '1') then
+--            l_data_out <= l_data_in;
+--        else
+--            l_data_out <= douta_RAM & "00000000";
+--        end if;
+--        if(SW6 = '1' and SW5 = '1' and wea_RAM = "0") then            
+--            r_data_out <= douta_RAM & "00000000";
+--        else
+--            r_data_out <= douta_RAM & "00000000";
+--        end if;
     end if;
 end process;
       

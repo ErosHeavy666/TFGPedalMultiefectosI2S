@@ -107,7 +107,6 @@ Port (
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
     enable_in             : in STD_LOGIC;
-    --SW14                  : in STD_LOGIC;
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -223,6 +222,7 @@ Port (
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
     enable_in             : in STD_LOGIC;
+    SW14                  : IN STD_LOGIC; --Switch de control para el tipo de filtro
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
@@ -251,22 +251,23 @@ Port (
 ); 
 end component;
 
-component EfectoAUTOWAH is
-GENERIC(
-    d_width         :  INTEGER := 16);
-Port ( 
-    clk                   : in STD_LOGIC;
-    reset_n               : in STD_LOGIC;
-    enable_in             : in STD_LOGIC;
-    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
-    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
-    enable_out            : out STD_LOGIC  
-); 
-end component;
+--component EfectoAUTOWAH is
+--GENERIC(
+--    d_width         :  INTEGER := 16);
+--Port ( 
+--    clk                   : in STD_LOGIC;
+--    reset_n               : in STD_LOGIC;
+--    enable_in             : in STD_LOGIC;
+--    l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+--    l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+--    r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC;
+--    r_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0);
+--    enable_out            : out STD_LOGIC  
+--); 
+--end component;
 
-signal enable_in_DELAY, enable_in_ES, enable_in_CHORUS, enable_in_VIBRATO, enable_in_REVERB, enable_in_ECO, enable_in_COMPRESSOR, enable_in_OVERDRIVE, enable_in_LOOPER, enable_in_BANKFILTER, enable_in_REVERB_PARAMETRIZADO, enable_in_AUTOWAH : STD_LOGIC;
+signal enable_in_DELAY, enable_in_ES, enable_in_CHORUS, enable_in_VIBRATO, enable_in_REVERB, enable_in_ECO, enable_in_COMPRESSOR, enable_in_OVERDRIVE, enable_in_LOOPER, enable_in_BANKFILTER, enable_in_REVERB_PARAMETRIZADO : STD_LOGIC;
+--signal enable_in_AUTOWAH : STD_LOGIC;
 signal r_data_out_DELAY, l_data_out_DELAY, r_data_in_DELAY, l_data_in_DELAY : STD_LOGIC_VECTOR (d_width-1  downto 0);
 signal r_data_out_ES, l_data_out_ES, r_data_in_ES, l_data_in_ES : STD_LOGIC_VECTOR (d_width-1  downto 0);
 signal r_data_out_CHORUS, l_data_out_CHORUS, r_data_in_CHORUS, l_data_in_CHORUS : STD_LOGIC_VECTOR (d_width-1  downto 0);
@@ -278,7 +279,7 @@ signal r_data_out_OVERDRIVE, l_data_out_OVERDRIVE, r_data_in_OVERDRIVE, l_data_i
 signal r_data_out_LOOPER, l_data_out_LOOPER, r_data_in_LOOPER, l_data_in_LOOPER : STD_LOGIC_VECTOR (d_width-1  downto 0);
 signal r_data_out_BANKFILTER, l_data_out_BANKFILTER, r_data_in_BANKFILTER, l_data_in_BANKFILTER : STD_LOGIC_VECTOR (d_width-1  downto 0);
 signal r_data_out_REVERB_PARAMETRIZADO, l_data_out_REVERB_PARAMETRIZADO, r_data_in_REVERB_PARAMETRIZADO, l_data_in_REVERB_PARAMETRIZADO : STD_LOGIC_VECTOR (d_width-1  downto 0);
-signal r_data_out_AUTOWAH, l_data_out_AUTOWAH, r_data_in_AUTOWAH, l_data_in_AUTOWAH : STD_LOGIC_VECTOR (d_width-1  downto 0);
+--signal r_data_out_AUTOWAH, l_data_out_AUTOWAH, r_data_in_AUTOWAH, l_data_in_AUTOWAH : STD_LOGIC_VECTOR (d_width-1  downto 0);
 
 begin
 
@@ -314,7 +315,6 @@ PORT MAP(
      clk => clk,
      reset_n => reset_n, 
      enable_in => enable_in_CHORUS,
-     --SW14 => SW14,
      l_data_in => l_data_in_CHORUS, 
      l_data_out => l_data_out_CHORUS, 
      r_data_in => r_data_in_CHORUS, 
@@ -410,6 +410,7 @@ PORT MAP(
      clk => clk,
      reset_n => reset_n, 
      enable_in => enable_in_BANKFILTER ,
+     SW14 => SW14,
      l_data_in => l_data_in_BANKFILTER  , 
      l_data_out => l_data_out_BANKFILTER , 
      r_data_in => r_data_in_BANKFILTER , 
@@ -434,21 +435,21 @@ PORT MAP(
      enable_out => enable_out
 );
 
-Unit_EfectAUTOWAH : EfectoAUTOWAH  
-GENERIC MAP(d_width => 16)
-PORT MAP(
-     clk => clk,
-     reset_n => reset_n, 
-     enable_in => enable_in_AUTOWAH ,
-     l_data_in => l_data_in_AUTOWAH  , 
-     l_data_out => l_data_out_AUTOWAH , 
-     r_data_in => r_data_in_AUTOWAH , 
-     r_data_out => r_data_out_AUTOWAH ,
-     enable_out => enable_out
-); 
+--Unit_EfectAUTOWAH : EfectoAUTOWAH  
+--GENERIC MAP(d_width => 16)
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in_AUTOWAH ,
+--     l_data_in => l_data_in_AUTOWAH  , 
+--     l_data_out => l_data_out_AUTOWAH , 
+--     r_data_in => r_data_in_AUTOWAH , 
+--     r_data_out => r_data_out_AUTOWAH ,
+--     enable_out => enable_out
+--); 
 
 --Process que se encarga de decir que tipo de efecto le vamos a pasar a las muestars
-process (SW0, SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW9, SW10, SW11, SW12, SW14, enable_in, 
+process (SW0, SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW9, SW10, SW11, SW12, enable_in,
 l_data_out_ES, r_data_out_ES, 
 r_data_out_DELAY, l_data_out_DELAY, 
 l_data_out_CHORUS, r_data_out_CHORUS,
@@ -460,11 +461,11 @@ r_data_out_OVERDRIVE, l_data_out_OVERDRIVE,
 r_data_out_LOOPER, l_data_out_LOOPER,
 r_data_out_BANKFILTER, l_data_out_BANKFILTER,
 r_data_out_REVERB_PARAMETRIZADO, l_data_out_REVERB_PARAMETRIZADO,
-r_data_out_AUTOWAH, l_data_out_AUTOWAH,
+--r_data_out_AUTOWAH, l_data_out_AUTOWAH,
 l_data_in, r_data_in)
 
-begin
-    if(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --ES
+begin --Si se desea añadir el autowah lo que habría que hacer es definir otro estado auxliar combinando dos switches, por ejemplo poner SW0 = 1 AND SW1 = 1 AND SWX = 0 (esta comentado)
+    if(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --ES
         enable_in_ES <= '1' and enable_in; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';
@@ -476,7 +477,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_DELAY <= (others => '0');
         r_data_in_DELAY <= (others => '0');
@@ -498,15 +499,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                              
         l_data_in_ES <= l_data_in;
         r_data_in_ES <= r_data_in;        
         l_data_out <= l_data_out_ES;
         r_data_out <= r_data_out_ES;
         
-    elsif(SW0 = '1' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --DELAY
+    elsif(SW0 = '1' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --DELAY
         enable_in_ES <= '0'; 
         enable_in_DELAY <= '1' and enable_in; 
         enable_in_CHORUS <= '0'; 
@@ -518,7 +519,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
          
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -540,15 +541,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                                                
         l_data_in_DELAY <= l_data_in;
         r_data_in_DELAY <= r_data_in;       
         l_data_out <= l_data_out_DELAY;
         r_data_out <= r_data_out_DELAY; 
          
-    elsif(SW0 = '0' AND SW1 = '1' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --CHORUS
+    elsif(SW0 = '0' AND SW1 = '1' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --CHORUS
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '1' and enable_in;  
@@ -560,7 +561,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -582,15 +583,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                                                
         l_data_in_CHORUS <= l_data_in;
         r_data_in_CHORUS <= r_data_in;       
         l_data_out <= l_data_out_CHORUS;
         r_data_out <= r_data_out_CHORUS;
         
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '1' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --REVERB   
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '1' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --REVERB   
         enable_in_ES <= '0' ;  
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';  
@@ -602,7 +603,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -624,15 +625,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                        
         l_data_in_REVERB <= l_data_in;
         r_data_in_REVERB <= r_data_in;       
         l_data_out <= l_data_out_REVERB;
         r_data_out <= r_data_out_REVERB;
          
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '1' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --ECO
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '1' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --ECO
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0'; 
@@ -644,7 +645,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -666,15 +667,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                                
         l_data_in_ECO <= l_data_in;
         r_data_in_ECO <= r_data_in;       
         l_data_out <= l_data_out_ECO;
         r_data_out <= r_data_out_ECO; 
                
-     elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '1' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --VIBRATO
+     elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '1' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --VIBRATO
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0';
         enable_in_CHORUS <= '0'; 
@@ -686,7 +687,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -708,15 +709,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                                                
         l_data_in_VIBRATO <= l_data_in;
         r_data_in_VIBRATO <= r_data_in;       
         l_data_out <= l_data_out_VIBRATO;
         r_data_out <= r_data_out_VIBRATO;
         
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --LOOPER_WRITE
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --LOOPER_WRITE
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';  
@@ -728,7 +729,7 @@ begin
         enable_in_LOOPER <= '1' and enable_in;
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -750,15 +751,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                       
         l_data_in_LOOPER <= l_data_in;
         r_data_in_LOOPER <= r_data_in;       
         l_data_out <= l_data_out_LOOPER;
         r_data_out <= r_data_out_LOOPER;
         
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '1' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --LOOPER_READ
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '1' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --LOOPER_READ
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';  
@@ -770,7 +771,7 @@ begin
         enable_in_LOOPER <= '1' and enable_in;
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -792,15 +793,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                       
         l_data_in_LOOPER <= l_data_in;
         r_data_in_LOOPER <= r_data_in;       
         l_data_out <= l_data_out_LOOPER;
         r_data_out <= r_data_out_LOOPER;
            
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '1' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --BANKFILTER
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '1' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --BANKFILTER
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';  
@@ -812,7 +813,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '1' and enable_in;
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -834,15 +835,15 @@ begin
         r_data_in_LOOPER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                       
         l_data_in_BANKFILTER <= l_data_in;
         r_data_in_BANKFILTER <= r_data_in;       
         l_data_out <= l_data_out_BANKFILTER;
         r_data_out <= r_data_out_BANKFILTER;   
                      
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '1' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --OVERDRIVE
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '1' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --OVERDRIVE
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0'; 
@@ -854,7 +855,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -876,15 +877,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                               
         l_data_in_OVERDRIVE <= l_data_in;
         r_data_in_OVERDRIVE <= r_data_in;       
         l_data_out <= l_data_out_OVERDRIVE;
         r_data_out <= r_data_out_OVERDRIVE;       
         
-   elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '1' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --COMPRESSOR
+   elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '1' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --COMPRESSOR
         enable_in_ES <= '0' ; 
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';
@@ -896,7 +897,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -918,15 +919,15 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                                
         l_data_in_COMPRESSOR <= l_data_in;
         r_data_in_COMPRESSOR <= r_data_in;       
         l_data_out <= l_data_out_COMPRESSOR;
         r_data_out <= r_data_out_COMPRESSOR;
 
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '1' AND SW11 = '0' AND SW12 = '0' AND SW14 = '0') then --REVERB_PARAMETRIZADO   
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '1' AND SW11 = '0' AND SW12 = '0') then --REVERB_PARAMETRIZADO   
         enable_in_ES <= '0' ;  
         enable_in_DELAY <= '0'; 
         enable_in_CHORUS <= '0';  
@@ -938,7 +939,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
          
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -960,15 +961,15 @@ begin
         r_data_in_LOOPER <= (others => '0');
         l_data_in_BANKFILTER <= (others => '0');
         r_data_in_BANKFILTER <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                        
         l_data_in_REVERB_PARAMETRIZADO <= l_data_in;
         r_data_in_REVERB_PARAMETRIZADO <= r_data_in;       
         l_data_out <= l_data_out_REVERB_PARAMETRIZADO;
         r_data_out <= r_data_out_REVERB_PARAMETRIZADO;
                             
-   elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '1' AND SW12 = '0' AND SW14 = '0') then --OVERDRIVE+DELAY
+   elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '1' AND SW12 = '0') then --OVERDRIVE+DELAY
         enable_in_ES <= '0' ; 
         enable_in_DELAY <='1' and enable_in; 
         enable_in_CHORUS <= '0';
@@ -980,7 +981,7 @@ begin
         enable_in_LOOPER <= '0';
         enable_in_BANKFILTER <= '0';
         enable_in_REVERB_PARAMETRIZADO <= '0';
-        enable_in_AUTOWAH <= '0';
+        --enable_in_AUTOWAH <= '0';
         
         l_data_in_ES <= (others => '0');
         r_data_in_ES <= (others => '0');
@@ -1000,8 +1001,8 @@ begin
         r_data_in_BANKFILTER <= (others => '0');
         l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
         r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-        l_data_in_AUTOWAH <= (others => '0');
-        r_data_in_AUTOWAH <= (others => '0');
+        --l_data_in_AUTOWAH <= (others => '0');
+        --r_data_in_AUTOWAH <= (others => '0');
                                       
         l_data_in_OVERDRIVE <= l_data_in;
         r_data_in_OVERDRIVE <= r_data_in;       
@@ -1010,7 +1011,7 @@ begin
         l_data_out <= l_data_out_DELAY;
         r_data_out <= r_data_out_DELAY; 
 
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '1' AND SW14 = '0') then --LOOPER_WRITE + COMPRESSOR
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '1') then --LOOPER_WRITE + COMPRESSOR
        enable_in_ES <= '0' ; 
        enable_in_DELAY <= '0'; 
        enable_in_CHORUS <= '0';  
@@ -1022,7 +1023,7 @@ begin
        enable_in_LOOPER <= '1' and enable_in;
        enable_in_BANKFILTER <= '0';
        enable_in_REVERB_PARAMETRIZADO <= '0';
-       enable_in_AUTOWAH <= '0';
+       --enable_in_AUTOWAH <= '0';
        
        l_data_in_ES <= (others => '0');
        r_data_in_ES <= (others => '0');
@@ -1042,8 +1043,8 @@ begin
        r_data_in_BANKFILTER <= (others => '0');
        l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
        r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-       l_data_in_AUTOWAH <= (others => '0');
-       r_data_in_AUTOWAH <= (others => '0');
+       --l_data_in_AUTOWAH <= (others => '0');
+       --r_data_in_AUTOWAH <= (others => '0');
                               
        l_data_in_COMPRESSOR <= l_data_in;
        r_data_in_COMPRESSOR <= r_data_in;  
@@ -1052,7 +1053,7 @@ begin
        l_data_out <= l_data_out_LOOPER;
        r_data_out <= r_data_out_LOOPER;
         
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '1' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '1' AND SW14 = '0') then --LOOPER_READ + COMPRESSOR
+    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '1' AND SW6 = '1' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '1') then --LOOPER_READ + COMPRESSOR
        enable_in_ES <= '0' ; 
        enable_in_DELAY <= '0'; 
        enable_in_CHORUS <= '0';  
@@ -1064,7 +1065,7 @@ begin
        enable_in_LOOPER <= '1' and enable_in;
        enable_in_BANKFILTER <= '0';
        enable_in_REVERB_PARAMETRIZADO <= '0';    
-       enable_in_AUTOWAH <= '0';
+       --enable_in_AUTOWAH <= '0';
        
        l_data_in_ES <= (others => '0');
        r_data_in_ES <= (others => '0');
@@ -1084,8 +1085,8 @@ begin
        r_data_in_BANKFILTER <= (others => '0');
        l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
        r_data_in_REVERB_PARAMETRIZADO <= (others => '0');  
-       l_data_in_AUTOWAH <= (others => '0');
-       r_data_in_AUTOWAH <= (others => '0');
+       --l_data_in_AUTOWAH <= (others => '0');
+       --r_data_in_AUTOWAH <= (others => '0');
                              
        l_data_in_COMPRESSOR <= l_data_in;
        r_data_in_COMPRESSOR <= r_data_in;  
@@ -1094,47 +1095,47 @@ begin
        l_data_out <= l_data_out_LOOPER;
        r_data_out <= r_data_out_LOOPER;
 
-    elsif(SW0 = '0' AND SW1 = '0' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0' AND SW14 = '1') then --AUTOWAH
-       enable_in_ES <= '0' ; 
-       enable_in_DELAY <= '0'; 
-       enable_in_CHORUS <= '0';  
-       enable_in_VIBRATO <= '0';
-       enable_in_REVERB <= '0'; 
-       enable_in_ECO <= '0';
-       enable_in_COMPRESSOR <= '0';
-       enable_in_OVERDRIVE <= '0';
-       enable_in_LOOPER <= '0';
-       enable_in_BANKFILTER <= '0';
-       enable_in_REVERB_PARAMETRIZADO <= '0';    
-       enable_in_AUTOWAH <= '1' and enable_in;
+--    elsif(SW0 = '1' AND SW1 = '1' AND SW2 = '0' AND SW3 = '0' AND SW4 = '0' AND SW5 = '0' AND SW6 = '0' AND SW7 = '0' AND SW8 = '0' AND SW9 = '0' AND SW10 = '0' AND SW11 = '0' AND SW12 = '0') then --AUTOWAH
+--       enable_in_ES <= '0' ; 
+--       enable_in_DELAY <= '0'; 
+--       enable_in_CHORUS <= '0';  
+--       enable_in_VIBRATO <= '0';
+--       enable_in_REVERB <= '0'; 
+--       enable_in_ECO <= '0';
+--       enable_in_COMPRESSOR <= '0';
+--       enable_in_OVERDRIVE <= '0';
+--       enable_in_LOOPER <= '0';
+--       enable_in_BANKFILTER <= '0';
+--       enable_in_REVERB_PARAMETRIZADO <= '0';    
+--       --enable_in_AUTOWAH <= '1' and enable_in;
         
-       l_data_in_ES <= (others => '0');
-       r_data_in_ES <= (others => '0');
-       l_data_in_DELAY <= (others => '0');
-       r_data_in_DELAY <= (others => '0');
-       l_data_in_CHORUS <= (others => '0');
-       r_data_in_CHORUS <= (others => '0');
-       l_data_in_VIBRATO <= (others => '0');
-       r_data_in_VIBRATO <= (others => '0');
-       l_data_in_REVERB <= (others => '0');
-       r_data_in_REVERB <= (others => '0');
-       l_data_in_ECO <= (others => '0');
-       r_data_in_ECO <= (others => '0');
-       l_data_in_OVERDRIVE <= (others => '0');
-       r_data_in_OVERDRIVE  <= (others => '0');
-       l_data_in_BANKFILTER <= (others => '0');
-       r_data_in_BANKFILTER <= (others => '0');
-       l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-       r_data_in_REVERB_PARAMETRIZADO <= (others => '0');  
-       l_data_in_COMPRESSOR <= (others => '0');
-       r_data_in_COMPRESSOR <= (others => '0');
-       l_data_in_LOOPER <= (others => '0');
-       r_data_in_LOOPER <= (others => '0');
+--       l_data_in_ES <= (others => '0');
+--       r_data_in_ES <= (others => '0');
+--       l_data_in_DELAY <= (others => '0');
+--       r_data_in_DELAY <= (others => '0');
+--       l_data_in_CHORUS <= (others => '0');
+--       r_data_in_CHORUS <= (others => '0');
+--       l_data_in_VIBRATO <= (others => '0');
+--       r_data_in_VIBRATO <= (others => '0');
+--       l_data_in_REVERB <= (others => '0');
+--       r_data_in_REVERB <= (others => '0');
+--       l_data_in_ECO <= (others => '0');
+--       r_data_in_ECO <= (others => '0');
+--       l_data_in_OVERDRIVE <= (others => '0');
+--       r_data_in_OVERDRIVE  <= (others => '0');
+--       l_data_in_BANKFILTER <= (others => '0');
+--       r_data_in_BANKFILTER <= (others => '0');
+--       l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
+--       r_data_in_REVERB_PARAMETRIZADO <= (others => '0');  
+--       l_data_in_COMPRESSOR <= (others => '0');
+--       r_data_in_COMPRESSOR <= (others => '0');
+--       l_data_in_LOOPER <= (others => '0');
+--       r_data_in_LOOPER <= (others => '0');
                              
-       l_data_in_AUTOWAH <= l_data_in;
-       r_data_in_AUTOWAH <= r_data_in;     
-       l_data_out <= l_data_out_AUTOWAH;
-       r_data_out <= r_data_out_AUTOWAH;
+--       l_data_in_AUTOWAH <= l_data_in;
+--       r_data_in_AUTOWAH <= r_data_in;     
+--       l_data_out <= l_data_out_AUTOWAH;
+--       r_data_out <= r_data_out_AUTOWAH;
                                               
    else --STOP
        enable_in_ES <= '0'; 
@@ -1148,7 +1149,7 @@ begin
        enable_in_LOOPER <= '0';
        enable_in_BANKFILTER <= '0';
        enable_in_REVERB_PARAMETRIZADO <= '0';
-       enable_in_AUTOWAH <= '0';
+       --enable_in_AUTOWAH <= '0';
               
        l_data_in_ES <= (others => '0');
        r_data_in_ES <= (others => '0');
@@ -1172,8 +1173,8 @@ begin
        r_data_in_BANKFILTER <= (others => '0');
        l_data_in_REVERB_PARAMETRIZADO <= (others => '0');
        r_data_in_REVERB_PARAMETRIZADO <= (others => '0');
-       l_data_in_AUTOWAH <= (others => '0');
-       r_data_in_AUTOWAH <= (others => '0');
+       --l_data_in_AUTOWAH <= (others => '0');
+       --r_data_in_AUTOWAH <= (others => '0');
               
        l_data_out <= (others => '0');
        r_data_out <= (others => '0');  

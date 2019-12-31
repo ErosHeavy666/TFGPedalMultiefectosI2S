@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Eros García Arroyo
 -- 
 -- Create Date: 03.10.2019 21:11:55
 -- Design Name: 
--- Module Name: Buffer16_IN_OUT - Behavioral
+-- Module Name:
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -40,6 +40,7 @@ Port (
     clk                   : in STD_LOGIC; --MCLK
     reset_n               : in STD_LOGIC; --Reset asíncrono a nivel alto del sistema global
     enable_in             : in STD_LOGIC; --Enable proporcionado por el i2s2 
+    SW14                  : IN STD_LOGIC; --Switch de control para el tipo de filtro
     l_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada izquierdos;
     l_data_out            : out STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de salida izquierdos;
     r_data_in             : in STD_LOGIC_VECTOR (d_width-1  downto 0); -- STD_LOGIC -> Datos de entrada derechos;
@@ -51,7 +52,7 @@ end EfectoBANKFILTER;
 architecture Behavioral of EfectoBANKFILTER is
             
     signal l_data_reg, r_data_reg: signed(d_width-1 downto 0);    
-    signal wave_out_retard : sine_vector_type;
+    --signal wave_out_retard : sine_vector_type;
     signal filter_select_aux : STD_LOGIC;    
     signal sample_out_ready_aux : STD_LOGIC;
     
@@ -68,29 +69,42 @@ Port (  clk_12megas : in STD_LOGIC; --MCLK
                                                  
 end component;
 
-component sine_wave_bankfilter is
-  port( clk, reset_n, enable_in: in std_logic;
-        wave_out: out sine_vector_type);
-end component;
+--******
+
+--component sine_wave_bankfilter is
+--  port( clk, reset_n, enable_in: in std_logic;
+--        wave_out: out sine_vector_type);
+--end component;
 
 begin
 
-Unit_sine_wave_bankfilter : sine_wave_bankfilter 
-PORT MAP(
-    clk => clk,
-    reset_n => reset_n,
-    enable_in => enable_in,
-    wave_out => wave_out_retard
-);
+--Unit_sine_wave_bankfilter : sine_wave_bankfilter 
+--PORT MAP(
+--    clk => clk,
+--    reset_n => reset_n,
+--    enable_in => enable_in,
+--    wave_out => wave_out_retard
+--);
 
-process(wave_out_retard)
+--process(wave_out_retard) --Filtrado automático cada segundo --> Si se quiere así hay que descomentar las líneas con * y comentar el process siguiente
+--begin
+--    if(wave_out_retard >= "00000000" and wave_out_retard <= "01111111") then
+--        filter_select_aux <= '1';                          
+--    else  
+--        filter_select_aux <= '0';
+--    end if;
+--end process;
+
+process(SW14) --Elección del filtrado manual --> Si se habilita el filtrado automático hay que comentar estas líneas 
 begin
-    if(wave_out_retard >= "00000000" and wave_out_retard <= "01111111") then
+    if(SW14 = '1') then --HPF
         filter_select_aux <= '1';                          
-    else  
+    else  --LPF
         filter_select_aux <= '0';
     end if;
 end process;
+
+--******
 
 Unit_FIR_Filter_bankfilter_L : Fir_Filter_bankfilter 
 GENERIC MAP(d_width => 16)

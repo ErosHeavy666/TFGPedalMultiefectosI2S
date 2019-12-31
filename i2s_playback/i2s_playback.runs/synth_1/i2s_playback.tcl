@@ -31,7 +31,6 @@ read_vhdl -library xil_defaultlib {
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoREVERB_PARAMETRIZADO.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoREVERB_test.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoVIBRATO.vhd
-  C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoWAHWAH.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/LEDs.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd
@@ -42,7 +41,6 @@ read_vhdl -library xil_defaultlib {
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_transceiver.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/register.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave.vhd
-  C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_chorus.vhd
   C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd
 }

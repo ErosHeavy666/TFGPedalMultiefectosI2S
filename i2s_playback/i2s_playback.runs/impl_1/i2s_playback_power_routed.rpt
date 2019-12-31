@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Sat Dec 28 12:24:02 2019
+| Date             : Tue Dec 31 16:27:35 2019
 | Host             : LAPTOP-ATT53B95 running 64-bit major release  (build 9200)
 | Command          : report_power -file i2s_playback_power_routed.rpt -pb i2s_playback_power_summary_routed.pb -rpx i2s_playback_power_routed.rpx
 | Design           : i2s_playback
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.006 |        6 |       --- |             --- |
-| Slice Logic             |     0.001 |    65748 |       --- |             --- |
-|   LUT as Logic          |     0.001 |     9851 |     63400 |           15.54 |
-|   CARRY4                |    <0.001 |      404 |     15850 |            2.55 |
-|   Register              |    <0.001 |    34325 |    126800 |           27.07 |
-|   F7/F8 Muxes           |    <0.001 |     1789 |     63400 |            2.82 |
+| Slice Logic             |     0.001 |    65563 |       --- |             --- |
+|   LUT as Logic          |     0.001 |     9706 |     63400 |           15.31 |
+|   CARRY4                |    <0.001 |      399 |     15850 |            2.52 |
+|   Register              |    <0.001 |    34267 |    126800 |           27.02 |
+|   F7/F8 Muxes           |    <0.001 |     1788 |     63400 |            2.82 |
 |   LUT as Shift Register |    <0.001 |    18246 |     19000 |           96.03 |
-|   Others                |     0.000 |      191 |       --- |             --- |
+|   Others                |     0.000 |      189 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.002 |    46883 |       --- |             --- |
+| Signals                 |     0.002 |    46713 |       --- |             --- |
 | Block RAM               |     0.002 |      128 |       135 |           94.81 |
 | PLL                     |     0.111 |        1 |         6 |           16.67 |
 | DSPs                    |    <0.001 |        4 |       240 |            1.67 |
@@ -152,7 +152,6 @@ Table of Contents
 |   i2s_clock                                      |     0.112 |
 |     inst                                         |     0.112 |
 |   unit_digital_efects                            |     0.008 |
-|     Unit_EfectAUTOWAH                            |    <0.001 |
 |     Unit_EfectBANKFILTER                         |    <0.001 |
 |       Unit_FIR_Filter_bankfilter_L               |    <0.001 |
 |         U0                                       |    <0.001 |
@@ -192,7 +191,6 @@ Table of Contents
 |           reg8                                   |    <0.001 |
 |           reg9                                   |    <0.001 |
 |         U1                                       |    <0.001 |
-|       Unit_sine_wave_bankfilter                  |    <0.001 |
 |     Unit_EfectCHORUS                             |     0.001 |
 |       Unit_sine_wave_chorus                      |    <0.001 |
 |     Unit_EfectCOMPRESSOR                         |    <0.001 |
