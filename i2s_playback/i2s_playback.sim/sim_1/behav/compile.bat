@@ -1,5 +1,5 @@
 @echo off
-set xv_path=C:\\Vivado\\Vivado\\2017.2\\bin
+set xv_path=C:\\Xilinx\\Vivado\\2017.2\\bin
 echo "xvhdl -m64 --relax -prj tb_randomEfect_vhdl.prj"
 call %xv_path%/xvhdl  -m64 --relax -prj tb_randomEfect_vhdl.prj -log xvhdl.log
 call type xvhdl.log > compile.log

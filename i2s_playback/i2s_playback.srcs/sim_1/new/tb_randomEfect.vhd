@@ -288,19 +288,19 @@ end process;
 --     enable_out => enable_out
 --); 
 
---Unit_EfectCOMPRESSOR : EfectCOMPRESSOR
---GENERIC MAP(d_width => 16
---            )
---PORT MAP(
---     clk => clk,
---     reset_n => reset_n, 
---     enable_in => enable_in,
---     l_data_in => Sample_In, 
---     l_data_out => open, 
---     r_data_in => Sample_In, 
---     r_data_out => Sample_out,
---     enable_out => enable_out
---); 
+Unit_EfectCOMPRESSOR : EfectCOMPRESSOR
+GENERIC MAP(d_width => 16
+            )
+PORT MAP(
+     clk => clk,
+     reset_n => reset_n, 
+     enable_in => enable_in,
+     l_data_in => Sample_In, 
+     l_data_out => open, 
+     r_data_in => Sample_In, 
+     r_data_out => Sample_out,
+     enable_out => enable_out
+); 
 
 --Unit_EfectOVERDRIVE : EfectoOVERDRIVE
 --GENERIC MAP(d_width => 16
@@ -316,19 +316,19 @@ end process;
 --     enable_out => enable_out
 --); 
 
-Unit_EfectoBANKFILTER : EfectoBANKFILTER
-GENERIC MAP(d_width => 16
-            )
-PORT MAP(
-     clk => clk,
-     reset_n => reset_n, 
-     enable_in => enable_in,
-     l_data_in => Sample_In, 
-     l_data_out => open, 
-     r_data_in => Sample_In, 
-     r_data_out => Sample_out,
-     enable_out => enable_out
-);
+--Unit_EfectoBANKFILTER : EfectoBANKFILTER
+--GENERIC MAP(d_width => 16
+--            )
+--PORT MAP(
+--     clk => clk,
+--     reset_n => reset_n, 
+--     enable_in => enable_in,
+--     l_data_in => Sample_In, 
+--     l_data_out => open, 
+--     r_data_in => Sample_In, 
+--     r_data_out => Sample_out,
+--     enable_out => enable_out
+--);
 
 process(clk)
 VARIABLE in_line : line;

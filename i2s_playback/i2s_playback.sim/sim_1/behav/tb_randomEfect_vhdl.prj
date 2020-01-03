@@ -1,11 +1,5 @@
 # compile vhdl design source files
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/sine_package.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/Fir_Filter_Autowah.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/Ruta_datos_FIR_WAH.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/controlador_fir_WAH.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/register.vhd"
-vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd"
+vhdl xil_defaultlib  "../../../i2s_playback.srcs/sources_1/new/EfectCOMPRESSOR.vhd"
 vhdl xil_defaultlib  "../../../i2s_playback.srcs/sim_1/new/tb_randomEfect.vhd"
 
 # Do not sort compile order

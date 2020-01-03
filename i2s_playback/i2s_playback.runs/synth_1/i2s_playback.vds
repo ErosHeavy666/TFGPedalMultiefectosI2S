@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Tue Dec 31 15:46:36 2019
-# Process ID: 8308
+# Start of session at: Fri Jan  3 02:22:18 2020
+# Process ID: 7440
 # Current directory: C:/Vivado/i2s_playback/i2s_playback.runs/synth_1
 # Command line: vivado.exe -log i2s_playback.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2s_playback.tcl
 # Log file: C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/i2s_playback.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11580 
+INFO: Helper process launched with PID 7788 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 319.555 ; gain = 75.293
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 319.594 ; gain = 76.078
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'i2s_playback' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:65]
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:5' bound to instance 'i2s_clock' of component 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:177]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:5' bound to instance 'i2s_clock' of component 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/realtime/clk_wiz_1_stub.vhdl:13]
 	Parameter ms_ratio_w bound to: 3 - type: integer 
 	Parameter sw_ratio_w bound to: 6 - type: integer 
 	Parameter data_w bound to: 16 - type: integer 
@@ -100,8 +100,8 @@ INFO: [Synth 8-3491] module 'EfectoLOOPER' declared at 'C:/Vivado/i2s_playback/i
 INFO: [Synth 8-638] synthesizing module 'EfectoLOOPER' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:54]
 	Parameter d_width bound to: 16 - type: integer 
 	Parameter d_deep bound to: 19 - type: integer 
-INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'Unit_RAM' of component 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'blk_mem_gen_1' declared at 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:5' bound to instance 'Unit_RAM' of component 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/realtime/blk_mem_gen_1_stub.vhdl:18]
 INFO: [Synth 8-256] done synthesizing module 'EfectoLOOPER' (12#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoLOOPER.vhd:54]
 	Parameter d_width bound to: 16 - type: integer 
 INFO: [Synth 8-3491] module 'EfectoBANKFILTER' declared at 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoAUTOWAH.vhd:36' bound to instance 'Unit_EfectBANKFILTER' of component 'EfectoBANKFILTER' [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/Digital_Efects.vhd:407]
@@ -170,7 +170,7 @@ INFO: [Synth 8-638] synthesizing module 'LEDs' [C:/Vivado/i2s_playback/i2s_playb
 INFO: [Synth 8-256] done synthesizing module 'LEDs' (22#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/LEDs.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'i2s_playback' (23#1) [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_playback.vhd:65]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:13 ; elapsed = 00:02:16 . Memory (MB): peak = 1212.234 ; gain = 967.973
+Finished RTL Elaboration : Time (s): cpu = 00:02:33 ; elapsed = 00:03:32 . Memory (MB): peak = 1212.281 ; gain = 968.766
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -180,49 +180,49 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:23 ; elapsed = 00:02:26 . Memory (MB): peak = 1212.234 ; gain = 967.973
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:43 ; elapsed = 00:03:59 . Memory (MB): peak = 1212.281 ; gain = 968.766
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
-Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
-Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
-Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
+Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
+Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp5/blk_mem_gen_1_in_context.xdc] for cell 'unit_digital_efects/Unit_EfectLOOPER/Unit_RAM'
+Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
+Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc] for cell 'i2s_clock'
 Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]
 Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Vivado/i2s_playback/i2s_playback.srcs/constrs_1/new/i2s_playback.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/i2s_playback_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/i2s_playback_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/dont_touch.xdc]
-write_xdc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2697.281 ; gain = 179.418
+write_xdc: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2697.352 ; gain = 178.414
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.308 . Memory (MB): peak = 2697.281 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.788 . Memory (MB): peak = 2697.352 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:21 ; elapsed = 00:04:15 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Constraint Validation : Time (s): cpu = 00:04:58 ; elapsed = 00:06:29 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:21 ; elapsed = 00:04:15 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Loading Part and Timing Information : Time (s): cpu = 00:04:58 ; elapsed = 00:06:29 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-8308-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/.Xil/Vivado-7440-LAPTOP-ATT53B95/dcp7/clk_wiz_1_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for i2s_clock. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for unit_digital_efects/Unit_EfectLOOPER/Unit_RAM. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:21 ; elapsed = 00:04:15 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:58 ; elapsed = 00:06:29 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'i2s_state_reg_reg' in module 'i2s'
 WARNING: [Synth 8-6014] Unused sequential element i2s_state_reg_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/i2s_transceiver.vhd:68]
@@ -302,7 +302,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Vi
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sine_wave'
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave.vhd:51]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:20:04 ; elapsed = 00:20:01 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:23:17 ; elapsed = 00:26:25 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -967,7 +967,7 @@ WARNING: [Synth 8-3332] Sequential element (l_data_reg_reg[82][0]) is unused and
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:25:18 ; elapsed = 00:26:17 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:27:55 ; elapsed = 00:32:25 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1038,13 +1038,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i2s_clock/clk_out1' to pin 'i2s_clock/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:25:49 ; elapsed = 00:26:48 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:28:29 ; elapsed = 00:33:03 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:26:31 ; elapsed = 00:27:33 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Timing Optimization : Time (s): cpu = 00:29:16 ; elapsed = 00:33:53 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1089,7 +1089,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\unit_i2s
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectCOMPRESSOR.vhd:65]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectCOMPRESSOR.vhd:66]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:28:28 ; elapsed = 00:29:51 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Technology Mapping : Time (s): cpu = 00:30:58 ; elapsed = 00:36:21 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1143,7 +1143,7 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:29:29 ; elapsed = 00:30:51 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished IO Insertion : Time (s): cpu = 00:32:18 ; elapsed = 00:37:56 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1156,7 +1156,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:29:29 ; elapsed = 00:30:52 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Renaming Generated Instances : Time (s): cpu = 00:32:18 ; elapsed = 00:37:57 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1168,25 +1168,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:29:38 ; elapsed = 00:31:00 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:32:33 ; elapsed = 00:38:19 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:29:38 ; elapsed = 00:31:00 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Renaming Generated Ports : Time (s): cpu = 00:32:33 ; elapsed = 00:38:20 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:29:41 ; elapsed = 00:31:03 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Handling Custom Attributes : Time (s): cpu = 00:32:38 ; elapsed = 00:38:27 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:29:41 ; elapsed = 00:31:03 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Renaming Generated Nets : Time (s): cpu = 00:32:38 ; elapsed = 00:38:28 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1324,14 +1324,14 @@ Report Instance Areas:
 |57    |  unit_leds                        |LEDs                          |    18|
 +------+-----------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:29:41 ; elapsed = 00:31:03 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Finished Writing Synthesis Report : Time (s): cpu = 00:32:38 ; elapsed = 00:38:28 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 169 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:25:29 ; elapsed = 00:29:25 . Memory (MB): peak = 2697.281 ; gain = 967.973
-Synthesis Optimization Complete : Time (s): cpu = 00:29:41 ; elapsed = 00:31:04 . Memory (MB): peak = 2697.281 ; gain = 2453.020
+Synthesis Optimization Runtime : Time (s): cpu = 00:27:52 ; elapsed = 00:36:27 . Memory (MB): peak = 2697.352 ; gain = 968.766
+Synthesis Optimization Complete : Time (s): cpu = 00:32:39 ; elapsed = 00:38:39 . Memory (MB): peak = 2697.352 ; gain = 2453.836
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 425 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1340,8 +1340,8 @@ No Unisim elements were transformed.
 
 150 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:29:57 ; elapsed = 00:31:24 . Memory (MB): peak = 2697.281 ; gain = 2461.602
+synth_design: Time (s): cpu = 00:33:05 ; elapsed = 00:39:29 . Memory (MB): peak = 2697.352 ; gain = 2460.297
 INFO: [Common 17-1381] The checkpoint 'C:/Vivado/i2s_playback/i2s_playback.runs/synth_1/i2s_playback.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2697.281 ; gain = 0.000
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.638 . Memory (MB): peak = 2697.281 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 31 16:18:26 2019...
+write_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2697.352 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 2697.352 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  3 03:02:20 2020...

@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_randomEfect_behav xil_defaultlib.tb_randomEfect -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 893a0b9648674972a087b3809a8290bd --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_randomEfect_behav xil_defaultlib.tb_randomEfect -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,12 +11,6 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling package xil_defaultlib.sine_package
-Compiling architecture behavioral of entity xil_defaultlib.sine_wave_bankfilter [sine_wave_bankfilter_default]
-Compiling architecture behavioral of entity xil_defaultlib.reg [reg_default]
-Compiling architecture behavioral of entity xil_defaultlib.Ruta_datos_Fir_bankfilter [ruta_datos_fir_bankfilter_defaul...]
-Compiling architecture behavioral of entity xil_defaultlib.controlador_fir_bankfilter [controlador_fir_bankfilter_defau...]
-Compiling architecture behavioral of entity xil_defaultlib.Fir_Filter_bankfilter [fir_filter_bankfilter_default]
-Compiling architecture behavioral of entity xil_defaultlib.EfectoBANKFILTER [efectobankfilter_default]
+Compiling architecture behavioral of entity xil_defaultlib.EfectCOMPRESSOR [efectcompressor_default]
 Compiling architecture behavioral of entity xil_defaultlib.tb_randomefect
 Built simulation snapshot tb_randomEfect_behav

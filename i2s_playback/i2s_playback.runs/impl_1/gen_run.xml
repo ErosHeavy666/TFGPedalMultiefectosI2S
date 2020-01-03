@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1577803593">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1578014531">
   <File Type="PWROPT-DRC" Name="i2s_playback_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="i2s_playback_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="i2s_playback_timing_summary_init.rpt"/>
@@ -239,7 +239,6 @@
     <File Path="$PSRCDIR/sources_1/new/sine_wave_autowah.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -247,7 +246,6 @@
     <File Path="$PSRCDIR/sources_1/new/EfectoWAHWAH.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
