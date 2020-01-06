@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_randomEfect_behav/xsimk.exe -simmode gui -wdb tb_randomEfect_behav.wdb -simrunnum 0 -socket 55880
+Running: xsim.dir/tb_randomEfect_behav/xsimk.exe -simmode gui -wdb tb_randomEfect_behav.wdb -simrunnum 0 -socket 63273
 Design successfully loaded
-Design Loading Memory Usage: 5912 KB (Peak: 5912 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 5908 KB (Peak: 5908 KB)
+Design Loading CPU Usage: 31 ms
 Simulation completed
-Simulation Memory Usage: 6560 KB (Peak: 6560 KB)
-Simulation CPU Usage: 15 ms
+Simulation Memory Usage: 7256 KB (Peak: 7256 KB)
+Simulation CPU Usage: 546 ms

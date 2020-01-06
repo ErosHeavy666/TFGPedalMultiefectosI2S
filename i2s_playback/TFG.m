@@ -11,14 +11,5 @@ sound(vhdlout);
 %% Guarda el audio procesado
 load handel.mat
 
-audiowrite('vhdlout_vibrato.wav',vhdlout,fs);
+audiowrite('haha_compressor.wav',vhdlout,fs);
 clear y Fs
-
-%% Señal triangular
-
-T = 1*(1/5);  
-fs = 1000; 
-t = 0:1/fs:T-1/fs;  
-x = sawtooth(2*pi*5*t,1/2);  
-plot(t,x) 
-grid on

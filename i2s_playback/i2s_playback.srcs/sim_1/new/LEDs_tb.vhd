@@ -46,19 +46,17 @@ Port (
     clk  : in STD_LOGIC;
     reset : in STD_LOGIC;
     play_enable : in STD_LOGIC;
-    l_data_rx : in STD_LOGIC_VECTOR (d_width-1 downto 0);
     r_data_rx : in STD_LOGIC_VECTOR (d_width-1 downto 0);
     LEDs : out STD_LOGIC_VECTOR (d_width-1 downto 0)
 );
 end component;
 
 signal clk, reset, play_enable : STD_LOGIC;
-signal l_data_rx, r_data_rx, LED : STD_LOGIC_VECTOR (d_width-1 downto 0);
+signal r_data_rx, LED : STD_LOGIC_VECTOR (d_width-1 downto 0);
 
 constant clk_period : time := 89ns;
 
 begin
-
 
     unit_leds : LEDs  
     GENERIC MAP(d_width => 16)
@@ -66,7 +64,6 @@ begin
         clk         =>  clk ,
         reset       =>  reset ,
         play_enable =>  play_enable,
-        l_data_rx   =>  l_data_rx  ,
         r_data_rx   =>  r_data_rx  ,
         LEDs        =>  LED       
     );
@@ -81,7 +78,6 @@ end process;
                 
 stim_proc: process 
 begin
-    l_data_rx <= "0000000000001100";
     r_data_rx <= "0000000000001100";
     reset <= '1';
     play_enable <= '0';
@@ -95,13 +91,11 @@ begin
     play_enable <= '1';
     wait for 10*clk_period;
     
-    l_data_rx <= "1000000000001100";
     r_data_rx <= "1000000000001100";
     reset <= '0';
     play_enable <= '1';
     wait for 10*clk_period;
     
-    l_data_rx <= "1111100000001100";
     r_data_rx <= "1111100000000110";
     reset <= '0';
     play_enable <= '1';
