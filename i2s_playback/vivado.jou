@@ -2,55 +2,13 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Thu Jan  2 21:09:32 2020
-# Process ID: 7876
+# Start of session at: Fri Jan  3 23:59:25 2020
+# Process ID: 11888
 # Current directory: C:/Vivado/i2s_playback
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11060 C:\Vivado\i2s_playback\i2s_playback.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6956 C:\Vivado\i2s_playback\i2s_playback.xpr
 # Log file: C:/Vivado/i2s_playback/vivado.log
 # Journal file: C:/Vivado/i2s_playback\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Vivado/i2s_playback/i2s_playback.xpr
 update_compile_order -fileset sources_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {C:/Vivado/i2s_playback/i2s_playback.runs/impl_1/i2s_playback.bit} [get_hw_devices xc7a100t_0]
-current_hw_device [get_hw_devices xc7a100t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Vivado/i2s_playback/i2s_playback.runs/impl_1/i2s_playback.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-close_hw
-launch_simulation
-launch_simulation
-open_wave_config C:/Vivado/i2s_playback/EfectoLOOPER_tb_behav.wcfg
-source tb_randomEfect.tcl
-close_sim
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {C:/Vivado/i2s_playback/i2s_playback.runs/impl_1/i2s_playback.bit} [get_hw_devices xc7a100t_0]
-current_hw_device [get_hw_devices xc7a100t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {C:/Vivado/i2s_playback/i2s_playback.runs/impl_1/i2s_playback.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-close_hw
-set_property used_in_synthesis false [get_files  C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/EfectoWAHWAH.vhd]
-set_property used_in_synthesis false [get_files  C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/new/sine_wave_autowah.vhd]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config C:/Vivado/i2s_playback/EfectoLOOPER_tb_behav.wcfg
-source tb_randomEfect.tcl
-restart
-run 10 us
-close_sim

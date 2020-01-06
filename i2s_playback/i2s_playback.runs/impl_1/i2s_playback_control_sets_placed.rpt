@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Fri Jan  3 03:11:18 2020
+| Date         : Sun Jan  5 16:51:09 2020
 | Host         : LAPTOP-ATT53B95 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file i2s_playback_control_sets_placed.rpt
 | Design       : i2s_playback
@@ -65,12 +65,12 @@ Table of Contents
 |  clock_IBUF              |                                                                                                   | reset_n_IBUF_BUFG                                                                    |                7 |             20 |
 |  i2s_clock/inst/clk_out1 | unit_i2s/l_in_next                                                                                | reset_n_IBUF_BUFG                                                                    |                9 |             31 |
 |  i2s_clock/inst/clk_out1 | unit_i2s/r_in_next                                                                                | reset_n_IBUF_BUFG                                                                    |               11 |             31 |
-|  i2s_clock/inst/clk_out1 | unit_digital_efects/Unit_EfectBANKFILTER/Unit_FIR_Filter_bankfilter_L/U1/E[0]                     | reset_n_IBUF_BUFG                                                                    |               14 |             32 |
 |  i2s_clock/inst/clk_out1 | unit_i2s/l_data_in_next_reg[15]_3                                                                 | unit_i2s/l_data_in_next_reg[15]_2                                                    |               12 |             32 |
-|  i2s_clock/inst/clk_out1 | unit_i2s/l_data_in_next_reg[15]_1                                                                 | unit_i2s/l_data_in_next_reg[15]_0                                                    |               11 |             32 |
-|  i2s_clock/inst/clk_out1 | unit_i2s/enable_in_COMPRESSOR16_out                                                               | reset_n_IBUF_BUFG                                                                    |               11 |             32 |
-|  i2s_clock/inst/clk_out1 | unit_i2s/enable_in_OVERDRIVE30_out                                                                | reset_n_IBUF_BUFG                                                                    |               12 |             32 |
+|  i2s_clock/inst/clk_out1 | unit_digital_efects/Unit_EfectBANKFILTER/Unit_FIR_Filter_bankfilter_L/U1/E[0]                     | reset_n_IBUF_BUFG                                                                    |               14 |             32 |
 |  i2s_clock/inst/clk_out1 | unit_i2s/r_data_out_reg[0][0]                                                                     | reset_n_IBUF_BUFG                                                                    |               14 |             32 |
+|  i2s_clock/inst/clk_out1 | unit_i2s/l_data_in_next_reg[15]_1                                                                 | unit_i2s/l_data_in_next_reg[15]_0                                                    |               11 |             32 |
+|  i2s_clock/inst/clk_out1 | unit_i2s/enable_in_OVERDRIVE30_out                                                                | reset_n_IBUF_BUFG                                                                    |               12 |             32 |
+|  i2s_clock/inst/clk_out1 | unit_i2s/enable_in_COMPRESSOR16_out                                                               | reset_n_IBUF_BUFG                                                                    |               11 |             32 |
 |  i2s_clock/inst/clk_out1 |                                                                                                   |                                                                                      |               22 |             40 |
 |  i2s_clock/inst/clk_out1 |                                                                                                   | reset_n_IBUF_BUFG                                                                    |               46 |            141 |
 |  i2s_clock/inst/clk_out1 | unit_i2s/enable_in_VIBRATO                                                                        |                                                                                      |               64 |            210 |

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Jan  3 05:03:51 2020
+# Process ID: 12560
+# Current directory: C:/Vivado/i2s_playback
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9140 C:\Vivado\i2s_playback\i2s_playback.xpr
+# Log file: C:/Vivado/i2s_playback/vivado.log
+# Journal file: C:/Vivado/i2s_playback\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Vivado/i2s_playback/i2s_playback.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'clk_wiz_1' generated file not found 'c:/Vivado/i2s_playback/i2s_playback.srcs/sources_1/ip/clk_wiz_1/stats.txt'. Please regenerate to continue.
+ERROR: [IP_Flow 19-993] Could not find IP file for IP 'blk_mem_gen_0'.
+CRITICAL WARNING: [IP_Flow 19-5097] Unable to determine VLNV from IP file; verify it has the correct syntax: 
+ERROR: [IP_Flow 19-993] Could not find IP file for IP 'fir_compiler_0'.
+CRITICAL WARNING: [IP_Flow 19-5097] Unable to determine VLNV from IP file; verify it has the correct syntax: 
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 824.164 ; gain = 121.680
+ERROR: [Common 17-39] 'open_project' failed due to earlier errors.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  3 05:04:40 2020...

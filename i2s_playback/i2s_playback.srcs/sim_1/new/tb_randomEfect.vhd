@@ -203,7 +203,7 @@ file data_in_file: text OPEN read_mode IS "C:\Vivado\i2s_playback\sample_in.dat"
 file data_out_file: text OPEN write_mode IS "C:\Vivado\i2s_playback\sample_out.dat";
 signal Sample_In, sample_out : STD_LOGIC_VECTOR (15 downto 0);
 constant clk_period : time := 10ns;
-signal SW14 : STD_LOGIC := '1';
+signal SW14 : signed (d_width-1 downto 0) := "0111111111111111";
 
 begin
 clk_process :process
@@ -288,21 +288,7 @@ end process;
 --     enable_out => enable_out
 --); 
 
-Unit_EfectCOMPRESSOR : EfectCOMPRESSOR
-GENERIC MAP(d_width => 16
-            )
-PORT MAP(
-     clk => clk,
-     reset_n => reset_n, 
-     enable_in => enable_in,
-     l_data_in => Sample_In, 
-     l_data_out => open, 
-     r_data_in => Sample_In, 
-     r_data_out => Sample_out,
-     enable_out => enable_out
-); 
-
---Unit_EfectOVERDRIVE : EfectoOVERDRIVE
+--Unit_EfectCOMPRESSOR : EfectCOMPRESSOR
 --GENERIC MAP(d_width => 16
 --            )
 --PORT MAP(
@@ -315,6 +301,20 @@ PORT MAP(
 --     r_data_out => Sample_out,
 --     enable_out => enable_out
 --); 
+
+Unit_EfectOVERDRIVE : EfectoOVERDRIVE
+GENERIC MAP(d_width => 16
+            )
+PORT MAP(
+     clk => clk,
+     reset_n => reset_n, 
+     enable_in => enable_in,
+     l_data_in => Sample_In, 
+     l_data_out => open, 
+     r_data_in => Sample_In, 
+     r_data_out => Sample_out,
+     enable_out => enable_out
+); 
 
 --Unit_EfectoBANKFILTER : EfectoBANKFILTER
 --GENERIC MAP(d_width => 16
