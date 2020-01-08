@@ -68,7 +68,7 @@ end component;
     signal M3_aux, M2_aux, M1_aux : signed(d_width-1 downto 0); 
     signal mult : signed (d_width*2-2 downto 0);
     signal sample_out_aux : signed(d_width-1 downto 0); 
-    signal uno_logic : STD_LOGIC := '1'; 
+
 begin
 
 --FIR-filter-Ruta de datos-Flujo de los datos Xn con sus Cn

@@ -38,17 +38,17 @@ end EfectoLOOPER_tb;
 architecture Behavioral of EfectoLOOPER_tb is
 
 constant d_width : INTEGER := 16;
-constant d_deep  : INTEGER := 18;
+constant d_deep  : INTEGER := 19;
 
 component EfectoLOOPER is
 GENERIC(
     d_width         : INTEGER := 16;
-    d_deep          : INTEGER := 18
+    d_deep          : INTEGER := 19
     );
 Port ( 
     clk                   : in STD_LOGIC;
     reset_n               : in STD_LOGIC;
-    BTNR                  : in STD_LOGIC;
+    SW13                  : in STD_LOGIC;
     enable_in             : IN STD_LOGIC;
     SW5                   : IN STD_LOGIC;
     SW6                   : IN STD_LOGIC;
@@ -60,7 +60,7 @@ Port (
 );
 end component;
 
-signal clk, reset_n, enable_in, enable_out, SW5, SW6, BTNR : STD_LOGIC;
+signal clk, reset_n, enable_in, enable_out, SW5, SW6, SW13 : STD_LOGIC;
 signal l_data_in, l_data_out, r_data_in, r_data_out : STD_LOGIC_VECTOR (d_width-1  downto 0);
 
 constant  clk_period : time := 89ns;
@@ -69,8 +69,7 @@ begin
 
 Unit_EfectLOOPER : EfectoLOOPER 
 GENERIC MAP(d_width => 16, 
-            d_deep => 18 
-            --g2 => 1/5
+            d_deep => 19 
             )
 PORT MAP(
      clk => clk,
@@ -78,7 +77,7 @@ PORT MAP(
      enable_in => enable_in ,
      SW5 => SW5,
      SW6 => SW6,
-     BTNR => BTNR,
+     SW13 => SW13,
      l_data_in => l_data_in   , 
      l_data_out => l_data_out  , 
      r_data_in => r_data_in  , 
@@ -99,6 +98,7 @@ PORT MAP(
           reset_n <= '1';
           SW5 <= '0';
           SW6 <= '0';
+          SW13 <= '0';
           enable_in <= '0';
           l_data_in <= "0000111100001111";
           r_data_in <= "1111000011110000";
@@ -107,6 +107,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '0';
           SW6 <= '0';
+          SW13 <= '0';
           enable_in <= '0';
           l_data_in <= "0000111100001111";
           r_data_in <= "1111000011110000";
@@ -115,6 +116,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '1';
           SW6 <= '0';
+          SW13 <= '0';
           enable_in <= '1';
           l_data_in <= "0000111100001100";
           r_data_in <= "1111000011110011";
@@ -123,6 +125,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '1';
           SW6 <= '0';
+          SW13 <= '0';
           enable_in <= '1';
           l_data_in <= "0000100100001100";
           r_data_in <= "1111011011110011";
@@ -131,6 +134,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '1';
           SW6 <= '0';
+          SW13 <= '0';
           enable_in <= '1';
           l_data_in <= "1100100100001100";
           r_data_in <= "0011011011110011";
@@ -139,6 +143,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '1';
           SW6 <= '1';
+          SW13 <= '0';
           enable_in <= '1';
           l_data_in <= "0000000000001111";
           r_data_in <= "0011011111110011";
@@ -147,11 +152,13 @@ PORT MAP(
           reset_n <= '1';
           SW5 <= '1';
           SW6 <= '0';
+          SW13 <= '0';
           wait for 200*clk_period;
           
           reset_n <= '0';
           SW5 <= '1';
           SW6 <= '1';
+          SW13 <= '0';
           enable_in <= '1';
           l_data_in <= "0000000000001111";
           r_data_in <= "0011011111110011";
@@ -160,6 +167,7 @@ PORT MAP(
           reset_n <= '0';
           SW5 <= '0';
           SW6 <= '0';
+          SW13 <= '0';
           wait;
           
       end process;

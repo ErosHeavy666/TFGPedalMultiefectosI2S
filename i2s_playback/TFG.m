@@ -11,5 +11,5 @@ sound(vhdlout);
 %% Guarda el audio procesado
 load handel.mat
 
-audiowrite('haha_compressor.wav',vhdlout,fs);
+audiowrite('haha_bankfilterHPF.wav',vhdlout,fs);
 clear y Fs
