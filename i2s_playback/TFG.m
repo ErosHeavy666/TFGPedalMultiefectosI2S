@@ -1,6 +1,6 @@
 %% Carga de un fichero .wav en Matlab y creaci ?on de otro fichero con el formato que emplea el
 %testbench.
-[data, fs] = audioread('haha.wav');
+[data, fs] = audioread('input_test.wav');
 file = fopen('sample_in.dat','w');
 fprintf(file, '%d\n', round(data.*65535));
 
